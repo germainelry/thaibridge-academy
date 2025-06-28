@@ -32,6 +32,48 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Reviews Summary Section */}
+      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-green-50 to-emerald-50">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
+            {/* Star Rating */}
+            <div className="flex flex-col items-center">
+              <div className="flex items-center gap-1 mb-2">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <Star
+                    key={star}
+                    className={`w-6 h-6 ${
+                      star <= 4 ? "text-yellow-400 fill-yellow-400" : 
+                      star === 5 ? "text-yellow-400 fill-yellow-400" : "text-gray-300"
+                    }`}
+                  />
+                ))}
+              </div>
+              <span className="text-2xl font-bold text-green-800">4.8/5</span>
+              <span className="text-green-600">Average Rating</span>
+            </div>
+
+            {/* Happy Students Counter */}
+            <div className="flex flex-col items-center">
+              <div className="flex items-center gap-2 mb-2">
+                <Users className="w-8 h-8 text-green-600" />
+                <span className="text-3xl font-bold text-green-800">200+</span>
+              </div>
+              <span className="text-green-600">Happy Students</span>
+            </div>
+
+            {/* Read Reviews Button */}
+            <div>
+              <Link to="/reviews">
+                <Button variant="outline" className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white rounded-full px-6 py-3 text-lg">
+                  Read All Reviews
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Course Highlights */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
