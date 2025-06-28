@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -39,20 +40,21 @@ All colors MUST be HSL.
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Thai-inspired custom colors */
+    --thai-deep-forest: 134 20% 18%;
+    --thai-green: 134 25% 41%;
+    --thai-sage: 77 20% 53%;
+    --thai-gold: 51 73% 53%;
+    --thai-terracotta: 30 56% 53%;
+    --thai-cream: 60 100% 96%;
   }
 
   .dark {
@@ -103,3 +105,32 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+/* Custom Thai color utilities */
+.text-thai-forest { color: hsl(var(--thai-deep-forest)); }
+.text-thai-green { color: hsl(var(--thai-green)); }
+.text-thai-sage { color: hsl(var(--thai-sage)); }
+.text-thai-gold { color: hsl(var(--thai-gold)); }
+.text-thai-terracotta { color: hsl(var(--thai-terracotta)); }
+
+.bg-thai-forest { background-color: hsl(var(--thai-deep-forest)); }
+.bg-thai-green { background-color: hsl(var(--thai-green)); }
+.bg-thai-sage { background-color: hsl(var(--thai-sage)); }
+.bg-thai-gold { background-color: hsl(var(--thai-gold)); }
+.bg-thai-terracotta { background-color: hsl(var(--thai-terracotta)); }
+.bg-thai-cream { background-color: hsl(var(--thai-cream)); }
+
+.border-thai-forest { border-color: hsl(var(--thai-deep-forest)); }
+.border-thai-green { border-color: hsl(var(--thai-green)); }
+.border-thai-sage { border-color: hsl(var(--thai-sage)); }
+.border-thai-gold { border-color: hsl(var(--thai-gold)); }
+
+.hover\:bg-thai-forest:hover { background-color: hsl(var(--thai-deep-forest)); }
+.hover\:bg-thai-green:hover { background-color: hsl(var(--thai-green)); }
+.hover\:bg-thai-sage:hover { background-color: hsl(var(--thai-sage)); }
+.hover\:bg-thai-gold:hover { background-color: hsl(var(--thai-gold)); }
+.hover\:bg-thai-terracotta:hover { background-color: hsl(var(--thai-terracotta)); }
+
+.hover\:text-thai-forest:hover { color: hsl(var(--thai-deep-forest)); }
+.hover\:text-thai-green:hover { color: hsl(var(--thai-green)); }
+.hover\:text-thai-gold:hover { color: hsl(var(--thai-gold)); }

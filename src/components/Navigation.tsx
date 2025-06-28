@@ -20,11 +20,11 @@ const Navigation = () => {
   const isActive = (href: string) => location.pathname === href;
 
   return (
-    <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-green-100 shadow-sm">
+    <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-thai-sage/30 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <Link to="/" className="text-2xl font-bold text-green-700 hover:text-green-800 transition-colors">
+            <Link to="/" className="text-2xl font-bold text-thai-forest hover:text-thai-green transition-colors">
               ThaiBridge Academy
             </Link>
           </div>
@@ -38,8 +38,8 @@ const Navigation = () => {
                   to={item.href}
                   className={`px-3 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                     isActive(item.href)
-                      ? "bg-green-100 text-green-700"
-                      : "text-gray-700 hover:text-green-600 hover:bg-green-50"
+                      ? "bg-thai-sage text-thai-cream"
+                      : "text-gray-700 hover:text-thai-green hover:bg-thai-cream"
                   }`}
                 >
                   {item.name}
@@ -50,7 +50,7 @@ const Navigation = () => {
 
           <div className="hidden md:block">
             <Link to="/contact">
-              <Button className="bg-green-600 hover:bg-green-700 text-white rounded-full px-6">
+              <Button className="bg-thai-terracotta hover:bg-thai-forest text-white rounded-full px-6">
                 Free Trial
               </Button>
             </Link>
@@ -60,7 +60,7 @@ const Navigation = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-green-600 hover:text-green-700 hover:bg-green-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500"
+              className="inline-flex items-center justify-center p-2 rounded-md text-thai-green hover:text-thai-forest hover:bg-thai-cream focus:outline-none focus:ring-2 focus:ring-inset focus:ring-thai-sage"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -71,15 +71,15 @@ const Navigation = () => {
       {/* Mobile Navigation */}
       {isOpen && (
         <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-green-100">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-thai-sage/30">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
                 className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
                   isActive(item.href)
-                    ? "bg-green-100 text-green-700"
-                    : "text-gray-700 hover:text-green-600 hover:bg-green-50"
+                    ? "bg-thai-sage text-thai-cream"
+                    : "text-gray-700 hover:text-thai-green hover:bg-thai-cream"
                 }`}
                 onClick={() => setIsOpen(false)}
               >
@@ -88,7 +88,7 @@ const Navigation = () => {
             ))}
             <div className="pt-2">
               <Link to="/contact" onClick={() => setIsOpen(false)}>
-                <Button className="w-full bg-green-600 hover:bg-green-700 text-white rounded-full">
+                <Button className="w-full bg-thai-terracotta hover:bg-thai-forest text-white rounded-full">
                   Free Trial
                 </Button>
               </Link>

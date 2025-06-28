@@ -63,16 +63,16 @@ const Courses = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-green-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-thai-cream to-white">
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-green-100 via-emerald-50 to-green-200">
+      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-thai-cream via-thai-sage/10 to-thai-cream/50">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-green-800 mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-thai-forest mb-6">
             Our Thai Language Courses
           </h1>
-          <p className="text-xl text-green-700 mb-8 leading-relaxed">
+          <p className="text-xl text-thai-green mb-8 leading-relaxed">
             Choose the perfect learning path for your Thai language journey. From intensive travel preparation to comprehensive mastery programs.
           </p>
         </div>
@@ -84,28 +84,28 @@ const Courses = () => {
           <div className="grid lg:grid-cols-3 gap-8">
             {courses.map((course, index) => (
               <Card key={index} className={`relative border-2 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 ${
-                course.popular ? 'border-orange-300 shadow-lg' : 'border-green-200 hover:border-green-400'
+                course.popular ? 'border-thai-gold/60 shadow-lg' : 'border-thai-sage/40 hover:border-thai-green'
               }`}>
                 {course.popular && (
-                  <Badge className="absolute -top-3 left-4 bg-orange-500 text-white px-3 py-1">
+                  <Badge className="absolute -top-3 left-4 bg-thai-gold text-thai-forest px-3 py-1">
                     MOST POPULAR
                   </Badge>
                 )}
                 
                 <CardHeader className="text-center pb-4">
                   <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ${
-                    course.popular ? 'bg-orange-100' : 'bg-green-100'
+                    course.popular ? 'bg-thai-gold/20' : 'bg-thai-sage/20'
                   }`}>
                     <course.icon className={`w-8 h-8 ${
-                      course.popular ? 'text-orange-600' : 'text-green-600'
+                      course.popular ? 'text-thai-gold' : 'text-thai-green'
                     }`} />
                   </div>
-                  <CardTitle className="text-2xl text-green-800 mb-2">{course.title}</CardTitle>
-                  <CardDescription className="text-lg text-green-600 mb-4">
+                  <CardTitle className="text-2xl text-thai-forest mb-2">{course.title}</CardTitle>
+                  <CardDescription className="text-lg text-thai-green mb-4">
                     {course.description}
                   </CardDescription>
                   
-                  <div className="space-y-2 text-sm text-green-700">
+                  <div className="space-y-2 text-sm text-thai-green">
                     <div className="flex items-center justify-center gap-2">
                       <Clock className="w-4 h-4" />
                       <span>{course.duration}</span>
@@ -116,7 +116,7 @@ const Courses = () => {
                     </div>
                   </div>
                   
-                  <div className="text-2xl font-bold text-green-800 mt-4">
+                  <div className="text-2xl font-bold text-thai-forest mt-4">
                     {course.price}
                   </div>
                 </CardHeader>
@@ -125,8 +125,8 @@ const Courses = () => {
                   <div className="space-y-3 mb-6">
                     {course.features.map((feature, featureIndex) => (
                       <div key={featureIndex} className="flex items-start gap-3">
-                        <Check className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                        <span className="text-green-700 text-sm">{feature}</span>
+                        <Check className="w-5 h-5 text-thai-sage mt-0.5 flex-shrink-0" />
+                        <span className="text-thai-green text-sm">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -135,14 +135,14 @@ const Courses = () => {
                     <Link to="/contact">
                       <Button className={`w-full rounded-full py-3 ${
                         course.popular 
-                          ? 'bg-orange-500 hover:bg-orange-600' 
-                          : 'bg-green-600 hover:bg-green-700'
+                          ? 'bg-thai-gold hover:bg-thai-forest text-thai-forest hover:text-white' 
+                          : 'bg-thai-green hover:bg-thai-forest'
                       } text-white`}>
                         Get Started
                       </Button>
                     </Link>
                     <Link to="/contact">
-                      <Button variant="outline" className="w-full border-green-600 text-green-600 hover:bg-green-600 hover:text-white rounded-full py-3">
+                      <Button variant="outline" className="w-full border-thai-terracotta text-thai-terracotta hover:bg-thai-terracotta hover:text-white rounded-full py-3">
                         Free Trial Lesson
                       </Button>
                     </Link>
@@ -155,36 +155,36 @@ const Courses = () => {
       </section>
 
       {/* Why Choose Our Courses */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-green-50 to-emerald-50">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-thai-cream to-thai-sage/10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-4">Why Choose Our Courses?</h2>
-            <p className="text-lg text-green-600 max-w-2xl mx-auto">Our courses are designed with your success in mind</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-thai-forest mb-4">Why Choose Our Courses?</h2>
+            <p className="text-lg text-thai-green max-w-2xl mx-auto">Our courses are designed with your success in mind</p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Award className="w-8 h-8 text-green-600" />
+              <div className="w-16 h-16 bg-thai-sage/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Award className="w-8 h-8 text-thai-green" />
               </div>
-              <h3 className="text-xl font-semibold text-green-800 mb-3">Native Thai Instructors</h3>
-              <p className="text-green-600">Learn from experienced native speakers with decades of teaching experience.</p>
+              <h3 className="text-xl font-semibold text-thai-forest mb-3">Native Thai Instructors</h3>
+              <p className="text-thai-green">Learn from experienced native speakers with decades of teaching experience.</p>
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <BookOpen className="w-8 h-8 text-green-600" />
+              <div className="w-16 h-16 bg-thai-sage/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <BookOpen className="w-8 h-8 text-thai-green" />
               </div>
-              <h3 className="text-xl font-semibold text-green-800 mb-3">Scientifically Designed</h3>
-              <p className="text-green-600">Our curriculum follows the latest research on language acquisition and retention.</p>
+              <h3 className="text-xl font-semibold text-thai-forest mb-3">Scientifically Designed</h3>
+              <p className="text-thai-green">Our curriculum follows the latest research on language acquisition and retention.</p>
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Heart className="w-8 h-8 text-green-600" />
+              <div className="w-16 h-16 bg-thai-sage/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Heart className="w-8 h-8 text-thai-green" />
               </div>
-              <h3 className="text-xl font-semibold text-green-800 mb-3">Cultural Connection</h3>
-              <p className="text-green-600">Learn not just the language, but also Thai culture and customs for meaningful interactions.</p>
+              <h3 className="text-xl font-semibold text-thai-forest mb-3">Cultural Connection</h3>
+              <p className="text-thai-green">Learn not just the language, but also Thai culture and customs for meaningful interactions.</p>
             </div>
           </div>
         </div>
@@ -193,18 +193,18 @@ const Courses = () => {
       {/* CTA Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-6">Ready to Start Learning?</h2>
-          <p className="text-xl text-green-600 mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-thai-forest mb-6">Ready to Start Learning?</h2>
+          <p className="text-xl text-thai-green mb-8">
             Book a free trial lesson today and experience our teaching methodology firsthand.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/contact">
-              <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg rounded-full">
+              <Button size="lg" className="bg-thai-green hover:bg-thai-forest text-white px-8 py-4 text-lg rounded-full">
                 Book Free Trial
               </Button>
             </Link>
             <Link to="/faq">
-              <Button size="lg" variant="outline" className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white px-8 py-4 text-lg rounded-full">
+              <Button size="lg" variant="outline" className="border-thai-terracotta text-thai-terracotta hover:bg-thai-terracotta hover:text-white px-8 py-4 text-lg rounded-full">
                 View FAQ
               </Button>
             </Link>

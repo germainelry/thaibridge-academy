@@ -65,6 +65,14 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				thai: {
+					forest: 'hsl(var(--thai-deep-forest))',
+					green: 'hsl(var(--thai-green))',
+					sage: 'hsl(var(--thai-sage))',
+					gold: 'hsl(var(--thai-gold))',
+					terracotta: 'hsl(var(--thai-terracotta))',
+					cream: 'hsl(var(--thai-cream))'
 				}
 			},
 			borderRadius: {
