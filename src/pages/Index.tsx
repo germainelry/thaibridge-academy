@@ -41,12 +41,11 @@ const Index = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
-              <button
-                onClick={() => scrollToSection('courses-section')}
-                className="font-primary text-lg font-semibold bg-thai-button-soft hover:bg-thai-button-sage text-white px-10 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
-              >
-                Start Learning Thai
-              </button>
+              <Link to="/contact">
+                <button className="font-primary text-lg font-semibold bg-thai-button-soft hover:bg-thai-button-sage text-white px-10 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                  Start Learning Thai
+                </button>
+              </Link>
               <button
                 onClick={() => scrollToSection('courses-section')}
                 className="font-primary text-lg font-semibold border-2 border-white text-white hover:bg-white hover:text-thai-deep-forest px-10 py-4 rounded-full transition-all duration-300 bg-transparent"
