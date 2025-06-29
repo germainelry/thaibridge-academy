@@ -67,12 +67,15 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				thai: {
-					forest: 'hsl(var(--thai-deep-forest))',
-					green: 'hsl(var(--thai-green))',
-					sage: 'hsl(var(--thai-sage))',
-					gold: 'hsl(var(--thai-gold))',
-					terracotta: 'hsl(var(--thai-terracotta))',
-					cream: 'hsl(var(--thai-cream))'
+					'deep-forest': 'hsl(var(--thai-deep-forest))',
+					'darker-forest': 'hsl(var(--thai-darker-forest))',
+					'card-white': 'hsl(var(--thai-card-white))',
+					'light-bg': 'hsl(var(--thai-light-bg))',
+					'button-fresh': 'hsl(var(--thai-button-fresh))',
+					'button-sage': 'hsl(var(--thai-button-sage))',
+					'accent-gold': 'hsl(var(--thai-accent-gold))',
+					'text-dark': 'hsl(var(--thai-text-dark))',
+					'text-secondary': 'hsl(var(--thai-text-secondary))'
 				}
 			},
 			borderRadius: {

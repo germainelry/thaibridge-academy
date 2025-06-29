@@ -48,13 +48,16 @@ All colors MUST be HSL.
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
 
-    /* Thai-inspired custom colors */
-    --thai-deep-forest: 134 20% 18%;
-    --thai-green: 134 25% 41%;
-    --thai-sage: 77 20% 53%;
-    --thai-gold: 51 73% 53%;
-    --thai-terracotta: 30 56% 53%;
-    --thai-cream: 60 100% 96%;
+    /* Thai-inspired sophisticated color scheme */
+    --thai-deep-forest: 126 35% 25%;    /* #2D5A27 - main background */
+    --thai-darker-forest: 126 37% 16%;  /* #1E3A1A - navigation, footer */
+    --thai-card-white: 0 0% 100%;       /* #FFFFFF - cards, content */
+    --thai-light-bg: 120 20% 97%;       /* #F7FAF7 - subtle sections */
+    --thai-button-fresh: 107 25% 58%;   /* #7FB069 - primary buttons */
+    --thai-button-sage: 134 25% 41%;    /* #4A7C59 - secondary buttons */
+    --thai-accent-gold: 38 37% 64%;     /* #D4A574 - highlights, badges */
+    --thai-text-dark: 210 29% 24%;      /* #2C3E50 - text on light */
+    --thai-text-secondary: 120 13% 66%; /* #A0B3A0 - secondary text on dark */
   }
 
   .dark {
@@ -106,31 +109,24 @@ All colors MUST be HSL.
   }
 }
 
-/* Custom Thai color utilities */
-.text-thai-forest { color: hsl(var(--thai-deep-forest)); }
-.text-thai-green { color: hsl(var(--thai-green)); }
-.text-thai-sage { color: hsl(var(--thai-sage)); }
-.text-thai-gold { color: hsl(var(--thai-gold)); }
-.text-thai-terracotta { color: hsl(var(--thai-terracotta)); }
+/* Thai sophisticated color utilities */
+.bg-thai-deep-forest { background-color: hsl(var(--thai-deep-forest)); }
+.bg-thai-darker-forest { background-color: hsl(var(--thai-darker-forest)); }
+.bg-thai-card-white { background-color: hsl(var(--thai-card-white)); }
+.bg-thai-light-bg { background-color: hsl(var(--thai-light-bg)); }
+.bg-thai-button-fresh { background-color: hsl(var(--thai-button-fresh)); }
+.bg-thai-button-sage { background-color: hsl(var(--thai-button-sage)); }
+.bg-thai-accent-gold { background-color: hsl(var(--thai-accent-gold)); }
 
-.bg-thai-forest { background-color: hsl(var(--thai-deep-forest)); }
-.bg-thai-green { background-color: hsl(var(--thai-green)); }
-.bg-thai-sage { background-color: hsl(var(--thai-sage)); }
-.bg-thai-gold { background-color: hsl(var(--thai-gold)); }
-.bg-thai-terracotta { background-color: hsl(var(--thai-terracotta)); }
-.bg-thai-cream { background-color: hsl(var(--thai-cream)); }
+.text-thai-deep-forest { color: hsl(var(--thai-deep-forest)); }
+.text-thai-darker-forest { color: hsl(var(--thai-darker-forest)); }
+.text-thai-text-dark { color: hsl(var(--thai-text-dark)); }
+.text-thai-text-secondary { color: hsl(var(--thai-text-secondary)); }
+.text-thai-accent-gold { color: hsl(var(--thai-accent-gold)); }
 
-.border-thai-forest { border-color: hsl(var(--thai-deep-forest)); }
-.border-thai-green { border-color: hsl(var(--thai-green)); }
-.border-thai-sage { border-color: hsl(var(--thai-sage)); }
-.border-thai-gold { border-color: hsl(var(--thai-gold)); }
+.border-thai-accent-gold { border-color: hsl(var(--thai-accent-gold)); }
+.border-thai-button-sage { border-color: hsl(var(--thai-button-sage)); }
 
-.hover\:bg-thai-forest:hover { background-color: hsl(var(--thai-deep-forest)); }
-.hover\:bg-thai-green:hover { background-color: hsl(var(--thai-green)); }
-.hover\:bg-thai-sage:hover { background-color: hsl(var(--thai-sage)); }
-.hover\:bg-thai-gold:hover { background-color: hsl(var(--thai-gold)); }
-.hover\:bg-thai-terracotta:hover { background-color: hsl(var(--thai-terracotta)); }
-
-.hover\:text-thai-forest:hover { color: hsl(var(--thai-deep-forest)); }
-.hover\:text-thai-green:hover { color: hsl(var(--thai-green)); }
-.hover\:text-thai-gold:hover { color: hsl(var(--thai-gold)); }
+.hover\:bg-thai-button-sage:hover { background-color: hsl(var(--thai-button-sage)); }
+.hover\:bg-thai-accent-gold:hover { background-color: hsl(var(--thai-accent-gold)); }
+.hover\:text-white:hover { color: white; }
