@@ -5,34 +5,54 @@ import { Star, Users, Clock, BookOpen, Heart, Award, Calendar, MessageCircle } f
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import ScrollDown from "@/components/ScrollDown";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-thai-card-white">
       <Navigation />
       
-      {/* Hero Section */}
-      <section className="relative pt-36 pb-20 px-4 sm:px-6 lg:px-8 bg-thai-deep-forest">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1466442929976-97f336a657be?ixlib=rb-4.0.3')] bg-cover bg-center opacity-20"></div>
-        <div className="relative max-w-7xl mx-auto">
-          <div className="text-center">
-            <h1 className="font-display text-hero font-bold text-white mb-6 animate-fade-in">
-              Speak Thai. Connect Deeper.
-            </h1>
-            <p className="font-primary text-lg font-normal text-thai-text-secondary mb-8 max-w-4xl mx-auto leading-relaxed animate-fade-in">
-              Learn from native Thai speakers—online or through our unique immersion experiences. Connect authentically, travel deeper, and discover the Thailand locals know.
+      {/* Full-Screen Hero Section */}
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1466442929976-97f336a657be?ixlib=rb-4.0.3')] bg-cover bg-center"></div>
+        <div className="absolute inset-0 bg-thai-deep-forest/60"></div>
+        
+        <div className="relative z-10 text-center max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-8">
+            <p className="text-thai-accent-gold uppercase tracking-wider text-sm font-primary font-semibold">
+              THAI LANGUAGE LEARNING EXCELLENCE
             </p>
-            <Link to="/courses">
-              <Button className="font-primary text-base font-semibold bg-thai-button-fresh hover:bg-thai-button-sage text-white px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                View Courses
-              </Button>
-            </Link>
+            
+            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight">
+              Speak Thai.<br />
+              Connect Deeper.
+            </h1>
+            
+            <p className="font-primary text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+              Learn from native Thai speakers—online or through our unique immersion experiences. 
+              Connect authentically, travel deeper, and discover the Thailand locals know.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
+              <Link to="/courses">
+                <Button className="font-primary text-lg font-semibold bg-thai-accent-gold hover:bg-thai-button-sage text-white px-10 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                  Book Your Stay
+                </Button>
+              </Link>
+              <Link to="/courses">
+                <Button variant="outline" className="font-primary text-lg font-semibold border-2 border-white text-white hover:bg-white hover:text-thai-deep-forest px-10 py-4 rounded-full transition-all duration-300">
+                  Explore Courses
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
+        
+        <ScrollDown />
       </section>
 
       {/* Reviews Summary Section */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-thai-light-bg">
+      <section id="reviews-section" className="py-16 px-4 sm:px-6 lg:px-8 bg-thai-light-bg">
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
             {/* Star Rating */}
@@ -74,7 +94,7 @@ const Index = () => {
       </section>
 
       {/* Popular Courses */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-thai-card-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-thai-card-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-thai-text-dark mb-4">Our Popular Courses</h2>
@@ -155,7 +175,7 @@ const Index = () => {
       </section>
 
       {/* About Our Academy Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-thai-light-bg">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-thai-light-bg">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -194,7 +214,7 @@ const Index = () => {
       </section>
 
       {/* Why Join Us Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-thai-card-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-thai-card-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-thai-text-dark mb-4">Why Join ThaiBridge Academy?</h2>
@@ -246,7 +266,7 @@ const Index = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-thai-card-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-thai-light-bg">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-thai-text-dark mb-4">What Our Students Say</h2>
@@ -287,7 +307,7 @@ const Index = () => {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-thai-deep-forest text-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-thai-deep-forest text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-display text-3xl md:text-4xl font-bold mb-6">Start Your Thai Journey Today</h2>
           <p className="font-primary text-xl mb-8 leading-relaxed text-thai-text-secondary">
