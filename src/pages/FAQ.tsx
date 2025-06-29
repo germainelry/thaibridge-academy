@@ -139,10 +139,10 @@ const FAQ = () => {
       {/* Hero Section */}
       <section className="pt-36 pb-20 px-4 sm:px-6 lg:px-8 bg-thai-deep-forest">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 animate-fade-in">
+          <h1 className="font-display text-hero font-bold text-white mb-6 animate-fade-in">
             Frequently Asked Questions
           </h1>
-          <p className="text-xl text-thai-text-secondary mb-8 leading-relaxed animate-fade-in">
+          <p className="font-primary text-lg font-normal text-thai-text-secondary mb-8 leading-relaxed animate-fade-in">
             Find answers to common questions about our Thai language courses and learning process.
           </p>
           
@@ -154,7 +154,7 @@ const FAQ = () => {
               placeholder="Search FAQ..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-10 pr-4 py-3 border-2 border-thai-button-sage/40 focus:border-thai-button-sage rounded-full"
+              className="pl-10 pr-4 py-3 border-2 border-thai-button-sage/40 focus:border-thai-button-sage rounded-full font-primary text-base font-normal"
             />
           </div>
         </div>
@@ -165,10 +165,10 @@ const FAQ = () => {
         <div className="max-w-4xl mx-auto">
           {filteredFAQs.length === 0 ? (
             <div className="text-center py-12">
-              <p className="text-xl text-thai-button-sage mb-4">No FAQs found matching your search.</p>
+              <p className="font-primary text-lg font-normal text-thai-button-sage mb-4">No FAQs found matching your search.</p>
               <Button 
                 onClick={() => setSearchTerm("")}
-                className="bg-thai-button-fresh hover:bg-thai-button-sage text-white rounded-full px-6"
+                className="font-primary text-base font-semibold bg-thai-button-fresh hover:bg-thai-button-sage text-white rounded-full px-6"
               >
                 Show All FAQs
               </Button>
@@ -178,8 +178,8 @@ const FAQ = () => {
               {filteredFAQs.map((category, categoryIndex) => (
                 <Card key={categoryIndex} className="border-2 border-thai-button-sage/40 shadow-lg bg-thai-card-white">
                   <CardHeader>
-                    <CardTitle className="text-2xl text-thai-text-dark">{category.category}</CardTitle>
-                    <CardDescription className="text-thai-button-sage">
+                    <CardTitle className="font-display text-h2 font-semibold text-thai-text-dark">{category.category}</CardTitle>
+                    <CardDescription className="font-primary text-base font-normal text-thai-button-sage">
                       {category.questions.length} question{category.questions.length !== 1 ? 's' : ''}
                     </CardDescription>
                   </CardHeader>
@@ -191,10 +191,10 @@ const FAQ = () => {
                           value={`${categoryIndex}-${questionIndex}`}
                           className="border-thai-button-sage/20"
                         >
-                          <AccordionTrigger className="text-left text-thai-text-dark hover:text-thai-button-sage">
+                          <AccordionTrigger className="font-primary text-base font-semibold text-left text-thai-text-dark hover:text-thai-button-sage">
                             {faq.question}
                           </AccordionTrigger>
-                          <AccordionContent className="text-thai-button-sage leading-relaxed pt-2">
+                          <AccordionContent className="font-primary text-base font-normal text-thai-button-sage leading-relaxed pt-2">
                             {faq.answer}
                           </AccordionContent>
                         </AccordionItem>
@@ -216,18 +216,18 @@ const FAQ = () => {
               <div className="flex items-center justify-center mb-4">
                 <MessageCircle className="w-12 h-12 text-thai-button-sage" />
               </div>
-              <h2 className="text-3xl font-bold text-thai-text-dark mb-4">Still Have Questions?</h2>
-              <p className="text-lg text-thai-button-sage mb-6">
+              <h2 className="font-display text-h1 font-semibold text-thai-text-dark mb-4">Still Have Questions?</h2>
+              <p className="font-primary text-lg font-normal text-thai-button-sage mb-6">
                 Can't find what you're looking for? Our team is here to help you get started on your Thai language journey.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link to="/contact">
-                  <Button className="bg-thai-button-fresh hover:bg-thai-button-sage text-white px-8 py-3 rounded-full">
+                  <Button className="font-primary text-base font-semibold bg-thai-button-fresh hover:bg-thai-button-sage text-white px-8 py-3 rounded-full">
                     Contact Us
                   </Button>
                 </Link>
                 <Link to="/courses">
-                  <Button variant="outline" className="border-thai-button-sage text-thai-button-sage hover:bg-thai-button-sage hover:text-white px-8 py-3 rounded-full">
+                  <Button variant="outline" className="font-primary text-sm font-medium border-thai-button-sage text-thai-button-sage hover:bg-thai-button-sage hover:text-white px-8 py-3 rounded-full">
                     View Courses
                   </Button>
                 </Link>

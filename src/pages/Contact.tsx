@@ -50,10 +50,10 @@ const Contact = () => {
       {/* Hero Section */}
       <section className="pt-36 pb-20 px-4 sm:px-6 lg:px-8 bg-thai-deep-forest">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 animate-fade-in">
+          <h1 className="font-display text-hero font-bold text-white mb-6 animate-fade-in">
             Get in Touch
           </h1>
-          <p className="text-xl text-thai-text-secondary mb-8 leading-relaxed animate-fade-in">
+          <p className="font-primary text-lg font-normal text-thai-text-secondary mb-8 leading-relaxed animate-fade-in">
             Ready to start your Thai language journey? Book your free trial lesson today or get in touch with any questions.
           </p>
         </div>
@@ -66,11 +66,11 @@ const Contact = () => {
             {/* Contact Form */}
             <Card className="border-2 border-thai-button-sage/30 shadow-lg bg-thai-card-white">
               <CardHeader>
-                <CardTitle className="text-2xl text-thai-text-dark flex items-center gap-2">
+                <CardTitle className="font-display text-h2 font-semibold text-thai-text-dark flex items-center gap-2">
                   <Calendar className="w-6 h-6" />
                   Book Your Free Trial Lesson
                 </CardTitle>
-                <CardDescription className="text-lg text-thai-button-sage">
+                <CardDescription className="font-primary text-base font-normal text-thai-button-sage">
                   Fill out the form below and we'll contact you within 24 hours to schedule your personalized trial lesson.
                 </CardDescription>
               </CardHeader>
@@ -78,17 +78,18 @@ const Contact = () => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="name">Full Name *</Label>
+                      <Label htmlFor="name" className="font-primary text-base font-semibold">Full Name *</Label>
                       <Input
                         id="name"
                         value={formData.name}
                         onChange={(e) => handleChange("name", e.target.value)}
                         placeholder="Your full name"
                         required
+                        className="font-primary text-base font-normal"
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="email">Email Address *</Label>
+                      <Label htmlFor="email" className="font-primary text-base font-semibold">Email Address *</Label>
                       <Input
                         id="email"
                         type="email"
@@ -96,64 +97,67 @@ const Contact = () => {
                         onChange={(e) => handleChange("email", e.target.value)}
                         placeholder="your.email@example.com"
                         required
+                        className="font-primary text-base font-normal"
                       />
                     </div>
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="phone">Phone Number</Label>
+                    <Label htmlFor="phone" className="font-primary text-base font-semibold">Phone Number</Label>
                     <Input
                       id="phone"
                       type="tel"
                       value={formData.phone}
                       onChange={(e) => handleChange("phone", e.target.value)}
                       placeholder="+65 XXXX XXXX"
+                      className="font-primary text-base font-normal"
                     />
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="course">Interested Course</Label>
+                    <Label htmlFor="course" className="font-primary text-base font-semibold">Interested Course</Label>
                     <Select value={formData.course} onValueChange={(value) => handleChange("course", value)}>
-                      <SelectTrigger>
+                      <SelectTrigger className="font-primary text-base font-normal">
                         <SelectValue placeholder="Select a course" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="private">1 to 1 Private Coaching</SelectItem>
-                        <SelectItem value="mastery">Thai Mastery Series</SelectItem>
-                        <SelectItem value="traveller">Basic Traveller's Pack</SelectItem>
-                        <SelectItem value="undecided">Not sure yet</SelectItem>
+                        <SelectItem value="private" className="font-primary text-base font-normal">1 to 1 Private Coaching</SelectItem>
+                        <SelectItem value="mastery" className="font-primary text-base font-normal">Thai Mastery Series</SelectItem>
+                        <SelectItem value="traveller" className="font-primary text-base font-normal">Basic Traveller's Pack</SelectItem>
+                        <SelectItem value="undecided" className="font-primary text-base font-normal">Not sure yet</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="experience">Thai Language Experience</Label>
+                    <Label htmlFor="experience" className="font-primary text-base font-semibold">Thai Language Experience</Label>
                     <Select value={formData.experience} onValueChange={(value) => handleChange("experience", value)}>
-                      <SelectTrigger>
+                      <SelectTrigger className="font-primary text-base font-normal">
                         <SelectValue placeholder="Select your current level" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="complete-beginner">Complete Beginner</SelectItem>
-                        <SelectItem value="some-basics">Know Some Basic Phrases</SelectItem>
-                        <SelectItem value="elementary">Elementary Level</SelectItem>
-                        <SelectItem value="intermediate">Intermediate Level</SelectItem>
-                        <SelectItem value="advanced">Advanced Level</SelectItem>
+                        <SelectItem value="complete-beginner" className="font-primary text-base font-normal">Complete Beginner</SelectItem>
+                        <SelectItem value="some-basics" className="font-primary text-base font-normal">Know Some Basic Phrases</SelectItem>
+                        <SelectItem value="elementary" className="font-primary text-base font-normal">Elementary Level</SelectItem>
+                        <SelectItem value="intermediate" className="font-primary text-base font-normal">Intermediate Level</SelectItem>
+                        <SelectItem value="advanced" className="font-primary text-base font-normal">Advanced Level</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="message">Message (Optional)</Label>
+                    <Label htmlFor="message" className="font-primary text-base font-semibold">Message (Optional)</Label>
                     <Textarea
                       id="message"
                       value={formData.message}
                       onChange={(e) => handleChange("message", e.target.value)}
                       placeholder="Tell us about your learning goals, preferred schedule, or any questions you have..."
                       rows={4}
+                      className="font-primary text-base font-normal"
                     />
                   </div>
                   
-                  <Button type="submit" className="w-full bg-thai-button-fresh hover:bg-thai-button-sage text-white py-3 rounded-full text-lg">
+                  <Button type="submit" className="font-primary text-base font-semibold w-full bg-thai-button-fresh hover:bg-thai-button-sage text-white py-3 rounded-full">
                     Book Free Trial Lesson
                   </Button>
                 </form>
@@ -164,11 +168,11 @@ const Contact = () => {
             <div className="space-y-8">
               <Card className="border-2 border-thai-button-sage/30 shadow-lg bg-thai-card-white">
                 <CardHeader>
-                  <CardTitle className="text-2xl text-thai-text-dark flex items-center gap-2">
+                  <CardTitle className="font-display text-h2 font-semibold text-thai-text-dark flex items-center gap-2">
                     <MessageCircle className="w-6 h-6" />
                     Get in Touch
                   </CardTitle>
-                  <CardDescription className="text-lg text-thai-button-sage">
+                  <CardDescription className="font-primary text-base font-normal text-thai-button-sage">
                     Have questions? We're here to help you start your Thai language journey.
                   </CardDescription>
                 </CardHeader>
@@ -176,17 +180,17 @@ const Contact = () => {
                   <div className="flex items-start gap-4">
                     <Mail className="w-6 h-6 text-thai-button-sage mt-1" />
                     <div>
-                      <h4 className="font-semibold text-thai-text-dark mb-1">Email Us</h4>
-                      <p className="text-thai-button-sage">hello@thaibridgeacademy.com</p>
-                      <p className="text-sm text-thai-text-secondary">We typically respond within 2-4 hours</p>
+                      <h4 className="font-primary text-base font-semibold text-thai-text-dark mb-1">Email Us</h4>
+                      <p className="font-primary text-base font-normal text-thai-button-sage">hello@thaibridgeacademy.com</p>
+                      <p className="font-primary text-sm font-normal text-thai-text-secondary">We typically respond within 2-4 hours</p>
                     </div>
                   </div>
                   
                   <div className="flex items-start gap-4">
                     <Clock className="w-6 h-6 text-thai-button-sage mt-1" />
                     <div>
-                      <h4 className="font-semibold text-thai-text-dark mb-1">Operating Hours</h4>
-                      <div className="text-thai-button-sage space-y-1">
+                      <h4 className="font-primary text-base font-semibold text-thai-text-dark mb-1">Operating Hours</h4>
+                      <div className="font-primary text-base font-normal text-thai-button-sage space-y-1">
                         <p>Monday - Friday: 9:00 AM - 9:00 PM SGT</p>
                         <p>Saturday: 10:00 AM - 6:00 PM SGT</p>
                         <p>Sunday: 2:00 PM - 8:00 PM SGT</p>
@@ -198,28 +202,28 @@ const Contact = () => {
 
               <Card className="border-2 border-thai-button-sage/30 shadow-lg bg-thai-light-bg">
                 <CardHeader>
-                  <CardTitle className="text-2xl text-thai-text-dark">Why Choose ThaiBridge?</CardTitle>
+                  <CardTitle className="font-display text-h2 font-semibold text-thai-text-dark">Why Choose ThaiBridge?</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-thai-accent-gold rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-thai-button-sage">Native Thai instructors with extensive teaching experience</p>
+                    <p className="font-primary text-base font-normal text-thai-button-sage">Native Thai instructors with extensive teaching experience</p>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-thai-accent-gold rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-thai-button-sage">Personalized learning plans tailored to your goals</p>
+                    <p className="font-primary text-base font-normal text-thai-button-sage">Personalized learning plans tailored to your goals</p>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-thai-accent-gold rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-thai-button-sage">Flexible scheduling to fit your busy lifestyle</p>
+                    <p className="font-primary text-base font-normal text-thai-button-sage">Flexible scheduling to fit your busy lifestyle</p>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-thai-accent-gold rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-thai-button-sage">Cultural insights that go beyond language learning</p>
+                    <p className="font-primary text-base font-normal text-thai-button-sage">Cultural insights that go beyond language learning</p>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-thai-accent-gold rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-thai-button-sage">Supportive community of fellow learners</p>
+                    <p className="font-primary text-base font-normal text-thai-button-sage">Supportive community of fellow learners</p>
                   </div>
                 </CardContent>
               </Card>

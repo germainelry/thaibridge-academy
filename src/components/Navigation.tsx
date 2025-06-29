@@ -23,7 +23,7 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <Link to="/" className="text-2xl font-bold text-white hover:text-thai-accent-gold transition-colors">
+            <Link to="/" className="font-display text-h3 font-semibold text-white hover:text-thai-accent-gold transition-colors">
               ThaiBridge Academy
             </Link>
           </div>
@@ -35,7 +35,7 @@ const Navigation = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`px-3 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                  className={`font-primary text-base font-medium px-3 py-2 rounded-full transition-all duration-200 ${
                     isActive(item.href)
                       ? "bg-thai-button-sage text-white"
                       : "text-thai-text-secondary hover:text-white hover:bg-thai-button-sage/50"
@@ -49,7 +49,7 @@ const Navigation = () => {
 
           <div className="hidden md:block">
             <Link to="/contact">
-              <Button className="bg-thai-accent-gold hover:bg-thai-button-sage text-white rounded-full px-6">
+              <Button className="font-primary text-base font-semibold bg-thai-accent-gold hover:bg-thai-button-sage text-white rounded-full px-6">
                 Free Trial
               </Button>
             </Link>
@@ -75,7 +75,7 @@ const Navigation = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                className={`block px-3 py-2 rounded-md text-base font-medium font-primary transition-colors ${
                   isActive(item.href)
                     ? "bg-thai-button-sage text-white"
                     : "text-thai-text-secondary hover:text-white hover:bg-thai-button-sage/50"
@@ -87,7 +87,7 @@ const Navigation = () => {
             ))}
             <div className="pt-2">
               <Link to="/contact" onClick={() => setIsOpen(false)}>
-                <Button className="w-full bg-thai-accent-gold hover:bg-thai-button-sage text-white rounded-full">
+                <Button className="w-full font-primary bg-thai-accent-gold hover:bg-thai-button-sage text-white rounded-full">
                   Free Trial
                 </Button>
               </Link>

@@ -85,6 +85,31 @@
     --thai-warning: 38 92% 50%;             /* Warning states */
     --thai-error: 0 84% 60%;                /* Error states */
     --thai-info: 199 89% 48%;               /* Info states */
+
+    /* Font Families */
+    --font-primary: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-display: 'Playfair Display', Georgia, serif;
+
+    /* Font Sizes - Desktop */
+    --text-hero: 3rem; /* 48px */
+    --text-h1: 2.25rem; /* 36px */
+    --text-h2: 1.5rem; /* 24px */
+    --text-h3: 1.25rem; /* 20px */
+    --text-lg: 1.125rem; /* 18px */
+    --text-base: 1rem; /* 16px */
+    --text-sm: 0.875rem; /* 14px */
+    --text-xs: 0.75rem; /* 12px */
+
+    /* Font Weights */
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+
+    /* Line Heights */
+    --leading-tight: 1.25;
+    --leading-normal: 1.5;
+    --leading-relaxed: 1.75;
   }
 
   /* Dark Mode Support (if needed in future) */
@@ -310,3 +335,40 @@
     transition: none;
   }
 }
+
+@media (max-width: 768px) {
+  :root {
+    --text-hero: 2rem; /* 32px */
+    --text-h1: 1.75rem; /* 28px */
+    --text-h2: 1.25rem; /* 20px */
+    --text-h3: 1.125rem; /* 18px */
+  }
+}
+
+.font-primary { font-family: var(--font-primary); }
+.font-display { font-family: var(--font-display); letter-spacing: -0.02em; }
+
+.text-hero { font-size: var(--text-hero); line-height: var(--leading-tight); }
+.text-h1 { font-size: var(--text-h1); line-height: var(--leading-tight); }
+.text-h2 { font-size: var(--text-h2); line-height: var(--leading-normal); }
+.text-h3 { font-size: var(--text-h3); line-height: var(--leading-normal); }
+.text-lg { font-size: var(--text-lg); line-height: var(--leading-relaxed); }
+.text-base { font-size: var(--text-base); line-height: var(--leading-normal); }
+.text-sm { font-size: var(--text-sm); line-height: var(--leading-normal); }
+.text-xs { font-size: var(--text-xs); line-height: var(--leading-normal); }
+
+.font-normal { font-weight: var(--font-normal); }
+.font-medium { font-weight: var(--font-medium); }
+.font-semibold { font-weight: var(--font-semibold); }
+.font-bold { font-weight: var(--font-bold); }
+
+/* Font-face swap for performance (for custom fonts if self-hosted) */
+/*
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('...') format('woff2');
+}
+*/
