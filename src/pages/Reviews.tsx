@@ -157,7 +157,7 @@ const Reviews = () => {
           <Star
             key={star}
             className={`w-4 h-4 ${
-              star <= rating ? "text-thai-accent-gold fill-thai-accent-gold" : "text-gray-300"
+              star <= rating ? "text-thai-accent-gold fill-thai-accent-gold" : "text-thai-neutral-medium"
             }`}
           />
         ))}
@@ -256,8 +256,10 @@ const Reviews = () => {
                   <div className="flex items-start gap-4 mb-4">
                     <img
                       src={review.avatar}
-                      alt={review.name}
+                      alt={`${review.name} - ${review.course} student`}
                       className="w-12 h-12 rounded-full object-cover"
+                      loading="lazy"
+                      decoding="async"
                     />
                     <div className="flex-1">
                       <h3 className="font-primary text-base font-semibold text-thai-text-dark">{review.name}</h3>

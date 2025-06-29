@@ -71,6 +71,8 @@ const About = () => {
                 src="https://images.unsplash.com/photo-1469041797191-50ace28483c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
                 alt="Thai landscape with traditional elements" 
                 className="rounded-lg shadow-2xl"
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-thai-deep-forest/20 to-transparent rounded-lg"></div>
             </div>
@@ -160,6 +162,8 @@ const About = () => {
                 src="https://images.unsplash.com/photo-1493962853295-0fd70327578a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
                 alt="Thai cultural scene with community gathering" 
                 className="rounded-lg shadow-2xl"
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-thai-deep-forest/20 to-transparent rounded-lg"></div>
             </div>

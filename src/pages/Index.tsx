@@ -43,7 +43,7 @@ const Index = () => {
                     key={star}
                     className={`w-6 h-6 ${
                       star <= 4 ? "text-thai-accent-gold fill-thai-accent-gold" : 
-                      star === 5 ? "text-thai-accent-gold fill-thai-accent-gold" : "text-gray-300"
+                      star === 5 ? "text-thai-accent-gold fill-thai-accent-gold" : "text-thai-neutral-medium"
                     }`}
                   />
                 ))}
@@ -184,6 +184,8 @@ const Index = () => {
                 src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
                 alt="Thai temple surrounded by lush greenery" 
                 className="rounded-lg shadow-2xl"
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-thai-deep-forest/20 to-transparent rounded-lg"></div>
             </div>
