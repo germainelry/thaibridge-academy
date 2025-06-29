@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Heart, Users, Award, Globe } from "lucide-react";
@@ -31,28 +30,28 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-green-50 to-white">
+    <div className="min-h-screen bg-thai-card-white">
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-green-100 via-emerald-50 to-green-200">
+      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-thai-deep-forest">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-green-800 mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             About ThaiBridge Academy
           </h1>
-          <p className="text-xl text-green-700 mb-8 leading-relaxed">
+          <p className="text-xl text-thai-text-secondary mb-8 leading-relaxed">
             Bridging cultures through the beautiful Thai language. Discover our story, mission, and the passionate team behind your learning journey.
           </p>
         </div>
       </section>
 
       {/* Our Story Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-thai-card-white">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-6">Our Story</h2>
-              <div className="space-y-4 text-lg text-green-700 leading-relaxed">
+              <h2 className="text-3xl md:text-4xl font-bold text-thai-text-dark mb-6">Our Story</h2>
+              <div className="space-y-4 text-lg text-thai-button-sage leading-relaxed">
                 <p>
                   We at ThaiBridge firmly believe that speaking the mother tongue of the locals is the only way for making meaningful interactions and truly immersing oneself in another country. Trust us, it will open the doors to richer travel experiences that you otherwise wouldn't know existed.
                 </p>
@@ -73,29 +72,29 @@ const About = () => {
                 alt="Thai landscape with traditional elements" 
                 className="rounded-lg shadow-2xl"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-green-900/20 to-transparent rounded-lg"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-thai-deep-forest/20 to-transparent rounded-lg"></div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-green-50 to-emerald-50">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-thai-light-bg">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12">
-            <Card className="border-2 border-green-200 shadow-lg">
+            <Card className="border-2 border-thai-button-sage/30 shadow-lg bg-thai-card-white">
               <CardContent className="p-8 text-center">
-                <h3 className="text-2xl font-bold text-green-800 mb-4">Our Mission</h3>
-                <p className="text-lg text-green-700 leading-relaxed">
+                <h3 className="text-2xl font-bold text-thai-text-dark mb-4">Our Mission</h3>
+                <p className="text-lg text-thai-button-sage leading-relaxed">
                   To empower learners with authentic Thai language skills and cultural understanding, enabling meaningful connections and enriching travel experiences throughout Thailand.
                 </p>
               </CardContent>
             </Card>
             
-            <Card className="border-2 border-green-200 shadow-lg">
+            <Card className="border-2 border-thai-button-sage/30 shadow-lg bg-thai-card-white">
               <CardContent className="p-8 text-center">
-                <h3 className="text-2xl font-bold text-green-800 mb-4">Our Vision</h3>
-                <p className="text-lg text-green-700 leading-relaxed">
+                <h3 className="text-2xl font-bold text-thai-text-dark mb-4">Our Vision</h3>
+                <p className="text-lg text-thai-button-sage leading-relaxed">
                   To be the leading bridge between Thai culture and international learners, creating a global community of cultural ambassadors who celebrate and share Thailand's rich heritage.
                 </p>
               </CardContent>
@@ -105,21 +104,21 @@ const About = () => {
       </section>
 
       {/* Our Values */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-thai-card-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-4">Our Core Values</h2>
-            <p className="text-lg text-green-600 max-w-2xl mx-auto">The principles that guide everything we do at ThaiBridge Academy</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-thai-text-dark mb-4">Our Core Values</h2>
+            <p className="text-lg text-thai-button-sage max-w-2xl mx-auto">The principles that guide everything we do at ThaiBridge Academy</p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
               <div key={index} className="text-center group">
-                <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-green-200 transition-colors duration-300">
-                  <value.icon className="w-10 h-10 text-green-600" />
+                <div className="w-20 h-20 bg-thai-light-bg rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-thai-button-sage/20 transition-colors duration-300">
+                  <value.icon className="w-10 h-10 text-thai-button-sage" />
                 </div>
-                <h3 className="text-xl font-semibold text-green-800 mb-4">{value.title}</h3>
-                <p className="text-green-600 leading-relaxed">{value.description}</p>
+                <h3 className="text-xl font-semibold text-thai-text-dark mb-4">{value.title}</h3>
+                <p className="text-thai-button-sage leading-relaxed">{value.description}</p>
               </div>
             ))}
           </div>
@@ -127,24 +126,24 @@ const About = () => {
       </section>
 
       {/* Meet Our Team */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-green-50 to-emerald-50">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-thai-light-bg">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-4">Meet Our Instructors</h2>
-            <p className="text-lg text-green-600 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-thai-text-dark mb-4">Meet Our Instructors</h2>
+            <p className="text-lg text-thai-button-sage max-w-2xl mx-auto">
               Our experienced team of native Thai speakers and cultural experts are here to guide your learning journey
             </p>
           </div>
           
-          <div className="bg-white rounded-lg shadow-lg p-8 text-center">
-            <p className="text-lg text-green-700 leading-relaxed mb-6">
+          <div className="bg-thai-card-white rounded-lg shadow-lg p-8 text-center">
+            <p className="text-lg text-thai-button-sage leading-relaxed mb-6">
               Our instructors aren't just native Thai speakers; every instructor has been handpicked based on their deep knowledge of the Thai language, proficiency in English/Chinese, and extensive teaching experience spanning decades.
             </p>
-            <p className="text-lg text-green-700 leading-relaxed mb-8">
+            <p className="text-lg text-thai-button-sage leading-relaxed mb-8">
               Each brings unique insights into Thai culture, regional dialects, and the subtle nuances that make authentic communication possible. They are not just teachers - they are cultural ambassadors passionate about sharing the beauty of Thailand with the world.
             </p>
             <Link to="/contact">
-              <Button className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-full">
+              <Button className="bg-thai-button-fresh hover:bg-thai-button-sage text-white px-8 py-3 rounded-full">
                 Meet Our Team
               </Button>
             </Link>
@@ -153,7 +152,7 @@ const About = () => {
       </section>
 
       {/* Community Impact */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-thai-card-white">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
@@ -162,11 +161,11 @@ const About = () => {
                 alt="Thai cultural scene with community gathering" 
                 className="rounded-lg shadow-2xl"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-green-900/20 to-transparent rounded-lg"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-thai-deep-forest/20 to-transparent rounded-lg"></div>
             </div>
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-6">Building Community</h2>
-              <div className="space-y-4 text-lg text-green-700 leading-relaxed">
+              <h2 className="text-3xl md:text-4xl font-bold text-thai-text-dark mb-6">Building Community</h2>
+              <div className="space-y-4 text-lg text-thai-button-sage leading-relaxed">
                 <p>
                   At ThaiBridge Academy, we're more than just a language school - we're a thriving community of Thai culture enthusiasts, travelers, and lifelong learners.
                 </p>
@@ -179,7 +178,7 @@ const About = () => {
               </div>
               <div className="mt-8">
                 <Link to="/contact">
-                  <Button className="bg-green-600 hover:bg-green-700 text-white rounded-full px-8">
+                  <Button className="bg-thai-button-fresh hover:bg-thai-button-sage text-white rounded-full px-8">
                     Join Our Community
                   </Button>
                 </Link>
@@ -190,21 +189,21 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-green-600 to-emerald-700 text-white">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-thai-deep-forest text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Begin Your Journey?</h2>
-          <p className="text-xl mb-8 leading-relaxed opacity-90">
+          <p className="text-xl mb-8 leading-relaxed text-thai-text-secondary">
             Join thousands of students who have discovered the joy of connecting with Thai culture through language learning.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/courses">
-              <Button size="lg" className="bg-white text-green-600 hover:bg-gray-100 px-8 py-4 text-lg rounded-full">
+              <Button className="bg-thai-button-fresh hover:bg-thai-button-sage text-white px-8 py-3 rounded-full text-lg">
                 Explore Courses
               </Button>
             </Link>
             <Link to="/contact">
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-green-600 px-8 py-4 text-lg rounded-full">
-                Contact Us
+              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-thai-text-dark px-8 py-3 rounded-full text-lg">
+                Get Started Today
               </Button>
             </Link>
           </div>

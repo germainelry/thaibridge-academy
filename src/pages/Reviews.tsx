@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -157,7 +156,7 @@ const Reviews = () => {
           <Star
             key={star}
             className={`w-4 h-4 ${
-              star <= rating ? "text-yellow-400 fill-yellow-400" : "text-gray-300"
+              star <= rating ? "text-thai-accent-gold fill-thai-accent-gold" : "text-gray-300"
             }`}
           />
         ))}
@@ -179,99 +178,134 @@ const Reviews = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-green-50 to-white">
+    <div className="min-h-screen bg-thai-card-white">
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-green-100 via-emerald-50 to-green-200">
+      <section className="pt-20 pb-12 px-4 sm:px-6 lg:px-8 bg-thai-deep-forest">
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-green-800 mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             What Our Students Say
           </h1>
-          <p className="text-xl text-green-700 max-w-3xl mx-auto">
+          <p className="text-xl text-thai-text-secondary max-w-3xl mx-auto">
             Discover why over 200 students have chosen ThaiBridge Academy to begin their Thai language journey
           </p>
         </div>
       </section>
 
       {/* Filter Section */}
-      <section className="py-8 px-4 sm:px-6 lg:px-8">
+      <section className="py-8 px-4 sm:px-6 lg:px-8 bg-thai-light-bg">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-wrap justify-center gap-4 mb-8">
             <Button
               variant={activeFilter === "all" ? "default" : "outline"}
               onClick={() => setActiveFilter("all")}
-              className={`rounded-full px-6 ${
+              className={`${
                 activeFilter === "all"
-                  ? "bg-green-600 hover:bg-green-700 text-white"
-                  : "border-green-600 text-green-600 hover:bg-green-600 hover:text-white"
-              }`}
+                  ? "bg-thai-button-fresh hover:bg-thai-button-sage text-white"
+                  : "border-thai-button-sage text-thai-button-sage hover:bg-thai-button-sage hover:text-white"
+              } rounded-full px-6 py-2`}
             >
               All Reviews
             </Button>
             <Button
               variant={activeFilter === "private" ? "default" : "outline"}
               onClick={() => setActiveFilter("private")}
-              className={`rounded-full px-6 ${
+              className={`${
                 activeFilter === "private"
-                  ? "bg-green-600 hover:bg-green-700 text-white"
-                  : "border-green-600 text-green-600 hover:bg-green-600 hover:text-white"
-              }`}
+                  ? "bg-thai-button-fresh hover:bg-thai-button-sage text-white"
+                  : "border-thai-button-sage text-thai-button-sage hover:bg-thai-button-sage hover:text-white"
+              } rounded-full px-6 py-2`}
             >
-              1-to-1 Coaching
+              Private Coaching
             </Button>
             <Button
               variant={activeFilter === "mastery" ? "default" : "outline"}
               onClick={() => setActiveFilter("mastery")}
-              className={`rounded-full px-6 ${
+              className={`${
                 activeFilter === "mastery"
-                  ? "bg-green-600 hover:bg-green-700 text-white"
-                  : "border-green-600 text-green-600 hover:bg-green-600 hover:text-white"
-              }`}
+                  ? "bg-thai-button-fresh hover:bg-thai-button-sage text-white"
+                  : "border-thai-button-sage text-thai-button-sage hover:bg-thai-button-sage hover:text-white"
+              } rounded-full px-6 py-2`}
             >
               Thai Mastery
             </Button>
             <Button
               variant={activeFilter === "traveller" ? "default" : "outline"}
               onClick={() => setActiveFilter("traveller")}
-              className={`rounded-full px-6 ${
+              className={`${
                 activeFilter === "traveller"
-                  ? "bg-green-600 hover:bg-green-700 text-white"
-                  : "border-green-600 text-green-600 hover:bg-green-600 hover:text-white"
-              }`}
+                  ? "bg-thai-button-fresh hover:bg-thai-button-sage text-white"
+                  : "border-thai-button-sage text-thai-button-sage hover:bg-thai-button-sage hover:text-white"
+              } rounded-full px-6 py-2`}
             >
               Traveller's Pack
             </Button>
           </div>
+        </div>
+      </section>
 
-          {/* Reviews Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* Reviews Grid */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-thai-card-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredReviews.map((review) => (
-              <Card key={review.id} className="h-full border-2 border-green-200 hover:border-green-400 transition-all duration-300 hover:shadow-lg">
+              <Card key={review.id} className="border-2 border-thai-button-sage/30 hover:border-thai-button-sage transition-all duration-300 hover:shadow-xl transform hover:-translate-y-2 bg-thai-card-white">
                 <CardContent className="p-6">
-                  <div className="flex items-center gap-4 mb-4">
+                  <div className="flex items-start gap-4 mb-4">
                     <img
                       src={review.avatar}
                       alt={review.name}
                       className="w-12 h-12 rounded-full object-cover"
                     />
-                    <div>
-                      <h3 className="font-semibold text-green-800">{review.name}</h3>
-                      <Badge variant="outline" className="text-xs border-green-300 text-green-600">
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-thai-text-dark">{review.name}</h3>
+                      <Badge className="bg-thai-accent-gold text-white text-xs mt-1">
                         {getCourseDisplayName(review.course)}
                       </Badge>
                     </div>
                   </div>
                   
-                  <div className="flex items-center justify-between mb-3">
+                  <div className="mb-4">
                     {renderStars(review.rating)}
-                    <span className="text-sm text-green-600">{review.date}</span>
                   </div>
                   
-                  <p className="text-gray-700 leading-relaxed">{review.review}</p>
+                  <p className="text-thai-text-dark leading-relaxed mb-4">
+                    "{review.review}"
+                  </p>
+                  
+                  <div className="text-sm text-thai-button-sage">
+                    {review.date}
+                  </div>
                 </CardContent>
               </Card>
             ))}
+          </div>
+          
+          {filteredReviews.length === 0 && (
+            <div className="text-center py-12">
+              <p className="text-thai-text-dark text-lg">No reviews found for this category.</p>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-thai-light-bg">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-thai-text-dark mb-6">
+            Ready to Join Our Community?
+          </h2>
+          <p className="text-lg text-thai-button-sage mb-8 max-w-2xl mx-auto">
+            Start your Thai language journey today and become part of our growing community of successful learners.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button className="bg-thai-button-fresh hover:bg-thai-button-sage text-white px-8 py-3 rounded-full text-lg">
+              Start Learning Today
+            </Button>
+            <Button variant="outline" className="border-thai-button-sage text-thai-button-sage hover:bg-thai-button-sage hover:text-white px-8 py-3 rounded-full text-lg">
+              View All Courses
+            </Button>
           </div>
         </div>
       </section>

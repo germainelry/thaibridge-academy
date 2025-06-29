@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -134,42 +133,42 @@ const FAQ = () => {
   })).filter(category => category.questions.length > 0);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-thai-cream to-white">
+    <div className="min-h-screen bg-thai-card-white">
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-thai-cream via-thai-cream/70 to-thai-sage/20">
+      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-thai-deep-forest">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-thai-forest mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Frequently Asked Questions
           </h1>
-          <p className="text-xl text-thai-green mb-8 leading-relaxed">
+          <p className="text-xl text-thai-text-secondary mb-8 leading-relaxed">
             Find answers to common questions about our Thai language courses and learning process.
           </p>
           
           {/* Search Bar */}
           <div className="relative max-w-md mx-auto">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-thai-sage w-5 h-5" />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-thai-button-sage w-5 h-5" />
             <Input
               type="text"
               placeholder="Search FAQ..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-10 pr-4 py-3 border-2 border-thai-sage/40 focus:border-thai-green rounded-full"
+              className="pl-10 pr-4 py-3 border-2 border-thai-button-sage/40 focus:border-thai-button-sage rounded-full"
             />
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-thai-light-bg">
         <div className="max-w-4xl mx-auto">
           {filteredFAQs.length === 0 ? (
             <div className="text-center py-12">
-              <p className="text-xl text-thai-green mb-4">No FAQs found matching your search.</p>
+              <p className="text-xl text-thai-button-sage mb-4">No FAQs found matching your search.</p>
               <Button 
                 onClick={() => setSearchTerm("")}
-                className="bg-thai-green hover:bg-thai-forest text-white rounded-full px-6"
+                className="bg-thai-button-fresh hover:bg-thai-button-sage text-white rounded-full px-6"
               >
                 Show All FAQs
               </Button>
@@ -177,10 +176,10 @@ const FAQ = () => {
           ) : (
             <div className="space-y-8">
               {filteredFAQs.map((category, categoryIndex) => (
-                <Card key={categoryIndex} className="border-2 border-thai-sage/40 shadow-lg">
+                <Card key={categoryIndex} className="border-2 border-thai-button-sage/40 shadow-lg bg-thai-card-white">
                   <CardHeader>
-                    <CardTitle className="text-2xl text-thai-forest">{category.category}</CardTitle>
-                    <CardDescription className="text-thai-green">
+                    <CardTitle className="text-2xl text-thai-text-dark">{category.category}</CardTitle>
+                    <CardDescription className="text-thai-button-sage">
                       {category.questions.length} question{category.questions.length !== 1 ? 's' : ''}
                     </CardDescription>
                   </CardHeader>
@@ -190,12 +189,12 @@ const FAQ = () => {
                         <AccordionItem 
                           key={questionIndex} 
                           value={`${categoryIndex}-${questionIndex}`}
-                          className="border-thai-sage/20"
+                          className="border-thai-button-sage/20"
                         >
-                          <AccordionTrigger className="text-left text-thai-forest hover:text-thai-green">
+                          <AccordionTrigger className="text-left text-thai-text-dark hover:text-thai-button-sage">
                             {faq.question}
                           </AccordionTrigger>
-                          <AccordionContent className="text-thai-green leading-relaxed pt-2">
+                          <AccordionContent className="text-thai-button-sage leading-relaxed pt-2">
                             {faq.answer}
                           </AccordionContent>
                         </AccordionItem>
@@ -209,36 +208,29 @@ const FAQ = () => {
         </div>
       </section>
 
-      {/* Still Have Questions CTA */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-thai-cream to-thai-sage/10">
-        <div className="max-w-4xl mx-auto">
-          <Card className="border-2 border-thai-sage/40 shadow-lg text-center">
-            <CardHeader>
-              <CardTitle className="text-2xl text-thai-forest flex items-center justify-center gap-2">
-                <MessageCircle className="w-6 h-6" />
-                Still Have Questions?
-              </CardTitle>
-              <CardDescription className="text-lg text-thai-green">
-                We're here to help! Don't hesitate to reach out with any questions about our courses or the learning process.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
+      {/* Contact CTA */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-thai-card-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <Card className="border-2 border-thai-button-sage/30 shadow-lg bg-thai-light-bg">
+            <CardContent className="p-8">
+              <div className="flex items-center justify-center mb-4">
+                <MessageCircle className="w-12 h-12 text-thai-button-sage" />
+              </div>
+              <h2 className="text-3xl font-bold text-thai-text-dark mb-4">Still Have Questions?</h2>
+              <p className="text-lg text-thai-button-sage mb-6">
+                Can't find what you're looking for? Our team is here to help you get started on your Thai language journey.
+              </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link to="/contact">
-                  <Button size="lg" className="bg-thai-green hover:bg-thai-forest text-white px-8 py-4 text-lg rounded-full">
+                  <Button className="bg-thai-button-fresh hover:bg-thai-button-sage text-white px-8 py-3 rounded-full">
                     Contact Us
                   </Button>
                 </Link>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="border-thai-terracotta text-thai-terracotta hover:bg-thai-terracotta hover:text-white px-8 py-4 text-lg rounded-full"
-                  asChild
-                >
-                  <a href="mailto:hello@thaibridgeacademy.com">
-                    Email Direct
-                  </a>
-                </Button>
+                <Link to="/courses">
+                  <Button variant="outline" className="border-thai-button-sage text-thai-button-sage hover:bg-thai-button-sage hover:text-white px-8 py-3 rounded-full">
+                    View Courses
+                  </Button>
+                </Link>
               </div>
             </CardContent>
           </Card>
