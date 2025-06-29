@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -18,10 +17,10 @@ const Index = () => {
         <div className="relative max-w-7xl mx-auto">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 animate-fade-in">
-              From Singapore to Thailand - Speak Like a Local
+              Speak Thai. Connect Deeper.
             </h1>
             <p className="text-xl md:text-2xl text-thai-text-secondary mb-8 max-w-4xl mx-auto leading-relaxed animate-fade-in">
-              Learn Thai online or through immersion programs. Connect authentically, travel deeper, discover the real Thailand beyond the tourist trail.
+              Learn from native Thai speakers—online or through our unique immersion experiences. Connect authentically, travel deeper, and discover the Thailand locals know.
             </p>
             <Link to="/courses">
               <Button size="lg" className="bg-thai-button-fresh hover:bg-thai-button-sage text-white px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
