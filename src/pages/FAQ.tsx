@@ -139,10 +139,10 @@ const FAQ = () => {
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-thai-deep-forest">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 animate-fade-in">
             Frequently Asked Questions
           </h1>
-          <p className="text-xl text-thai-text-secondary mb-8 leading-relaxed">
+          <p className="text-xl text-thai-text-secondary mb-8 leading-relaxed animate-fade-in">
             Find answers to common questions about our Thai language courses and learning process.
           </p>
           

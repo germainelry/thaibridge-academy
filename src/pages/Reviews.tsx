@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Star, Filter } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { Link } from "react-router-dom";
 
 type ReviewFilter = "all" | "private" | "mastery" | "traveller";
 
@@ -184,10 +185,10 @@ const Reviews = () => {
       {/* Hero Section */}
       <section className="pt-20 pb-12 px-4 sm:px-6 lg:px-8 bg-thai-deep-forest">
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 animate-fade-in">
             What Our Students Say
           </h1>
-          <p className="text-xl text-thai-text-secondary max-w-3xl mx-auto">
+          <p className="text-xl text-thai-text-secondary max-w-3xl mx-auto animate-fade-in">
             Discover why over 200 students have chosen ThaiBridge Academy to begin their Thai language journey
           </p>
         </div>
@@ -300,12 +301,16 @@ const Reviews = () => {
             Start your Thai language journey today and become part of our growing community of successful learners.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-thai-button-fresh hover:bg-thai-button-sage text-white px-8 py-3 rounded-full text-lg">
-              Start Learning Today
-            </Button>
-            <Button variant="outline" className="border-thai-button-sage text-thai-button-sage hover:bg-thai-button-sage hover:text-white px-8 py-3 rounded-full text-lg">
-              View All Courses
-            </Button>
+            <Link to="/contact">
+              <Button className="bg-thai-button-fresh hover:bg-thai-button-sage text-white px-8 py-3 rounded-full text-lg">
+                Start Learning Today
+              </Button>
+            </Link>
+            <Link to="/courses">
+              <Button variant="outline" className="border-thai-button-sage text-thai-button-sage hover:bg-thai-button-sage hover:text-white px-8 py-3 rounded-full text-lg">
+                View All Courses
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

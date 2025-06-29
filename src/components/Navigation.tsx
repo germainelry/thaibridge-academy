@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
@@ -50,7 +49,7 @@ const Navigation = () => {
 
           <div className="hidden md:block">
             <Link to="/contact">
-              <Button className="bg-thai-accent-gold hover:bg-thai-button-fresh text-white rounded-full px-6">
+              <Button className="bg-thai-accent-gold hover:bg-thai-button-sage text-white rounded-full px-6">
                 Free Trial
               </Button>
             </Link>
@@ -88,7 +87,7 @@ const Navigation = () => {
             ))}
             <div className="pt-2">
               <Link to="/contact" onClick={() => setIsOpen(false)}>
-                <Button className="w-full bg-thai-accent-gold hover:bg-thai-button-fresh text-white rounded-full">
+                <Button className="w-full bg-thai-accent-gold hover:bg-thai-button-sage text-white rounded-full">
                   Free Trial
                 </Button>
               </Link>

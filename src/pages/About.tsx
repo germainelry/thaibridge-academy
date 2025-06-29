@@ -36,10 +36,10 @@ const About = () => {
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-thai-deep-forest">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 animate-fade-in">
             About ThaiBridge Academy
           </h1>
-          <p className="text-xl text-thai-text-secondary mb-8 leading-relaxed">
+          <p className="text-xl text-thai-text-secondary mb-8 leading-relaxed animate-fade-in">
             Bridging cultures through the beautiful Thai language. Discover our story, mission, and the passionate team behind your learning journey.
           </p>
         </div>
@@ -202,7 +202,7 @@ const About = () => {
               </Button>
             </Link>
             <Link to="/contact">
-              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-thai-text-dark px-8 py-3 rounded-full text-lg">
+              <Button variant="outline" className="border-white bg-transparent !text-white hover:bg-white hover:!text-thai-deep-forest px-8 py-3 rounded-full text-lg">
                 Get Started Today
               </Button>
             </Link>

@@ -23,7 +23,7 @@ const Index = () => {
               Learn from native Thai speakers—online or through our unique immersion experiences. Connect authentically, travel deeper, and discover the Thailand locals know.
             </p>
             <Link to="/courses">
-              <Button size="lg" className="bg-thai-button-fresh hover:bg-thai-button-sage text-white px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+              <Button className="bg-thai-button-fresh hover:bg-thai-button-sage text-white px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                 View Courses
               </Button>
             </Link>
@@ -329,12 +329,12 @@ const Index = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/contact">
-              <Button size="lg" className="bg-thai-button-fresh hover:bg-thai-accent-gold text-white px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+              <Button className="bg-thai-button-fresh hover:bg-thai-button-sage text-white px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
                 Book Free Trial
               </Button>
             </Link>
             <Link to="/contact">
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-thai-deep-forest px-8 py-4 text-lg rounded-full">
+              <Button variant="outline" className="border-white bg-transparent !text-white hover:bg-white hover:!text-thai-deep-forest px-8 py-4 text-lg rounded-full">
                 Contact Us
               </Button>
             </Link>
