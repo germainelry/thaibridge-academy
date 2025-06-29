@@ -43,7 +43,7 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
               <button
                 onClick={() => scrollToSection('courses-section')}
-                className="font-primary text-lg font-semibold bg-thai-accent-gold hover:bg-thai-button-sage text-white px-10 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+                className="font-primary text-lg font-semibold bg-thai-button-soft hover:bg-thai-button-sage text-white px-10 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
               >
                 Start Learning Thai
               </button>
@@ -113,8 +113,8 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {/* 1 to 1 Private Coaching */}
             <Card className="relative border-2 border-thai-button-sage/30 hover:border-thai-button-sage transition-all duration-300 hover:shadow-xl transform hover:-translate-y-2 bg-thai-card-white">
-              <Badge className="absolute -top-3 left-4 bg-thai-accent-gold text-white px-3 py-1">
-                MOST POPULAR
+              <Badge className="absolute -top-3 left-4 bg-thai-button-soft text-white px-3 py-1">
+                Most Popular
               </Badge>
               <CardHeader className="text-center pb-4">
                 <div className="w-16 h-16 bg-thai-light-bg rounded-full flex items-center justify-center mx-auto mb-4">

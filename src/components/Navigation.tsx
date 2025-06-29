@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
@@ -49,15 +48,6 @@ const Navigation = () => {
             </div>
           </div>
 
-          {/* Right side controls */}
-          <div className="hidden md:flex items-center">            
-            <Link to="/contact">
-              <Button className="font-primary text-base font-semibold bg-thai-accent-gold hover:bg-thai-button-sage text-white rounded-full px-6 py-3 shadow-lg hover:shadow-xl transition-all duration-300">
-                Free Trial
-              </Button>
-            </Link>
-          </div>
-
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
             <button
@@ -88,13 +78,6 @@ const Navigation = () => {
                 {item.name}
               </Link>
             ))}
-            <div className="pt-2">
-              <Link to="/contact" onClick={() => setIsOpen(false)}>
-                <Button className="w-full font-primary bg-thai-accent-gold hover:bg-thai-button-sage text-white rounded-full">
-                  Free Trial
-                </Button>
-              </Link>
-            </div>
           </div>
         </div>
       )}

@@ -72,7 +72,10 @@ export default {
 					'light-bg': 'hsl(var(--thai-light-bg))',
 					'button-fresh': 'hsl(var(--thai-button-fresh))',
 					'button-sage': 'hsl(var(--thai-button-sage))',
+					'button-soft': 'hsl(var(--thai-button-soft))',
 					'accent-gold': 'hsl(var(--thai-accent-gold))',
+					'accent-bright': 'hsl(var(--thai-accent-bright))',
+					'accent-cream': 'hsl(var(--thai-accent-cream))',
 					'text-dark': 'hsl(var(--thai-text-dark))',
 					'text-secondary': 'hsl(var(--thai-text-secondary))'
 				}

@@ -1,3 +1,5 @@
+/* Custom font imports */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Source+Sans+Pro:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -46,7 +48,10 @@
     --thai-light-bg: 138 15% 96%;
     --thai-button-fresh: 138 35% 45%;
     --thai-button-sage: 138 25% 35%;
-    --thai-accent-gold: 43 89% 58%;
+    --thai-button-soft: 138 30% 50%;
+    --thai-accent-gold: 43 80% 55%;
+    --thai-accent-bright: 47 100% 60%;
+    --thai-accent-cream: 45 90% 85%;
     --thai-text-dark: 138 25% 15%;
     --thai-text-secondary: 0 0% 85%;
   }
@@ -96,9 +101,7 @@
   }
 }
 
-/* Custom font imports */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Source+Sans+Pro:wght@300;400;500;600;700&display=swap');
-
+/* Custom font classes */
 .font-display {
   font-family: 'Playfair Display', serif;
 }
@@ -114,7 +117,7 @@ html {
 
 /* Custom button styles for better visibility */
 .hero-btn-primary {
-  @apply bg-thai-accent-gold hover:bg-thai-button-sage text-white font-semibold px-10 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105;
+  @apply bg-thai-button-soft hover:bg-thai-button-sage text-white font-semibold px-10 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105;
 }
 
 .hero-btn-secondary {

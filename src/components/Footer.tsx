@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Heart, MapPin, Phone, Mail, ArrowRight, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -15,9 +14,9 @@ const Footer = () => {
   return (
     <footer className="bg-thai-darker-forest text-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-3 gap-12">
+        <div className="grid lg:grid-cols-12 gap-12">
           {/* Left Column - Company Info */}
-          <div className="space-y-6">
+          <div className="lg:col-span-5 space-y-6">
             <div>
               <h3 className="font-display text-2xl font-bold mb-4 text-white">ThaiBridge Academy</h3>
               <p className="font-primary text-thai-text-secondary leading-relaxed mb-6">
@@ -48,43 +47,38 @@ const Footer = () => {
           </div>
           
           {/* Middle Column - Quick Links */}
-          <div>
+          <div className="lg:col-span-3">
             <h4 className="font-primary text-xl font-semibold mb-6 text-white">Quick Links</h4>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-3">
-                <Link to="/" className="flex items-center gap-2 font-primary text-thai-text-secondary hover:text-thai-accent-gold transition-colors group">
-                  <ArrowRight className="w-4 h-4 text-thai-accent-gold group-hover:translate-x-1 transition-transform" />
-                  Home
-                </Link>
-                <Link to="/courses" className="flex items-center gap-2 font-primary text-thai-text-secondary hover:text-thai-accent-gold transition-colors group">
-                  <ArrowRight className="w-4 h-4 text-thai-accent-gold group-hover:translate-x-1 transition-transform" />
-                  Courses
-                </Link>
-                <Link to="/about" className="flex items-center gap-2 font-primary text-thai-text-secondary hover:text-thai-accent-gold transition-colors group">  
-                  <ArrowRight className="w-4 h-4 text-thai-accent-gold group-hover:translate-x-1 transition-transform" />
-                  About Us
-                </Link>
-                <Link to="/faq" className="flex items-center gap-2 font-primary text-thai-text-secondary hover:text-thai-accent-gold transition-colors group">
-                  <ArrowRight className="w-4 h-4 text-thai-accent-gold group-hover:translate-x-1 transition-transform" />
-                  FAQ
-                </Link>
-              </div>
-              
-              <div className="space-y-3">
-                <Link to="/reviews" className="flex items-center gap-2 font-primary text-thai-text-secondary hover:text-thai-accent-gold transition-colors group">
-                  <ArrowRight className="w-4 h-4 text-thai-accent-gold group-hover:translate-x-1 transition-transform" />
-                  Reviews
-                </Link>
-                <Link to="/contact" className="flex items-center gap-2 font-primary text-thai-text-secondary hover:text-thai-accent-gold transition-colors group">
-                  <ArrowRight className="w-4 h-4 text-thai-accent-gold group-hover:translate-x-1 transition-transform" />
-                  Contact
-                </Link>
-              </div>
+            <div className="space-y-3">
+              <Link to="/" className="flex items-center gap-2 font-primary text-thai-text-secondary hover:text-thai-accent-gold transition-colors group">
+                <ArrowRight className="w-4 h-4 text-thai-accent-gold group-hover:translate-x-1 transition-transform" />
+                Home
+              </Link>
+              <Link to="/courses" className="flex items-center gap-2 font-primary text-thai-text-secondary hover:text-thai-accent-gold transition-colors group">
+                <ArrowRight className="w-4 h-4 text-thai-accent-gold group-hover:translate-x-1 transition-transform" />
+                Courses
+              </Link>
+              <Link to="/about" className="flex items-center gap-2 font-primary text-thai-text-secondary hover:text-thai-accent-gold transition-colors group">  
+                <ArrowRight className="w-4 h-4 text-thai-accent-gold group-hover:translate-x-1 transition-transform" />
+                About Us
+              </Link>
+              <Link to="/faq" className="flex items-center gap-2 font-primary text-thai-text-secondary hover:text-thai-accent-gold transition-colors group">
+                <ArrowRight className="w-4 h-4 text-thai-accent-gold group-hover:translate-x-1 transition-transform" />
+                FAQ
+              </Link>
+              <Link to="/reviews" className="flex items-center gap-2 font-primary text-thai-text-secondary hover:text-thai-accent-gold transition-colors group">
+                <ArrowRight className="w-4 h-4 text-thai-accent-gold group-hover:translate-x-1 transition-transform" />
+                Reviews
+              </Link>
+              <Link to="/contact" className="flex items-center gap-2 font-primary text-thai-text-secondary hover:text-thai-accent-gold transition-colors group">
+                <ArrowRight className="w-4 h-4 text-thai-accent-gold group-hover:translate-x-1 transition-transform" />
+                Contact
+              </Link>
             </div>
           </div>
           
           {/* Right Column - Newsletter */}
-          <div>
+          <div className="lg:col-span-4">
             <h4 className="font-primary text-xl font-semibold mb-6 text-white">Our Newsletter</h4>
             <p className="font-primary text-thai-text-secondary mb-6 leading-relaxed">
               Subscribe to our newsletter to stay updated with the latest Thai learning tips and special offers.
@@ -97,7 +91,7 @@ const Footer = () => {
                   placeholder="Your email address"
                   className="bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:border-thai-accent-gold"
                 />
-                <Button className="bg-thai-accent-gold hover:bg-thai-button-sage text-white px-6 font-primary font-semibold">
+                <Button className="bg-thai-button-soft hover:bg-thai-button-sage text-white px-6 font-primary font-semibold">
                   Subscribe
                 </Button>
               </div>

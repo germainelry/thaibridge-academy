@@ -263,7 +263,7 @@ const Reviews = () => {
                     />
                     <div className="flex-1">
                       <h3 className="font-primary text-base font-semibold text-thai-text-dark">{review.name}</h3>
-                      <Badge className="bg-thai-accent-gold text-white text-xs mt-1">
+                      <Badge className="bg-thai-button-soft text-white text-xs mt-1">
                         {getCourseDisplayName(review.course)}
                       </Badge>
                     </div>

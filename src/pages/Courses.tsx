@@ -83,11 +83,11 @@ const Courses = () => {
           <div className="grid lg:grid-cols-3 gap-8">
             {courses.map((course, index) => (
               <Card key={index} className={`relative border-2 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 bg-thai-card-white ${
-                course.popular ? 'border-thai-accent-gold/60 shadow-lg' : 'border-thai-button-sage/40 hover:border-thai-button-sage'
+                course.popular ? 'border-thai-button-sage shadow-lg' : 'border-thai-button-sage/40 hover:border-thai-button-sage'
               }`}>
                 {course.popular && (
                   <Badge className="absolute -top-3 left-4 bg-thai-accent-gold text-white px-3 py-1">
-                    MOST POPULAR
+                    Most Popular
                   </Badge>
                 )}
                 
@@ -138,11 +138,6 @@ const Courses = () => {
                           : 'bg-thai-button-fresh hover:bg-thai-button-sage text-white'
                       }`}>
                         Get Started
-                      </Button>
-                    </Link>
-                    <Link to="/contact">
-                      <Button variant="outline" className="font-primary text-sm font-medium w-full border-thai-button-sage text-thai-button-sage hover:bg-thai-button-sage hover:text-white rounded-full py-3">
-                        Free Trial Lesson
                       </Button>
                     </Link>
                   </div>
