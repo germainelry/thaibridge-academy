@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -20,6 +20,19 @@ const Contact = () => {
     message: ""
   });
   const { toast } = useToast();
+
+  // Handle hash navigation to scroll to form
+  useEffect(() => {
+    if (window.location.hash === '#contact-form') {
+      const element = document.getElementById('contact-form');
+      if (element) {
+        // Small delay to ensure the page is fully loaded
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -60,7 +73,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Form & Info */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-thai-light-bg">
+      <section id="contact-form" className="py-16 px-4 sm:px-6 lg:px-8 bg-thai-light-bg">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}

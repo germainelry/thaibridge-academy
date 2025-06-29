@@ -41,7 +41,7 @@ const Index = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
-              <Link to="/contact">
+              <Link to="/contact#contact-form">
                 <button className="font-primary text-lg font-semibold bg-thai-button-soft hover:bg-thai-button-sage text-white px-10 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
                   Start Learning Thai
                 </button>
@@ -322,12 +322,12 @@ const Index = () => {
             Discover the joy of learning a new language with us. Our comprehensive language programs and dedicated instructors will empower you to communicate confidently to make new connections and experiences.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/contact">
+            <Link to="/contact#contact-form">
               <Button className="font-primary bg-thai-button-fresh hover:bg-thai-button-sage text-white px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
                 Book Free Trial
               </Button>
             </Link>
-            <Link to="/contact">
+            <Link to="/contact#contact-form">
               <Button variant="outline" className="font-primary border-white bg-transparent !text-white hover:bg-white hover:!text-thai-deep-forest px-8 py-4 text-lg rounded-full">
                 Contact Us
               </Button>

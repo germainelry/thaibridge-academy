@@ -144,7 +144,7 @@ const About = () => {
             <p className="font-primary text-lg font-normal text-thai-button-sage leading-relaxed mb-8">
               Each brings unique insights into Thai culture, regional dialects, and the subtle nuances that make authentic communication possible. They are not just teachers - they are cultural ambassadors passionate about sharing the beauty of Thailand with the world.
             </p>
-            <Link to="/contact">
+            <Link to="/contact#contact-form">
               <Button className="font-primary text-base font-semibold bg-thai-button-fresh hover:bg-thai-button-sage text-white px-8 py-3 rounded-full">
                 Meet Our Team
               </Button>
@@ -181,7 +181,7 @@ const About = () => {
                 </p>
               </div>
               <div className="mt-8">
-                <Link to="/contact">
+                <Link to="/contact#contact-form">
                   <Button className="font-primary text-base font-semibold bg-thai-button-fresh hover:bg-thai-button-sage text-white rounded-full px-8">
                     Join Our Community
                   </Button>
@@ -205,7 +205,7 @@ const About = () => {
                 Explore Courses
               </Button>
             </Link>
-            <Link to="/contact">
+            <Link to="/contact#contact-form">
               <Button variant="outline" className="font-primary text-base font-semibold border-white bg-transparent !text-white hover:bg-white hover:!text-thai-deep-forest px-8 py-3 rounded-full text-lg">
                 Get Started Today
               </Button>

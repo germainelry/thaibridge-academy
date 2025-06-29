@@ -221,7 +221,7 @@ const FAQ = () => {
                 Can't find what you're looking for? Our team is here to help you get started on your Thai language journey.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/contact">
+                <Link to="/contact#contact-form">
                   <Button className="font-primary text-base font-semibold bg-thai-button-fresh hover:bg-thai-button-sage text-white px-8 py-3 rounded-full">
                     Contact Us
                   </Button>
