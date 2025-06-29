@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="col-span-2">
             <h3 className="text-2xl font-bold mb-4">ThaiBridge Academy</h3>
             <p className="text-thai-text-secondary mb-4 leading-relaxed">
-              Sàwàtdii 🇹🇭 Speak Thai, Discover More. Everyone can learn Thai. Learn from real native speakers with us.
+              Sàwàtdii~ Everyone can learn Thai. Learn from real native speakers with us.
             </p>
             <p className="text-thai-button-sage text-sm">
               Foster deeper connections with Thai culture through meaningful interactions.
@@ -47,10 +47,10 @@ const Footer = () => {
         
         <div className="border-t border-thai-button-sage/40 mt-8 pt-8 text-center">
           <p className="text-thai-text-secondary flex items-center justify-center gap-2">
-            Made with <Heart className="w-4 h-4 text-thai-accent-gold" fill="currentColor" /> for Thai language learners
+            Made with <Heart className="w-4 h-4 text-thai-accent-gold" fill="currentColor" /> for Thai Language Learners
           </p>
           <p className="text-thai-button-sage text-sm mt-2">
-            © 2024 ThaiBridge Academy. All rights reserved.
+            © 2025 ThaiBridge Academy
           </p>
         </div>
       </div>
