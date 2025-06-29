@@ -5,6 +5,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
 const Footer = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <footer className="bg-thai-darker-forest text-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -72,14 +79,6 @@ const Footer = () => {
                   <ArrowRight className="w-4 h-4 text-thai-accent-gold group-hover:translate-x-1 transition-transform" />
                   Contact
                 </Link>
-                <a href="#" className="flex items-center gap-2 font-primary text-thai-text-secondary hover:text-thai-accent-gold transition-colors group">
-                  <ArrowRight className="w-4 h-4 text-thai-accent-gold group-hover:translate-x-1 transition-transform" />
-                  Privacy Policy
-                </a>
-                <a href="#" className="flex items-center gap-2 font-primary text-thai-text-secondary hover:text-thai-accent-gold transition-colors group">
-                  <ArrowRight className="w-4 h-4 text-thai-accent-gold group-hover:translate-x-1 transition-transform" />
-                  Terms of Service
-                </a>
               </div>
             </div>
           </div>

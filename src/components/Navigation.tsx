@@ -2,11 +2,10 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
   const location = useLocation();
 
   const navigation = [
@@ -20,21 +19,10 @@ const Navigation = () => {
 
   const isActive = (href: string) => location.pathname === href;
 
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-    document.documentElement.classList.toggle('dark');
-  };
-
   return (
     <nav className="fixed top-0 w-full bg-thai-darker-forest/80 backdrop-blur-md z-50 border-b border-white/10 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* Language Selector */}
-          <div className="hidden md:flex items-center">
-            <span className="text-white/80 text-sm mr-2">🌐</span>
-            <span className="text-white/80 text-sm">English</span>
-          </div>
-
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="font-display text-2xl font-semibold text-white hover:text-thai-accent-gold transition-colors">
@@ -62,30 +50,16 @@ const Navigation = () => {
           </div>
 
           {/* Right side controls */}
-          <div className="hidden md:flex items-center space-x-4">
-            {/* Dark mode toggle */}
-            <button
-              onClick={toggleDarkMode}
-              className="p-2 rounded-full text-white/80 hover:text-white hover:bg-white/10 transition-colors"
-            >
-              {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-            </button>
-            
+          <div className="hidden md:flex items-center">            
             <Link to="/contact">
               <Button className="font-primary text-base font-semibold bg-thai-accent-gold hover:bg-thai-button-sage text-white rounded-full px-6 py-3 shadow-lg hover:shadow-xl transition-all duration-300">
-                Book Now
+                Free Trial
               </Button>
             </Link>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center space-x-2">
-            <button
-              onClick={toggleDarkMode}
-              className="p-2 rounded-full text-white/80 hover:text-white hover:bg-white/10 transition-colors"
-            >
-              {isDarkMode ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-            </button>
+          <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-white/80 hover:text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white/20"
@@ -117,7 +91,7 @@ const Navigation = () => {
             <div className="pt-2">
               <Link to="/contact" onClick={() => setIsOpen(false)}>
                 <Button className="w-full font-primary bg-thai-accent-gold hover:bg-thai-button-sage text-white rounded-full">
-                  Book Now
+                  Free Trial
                 </Button>
               </Link>
             </div>

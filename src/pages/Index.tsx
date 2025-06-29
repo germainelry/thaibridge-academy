@@ -8,6 +8,13 @@ import Footer from "@/components/Footer";
 import ScrollDown from "@/components/ScrollDown";
 
 const Index = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-thai-card-white">
       <Navigation />
@@ -34,16 +41,18 @@ const Index = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
-              <Link to="/courses">
-                <Button className="font-primary text-lg font-semibold bg-thai-accent-gold hover:bg-thai-button-sage text-white px-10 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-                  Book Your Stay
-                </Button>
-              </Link>
-              <Link to="/courses">
-                <Button variant="outline" className="font-primary text-lg font-semibold border-2 border-white text-white hover:bg-white hover:text-thai-deep-forest px-10 py-4 rounded-full transition-all duration-300">
-                  Explore Courses
-                </Button>
-              </Link>
+              <button
+                onClick={() => scrollToSection('courses-section')}
+                className="font-primary text-lg font-semibold bg-thai-accent-gold hover:bg-thai-button-sage text-white px-10 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+              >
+                Start Learning Thai
+              </button>
+              <button
+                onClick={() => scrollToSection('courses-section')}
+                className="font-primary text-lg font-semibold border-2 border-white text-white hover:bg-white hover:text-thai-deep-forest px-10 py-4 rounded-full transition-all duration-300 bg-transparent"
+              >
+                Explore Courses
+              </button>
             </div>
           </div>
         </div>
@@ -94,7 +103,7 @@ const Index = () => {
       </section>
 
       {/* Popular Courses */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-thai-card-white">
+      <section id="courses-section" className="py-20 px-4 sm:px-6 lg:px-8 bg-thai-card-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-thai-text-dark mb-4">Our Popular Courses</h2>
@@ -175,7 +184,7 @@ const Index = () => {
       </section>
 
       {/* About Our Academy Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-thai-light-bg">
+      <section id="about-section" className="py-20 px-4 sm:px-6 lg:px-8 bg-thai-light-bg">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -203,7 +212,7 @@ const Index = () => {
               <img 
                 src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
                 alt="Thai temple surrounded by lush greenery" 
-                className="rounded-lg shadow-2xl"
+                className="rounded-lg shadow-2xl w-full h-auto"
                 loading="lazy"
                 decoding="async"
               />
@@ -214,7 +223,7 @@ const Index = () => {
       </section>
 
       {/* Why Join Us Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-thai-card-white">
+      <section id="why-join-section" className="py-20 px-4 sm:px-6 lg:px-8 bg-thai-card-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-thai-text-dark mb-4">Why Join ThaiBridge Academy?</h2>
@@ -266,7 +275,7 @@ const Index = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-thai-light-bg">
+      <section id="testimonials-section" className="py-20 px-4 sm:px-6 lg:px-8 bg-thai-light-bg">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-thai-text-dark mb-4">What Our Students Say</h2>
