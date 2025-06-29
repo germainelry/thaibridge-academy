@@ -12,7 +12,7 @@ const Index = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative pt-20 pb-16 px-4 sm:px-6 lg:px-8 bg-thai-deep-forest">
+      <section className="relative pt-36 pb-20 px-4 sm:px-6 lg:px-8 bg-thai-deep-forest">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1466442929976-97f336a657be?ixlib=rb-4.0.3')] bg-cover bg-center opacity-20"></div>
         <div className="relative max-w-7xl mx-auto">
           <div className="text-center">
