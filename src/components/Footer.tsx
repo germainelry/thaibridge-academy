@@ -1,4 +1,5 @@
-import { MapPin, Phone, Mail, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { MapPin, Phone, Mail, Facebook, Instagram, Linkedin } from "lucide-react";
+import { Music } from "lucide-react"; // Using Music icon as TikTok placeholder
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
@@ -60,10 +61,10 @@ export function Footer() {
       color: "hover:text-blue-600" 
     },
     { 
-      name: "Twitter", 
-      icon: Twitter, 
-      href: "https://twitter.com/thaibridgesg",
-      color: "hover:text-blue-400" 
+      name: "TikTok", 
+      icon: Music, 
+      href: "https://tiktok.com/@thaibridgeacademy",
+      color: "hover:text-black" 
     }
   ];
 

@@ -48,9 +48,12 @@ export function Navigation() {
           <div className="flex-shrink-0">
             <a 
               href="/" 
-              className="font-display text-xl lg:text-2xl font-bold text-white hover:text-thai-gold transition-thai"
+              className="flex items-center space-x-3 font-display text-xl lg:text-2xl font-bold text-white hover:text-thai-gold transition-thai"
             >
-              ThaiBridge Academy
+              <div className="w-8 h-8 border-2 border-thai-gold rounded-lg flex items-center justify-center">
+                <span className="text-xs text-thai-gold font-bold">SVG</span>
+              </div>
+              <span>ThaiBridge Academy</span>
             </a>
           </div>
 

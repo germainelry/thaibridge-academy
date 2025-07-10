@@ -13,6 +13,7 @@ interface EmailPopupProps {
 export function EmailPopup({ isOpen, onClose }: EmailPopupProps) {
   const { toast } = useToast();
   const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
@@ -36,9 +37,9 @@ export function EmailPopup({ isOpen, onClose }: EmailPopupProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!email) {
+    if (!name || !email) {
       toast({
-        title: "Please enter your email address",
+        title: "Please fill in all fields",
         variant: "destructive"
       });
       return;
@@ -55,6 +56,7 @@ export function EmailPopup({ isOpen, onClose }: EmailPopupProps) {
     });
 
     setEmail("");
+    setName("");
     setIsSubmitting(false);
     onClose();
     
@@ -97,7 +99,7 @@ export function EmailPopup({ isOpen, onClose }: EmailPopupProps) {
             </div>
             
             <h2 className="font-display text-2xl font-bold text-thai-text-dark mb-2">
-              Stay Updated with ThaiBridge Academy
+              Stay Connected with ThaiBridge Academy
             </h2>
             
             <p className="text-muted-foreground">
@@ -106,6 +108,20 @@ export function EmailPopup({ isOpen, onClose }: EmailPopupProps) {
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="popup-name">Your Name</Label>
+              <Input
+                id="popup-name"
+                type="text"
+                placeholder="Enter your name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="w-full"
+                disabled={isSubmitting}
+                required
+              />
+            </div>
+            
             <div className="space-y-2">
               <Label htmlFor="popup-email">Email Address</Label>
               <Input
@@ -116,6 +132,7 @@ export function EmailPopup({ isOpen, onClose }: EmailPopupProps) {
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full"
                 disabled={isSubmitting}
+                required
               />
             </div>
 

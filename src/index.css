@@ -60,15 +60,28 @@ All colors are in HSL format for consistent theming across light/dark modes.
     --font-display: 'Playfair Display', serif;
     --font-body: 'Source Sans Pro', sans-serif;
     
-    /* Thai-Inspired Shadows and Effects */
-    --thai-shadow-soft: 0 4px 20px -4px hsl(115 35% 25% / 0.15);
-    --thai-shadow-medium: 0 8px 30px -6px hsl(115 35% 25% / 0.2);
-    --thai-shadow-strong: 0 16px 40px -8px hsl(115 35% 25% / 0.25);
-    --thai-glow-gold: 0 0 30px hsl(35 48% 65% / 0.3);
-    
-    /* Smooth Transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  /* Thai-Inspired Shadows and Effects */
+  --thai-shadow-soft: 0 4px 20px -4px hsl(115 35% 25% / 0.15);
+  --thai-shadow-medium: 0 8px 30px -6px hsl(115 35% 25% / 0.2);
+  --thai-shadow-strong: 0 16px 40px -8px hsl(115 35% 25% / 0.25);
+  --thai-glow-gold: 0 0 30px hsl(35 48% 65% / 0.3);
+  
+  /* Enhanced Card Shadows */
+  --card-shadow-soft: 0 4px 12px -4px hsl(115 35% 25% / 0.12);
+  --card-shadow-hover: 0 8px 25px -8px hsl(115 35% 25% / 0.18);
+  --card-shadow-strong: 0 12px 35px -10px hsl(115 35% 25% / 0.25);
+
+  /* Smooth Transitions */
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --transition-card: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  
+  /* Hero Background Pattern */
+  --hero-pattern: linear-gradient(135deg, hsl(115 35% 25% / 0.05) 25%, transparent 25%), 
+                  linear-gradient(225deg, hsl(115 35% 25% / 0.05) 25%, transparent 25%), 
+                  linear-gradient(45deg, hsl(115 35% 25% / 0.05) 25%, transparent 25%), 
+                  linear-gradient(315deg, hsl(115 35% 25% / 0.05) 25%, transparent 25%);
+  --hero-pattern-size: 40px 40px;
   }
 
   .dark {
@@ -157,6 +170,78 @@ All colors are in HSL format for consistent theming across light/dark modes.
   
   .transition-thai-bounce {
     transition: var(--transition-bounce);
+  }
+  
+  /* Enhanced Card Styles */
+  .card-hover {
+    transition: var(--transition-card);
+    box-shadow: var(--card-shadow-soft);
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: var(--card-shadow-hover);
+  }
+  
+  .card-interactive {
+    transition: var(--transition-card);
+    transform-origin: center;
+    will-change: transform, box-shadow;
+  }
+  
+  .card-interactive:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--card-shadow-strong);
+  }
+  
+  /* Hero Background Pattern */
+  .hero-pattern {
+    background-image: var(--hero-pattern);
+    background-size: var(--hero-pattern-size);
+    background-position: 0 0, 0 0, 0 0, 0 0;
+  }
+  
+  /* Animation Enhancements */
+  .animate-in {
+    animation: slideInUp 0.6s ease-out forwards;
+  }
+  
+  .animate-in-delay-1 {
+    animation: slideInUp 0.6s ease-out 0.1s both;
+  }
+  
+  .animate-in-delay-2 {
+    animation: slideInUp 0.6s ease-out 0.2s both;
+  }
+  
+  .animate-in-delay-3 {
+    animation: slideInUp 0.6s ease-out 0.3s both;
+  }
+  
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Reduce motion for accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    .card-hover:hover,
+    .card-interactive:hover {
+      transform: none;
+    }
+    
+    .animate-in,
+    .animate-in-delay-1,
+    .animate-in-delay-2,
+    .animate-in-delay-3 {
+      animation: none;
+    }
   }
   
   /* Smooth Scrolling */

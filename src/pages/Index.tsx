@@ -102,8 +102,9 @@ const Index = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="min-h-screen bg-thai-forest-deep text-white flex items-center justify-center relative">
-        <div className="container mx-auto px-4 text-center">
+      <section className="min-h-screen bg-thai-forest-deep text-white flex items-center justify-center relative hero-pattern">
+        <div className="absolute inset-0 bg-thai-forest-deep/90" />
+        <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="font-display text-5xl lg:text-7xl font-bold mb-6 animate-fade-in">
             Speak Thai. Connect Deeper.
           </h1>
@@ -152,7 +153,7 @@ const Index = () => {
             {courses.map((course, index) => {
               const IconComponent = course.icon;
               return (
-                <Card key={index} className={`relative shadow-thai-medium hover:shadow-thai-strong transition-thai ${!course.available ? 'opacity-60' : ''}`}>
+                <Card key={index} className={`relative card-interactive ${!course.available ? 'opacity-60' : ''}`}>
                   {course.popular && (
                     <Badge className="absolute -top-3 left-6 bg-accent text-accent-foreground font-semibold">
                       MOST POPULAR
@@ -228,7 +229,7 @@ const Index = () => {
             {features.map((feature, index) => {
               const IconComponent = feature.icon;
               return (
-                <Card key={index} className="shadow-thai-medium hover:shadow-thai-strong transition-thai">
+                <Card key={index} className="card-interactive">
                   <CardContent className="p-8">
                     <div className="flex items-start gap-4">
                       <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
@@ -260,7 +261,7 @@ const Index = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="shadow-thai-medium">
+              <Card key={index} className="card-interactive">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-1 mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
