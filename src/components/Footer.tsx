@@ -105,7 +105,7 @@ export function Footer() {
                 className="flex-[2_2_0%] min-w-[265px] bg-white/10 border-white/20 text-white placeholder:text-white/60"
                 required
               />
-              <Button type="submit" className="bg-thai-gold hover:bg-thai-gold/90 text-thai-forest-dark font-semibold min-w-[120px]">
+              <Button type="submit" className="bg-thai-gold hover:bg-thai-gold/90 text-thai-forest-dark font-semibold min-w-[120px] h-10 px-6 py-3 rounded-lg">
                 Subscribe
               </Button>
             </form>
