@@ -9,8 +9,8 @@ All colors are in HSL format for consistent theming across light/dark modes.
 @layer base {
   :root {
     /* Thai-Inspired Color Palette */
-    --thai-forest-deep: 115 35% 25%;        /* #2D5A27 - deep forest green (main backgrounds, hero) */
-    --thai-forest-dark: 115 38% 17%;        /* #1E3A1A - darker forest green (footer, navigation) */
+    --thai-forest-deep: 153 29% 12%;        /* #112C19 - deep forest green (main backgrounds, hero) */
+    --thai-forest-dark: 153 29% 18%;        /* #193922 - darker forest green (footer, navigation) */
     --thai-light-tint: 120 20% 98%;         /* #F7FAF7 - subtle green tint (alternating sections) */
     --thai-fresh-green: 108 30% 56%;        /* #7FB069 - fresh green (primary buttons, CTAs) */
     --thai-sage-green: 135 24% 39%;         /* #4A7C59 - sage green (secondary buttons) */
@@ -28,7 +28,7 @@ All colors are in HSL format for consistent theming across light/dark modes.
     --popover: 0 0% 100%;
     --popover-foreground: 210 29% 24%;
     
-    --primary: 108 30% 56%;                  /* Fresh green for primary buttons */
+    --primary: 160 34% 28%;                  /* Cool green for primary buttons */
     --primary-foreground: 0 0% 100%;         /* White text on green buttons */
     
     --secondary: 135 24% 39%;                /* Sage green for secondary elements */
@@ -50,10 +50,10 @@ All colors are in HSL format for consistent theming across light/dark modes.
     --radius: 0.75rem;                       /* Slightly more rounded for sophistication */
     
     /* Custom Thai Design Variables */
-    --thai-hero-bg: 115 35% 25%;             /* Deep forest for hero backgrounds */
+    --thai-hero-bg: 153 29% 12%;            /* #112C19 - deep forest for hero backgrounds */
     --thai-section-alt: 120 20% 98%;         /* Alternating section background */
-    --thai-nav-bg: 115 38% 17%;              /* Navigation background */
-    --thai-footer-bg: 115 38% 17%;           /* Footer background */
+    --thai-nav-bg: 153 29% 18%;             /* #193922 - navigation background */
+    --thai-footer-bg: 153 29% 18%;          /* #193922 - footer background */
     --thai-disabled: 220 13% 91%;            /* Disabled course states */
     
     /* Typography Scale */
@@ -251,19 +251,19 @@ All colors are in HSL format for consistent theming across light/dark modes.
   
   /* Custom Scrollbar */
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 10px;
   }
-  
   ::-webkit-scrollbar-track {
     background: hsl(var(--thai-light-tint));
+    border-radius: 6px;
   }
-  
   ::-webkit-scrollbar-thumb {
-    background: hsl(var(--thai-fresh-green));
-    border-radius: 4px;
+    background: hsl(var(--thai-forest-dark));
+    border-radius: 6px;
+    border: 2px solid hsl(var(--thai-light-tint));
+    box-shadow: 0 2px 6px hsl(var(--thai-forest-deep) / 0.15);
   }
-  
   ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--thai-sage-green));
+    background: hsl(var(--thai-forest-deep));
   }
 }

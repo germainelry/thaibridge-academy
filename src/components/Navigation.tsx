@@ -64,7 +64,7 @@ export function Navigation() {
                 <a
                   key={link.name}
                   href={link.href}
-                  className={`px-3 py-2 text-sm font-medium transition-thai ${
+                  className={`px-3 py-2 text-base font-medium transition-thai ${
                     isActive(link.href)
                       ? 'text-thai-gold border-b-2 border-thai-gold'
                       : 'text-white hover:text-thai-gold'
@@ -74,16 +74,6 @@ export function Navigation() {
                 </a>
               ))}
             </div>
-          </div>
-
-          {/* CTA Button - Desktop */}
-          <div className="hidden md:block">
-            <Button 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground"
-              onClick={() => window.location.href = '/contact'}
-            >
-              Get Started
-            </Button>
           </div>
 
           {/* Mobile menu button */}
@@ -107,7 +97,7 @@ export function Navigation() {
                 <a
                   key={link.name}
                   href={link.href}
-                  className={`block px-3 py-3 text-base font-medium transition-thai ${
+                  className={`block px-3 py-3 text-lg font-medium transition-thai ${
                     isActive(link.href)
                       ? 'text-thai-gold bg-white/10 rounded-lg'
                       : 'text-white hover:text-thai-gold hover:bg-white/5 rounded-lg'
@@ -117,15 +107,6 @@ export function Navigation() {
                 </a>
               ))}
               
-              {/* Mobile CTA */}
-              <div className="pt-4 pb-2">
-                <Button 
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-                  onClick={() => window.location.href = '/contact'}
-                >
-                  Get Started
-                </Button>
-              </div>
             </div>
           </div>
         )}

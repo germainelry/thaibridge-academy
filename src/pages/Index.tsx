@@ -102,8 +102,17 @@ const Index = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="min-h-screen bg-thai-forest-deep text-white flex items-center justify-center relative hero-pattern">
-        <div className="absolute inset-0 bg-thai-forest-deep/90" />
+      <section
+        className="min-h-screen w-full text-white flex items-center justify-center relative"
+        style={{
+          backgroundImage: "url('/background.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat"
+        }}
+      >
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/60" />
         <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="font-display text-5xl lg:text-7xl font-bold mb-6 animate-fade-in">
             Speak Thai. Connect Deeper.
@@ -112,15 +121,7 @@ const Index = () => {
             Learn from native Thai speakers—online or through our unique immersion experiences. 
             Connect authentically, travel deeper, and discover the Thailand locals know.
           </p>
-          <Button 
-            size="lg" 
-            className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-semibold animate-bounce-gentle"
-            onClick={() => document.getElementById('courses')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            Start Learning Thai
-          </Button>
         </div>
-        
         <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2">
           <ScrollDown />
         </div>
@@ -153,7 +154,7 @@ const Index = () => {
             {courses.map((course, index) => {
               const IconComponent = course.icon;
               return (
-                <Card key={index} className={`relative card-interactive ${!course.available ? 'opacity-60' : ''}`}>
+                <Card key={index} className={`relative card-interactive flex flex-col ${!course.available ? 'opacity-60' : ''}`}>
                   {course.popular && (
                     <Badge className="absolute -top-3 left-6 bg-accent text-accent-foreground font-semibold">
                       MOST POPULAR
@@ -174,17 +175,19 @@ const Index = () => {
                     </CardTitle>
                   </CardHeader>
                   
-                  <CardContent>
+                  <CardContent className="flex flex-1 flex-col">
                     <p className="text-muted-foreground text-center leading-relaxed mb-6">
                       {course.description}
                     </p>
-                    <Button 
-                      className="w-full" 
-                      disabled={!course.available}
-                      onClick={() => window.location.href = '/courses'}
-                    >
-                      {course.available ? 'Learn More' : 'Coming Soon'}
-                    </Button>
+                    <div className="mt-auto pt-4">
+                      <Button 
+                        className="w-full" 
+                        disabled={!course.available}
+                        onClick={() => window.location.href = '/courses'}
+                      >
+                        {course.available ? 'Learn More' : 'Coming Soon'}
+                      </Button>
+                    </div>
                   </CardContent>
                 </Card>
               );
@@ -224,28 +227,26 @@ const Index = () => {
           <h2 className="font-display text-3xl lg:text-4xl font-bold text-center text-thai-text-dark mb-12">
             Why Join Us
           </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {features.map((feature, index) => {
               const IconComponent = feature.icon;
               return (
-                <Card key={index} className="card-interactive">
-                  <CardContent className="p-8">
-                    <div className="flex items-start gap-4">
-                      <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                        <IconComponent className="w-8 h-8 text-primary" />
-                      </div>
-                      <div>
-                        <h3 className="font-display text-xl font-bold text-thai-text-dark mb-3">
-                          {feature.title}
-                        </h3>
-                        <p className="text-muted-foreground leading-relaxed">
-                          {feature.description}
-                        </p>
-                      </div>
+                <div
+                  key={index}
+                  className="group bg-white rounded-2xl shadow-thai-soft p-8 flex flex-col items-center text-center transition-thai"
+                >
+                  <div className="flex items-center justify-center mb-6">
+                    <div className="w-24 h-24 rounded-full flex items-center justify-center transition-thai bg-thai-gold/10 group-hover:bg-thai-gold/30">
+                      <IconComponent className="w-12 h-12 text-thai-forest-dark transition-thai group-hover:text-thai-gold" />
                     </div>
-                  </CardContent>
-                </Card>
+                  </div>
+                  <h3 className="font-display text-xl font-bold text-thai-text-dark mb-3">
+                    {feature.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
               );
             })}
           </div>
@@ -261,19 +262,19 @@ const Index = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="card-interactive">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-1 mb-4">
+              <Card key={index} className="card-interactive flex flex-col h-full">
+                <CardContent className="p-6 flex flex-1 flex-col">
+                  <div className="flex items-center gap-1 mb-4 justify-center">
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <Star key={i} className="w-4 h-4 text-thai-gold fill-current" />
                     ))}
                   </div>
-                  <p className="text-muted-foreground leading-relaxed mb-4">
-                    "{testimonial.quote}"
-                  </p>
-                  <div>
+                  <div className="flex-1 flex flex-col">
+                    <p className="text-thai-forest-dark italic text-lg text-center mb-4">“{testimonial.quote}”</p>
+                  </div>
+                  <div className="mt-auto pt-4 text-center">
                     <p className="font-semibold text-thai-text-dark">{testimonial.name}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.course}</p>
+                    <p className="text-sm text-thai-gold font-semibold">{testimonial.course}</p>
                   </div>
                 </CardContent>
               </Card>
