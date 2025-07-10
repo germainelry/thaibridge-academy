@@ -79,12 +79,12 @@ You can also connect a custom domain via Lovable’s settings.
 
 ## 📄 License
 
-MIT (or specify your license here)
+© 2025 Germaine Luah. All rights reserved.
 
 ---
 
 ## 🙏 Credits
 
-- ThaiBridge Academy team
+- ThaiBridge Academy Team for sponsoring this project
 - [Lovable.dev](https://lovable.dev/) for hosting
 - All open-source contributors
