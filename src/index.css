@@ -35,7 +35,7 @@ All colors are in HSL format for consistent theming across light/dark modes.
     --secondary-foreground: 0 0% 100%;       /* White text on sage green */
     
     --muted: 120 20% 98%;                    /* Subtle green tint for muted sections */
-    --muted-foreground: 120 12% 66%;         /* Light green-gray for muted text */
+    --muted-foreground: 120 12% 30%;         /* Slightly darker green-gray for muted text */
     
     --accent: 35 48% 65%;                    /* Thai gold for accents and highlights */
     --accent-foreground: 0 0% 100%;          /* White text on gold accents */

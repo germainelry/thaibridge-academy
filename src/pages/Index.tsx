@@ -233,7 +233,7 @@ const Index = () => {
               return (
                 <div
                   key={index}
-                  className="group bg-white rounded-2xl shadow-thai-soft p-8 flex flex-col items-center text-center transition-thai"
+                  className="group p-8 flex flex-col items-center text-center transition-thai"
                 >
                   <div className="flex items-center justify-center mb-6">
                     <div className="w-24 h-24 rounded-full flex items-center justify-center transition-thai bg-thai-gold/10 group-hover:bg-thai-gold/30">

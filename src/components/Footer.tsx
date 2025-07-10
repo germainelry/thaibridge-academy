@@ -8,16 +8,23 @@ import { useToast } from "@/hooks/use-toast";
 export function Footer() {
   const { toast } = useToast();
   const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
 
   const handleNewsletterSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email) return;
-    
+    if (!name || !email) {
+      toast({
+        title: "Please fill in all fields",
+        variant: "destructive"
+      });
+      return;
+    }
     toast({
       title: "Thank you for subscribing!",
       description: "You'll receive our latest updates and Thai learning tips.",
     });
     setEmail("");
+    setName("");
   };
 
   const footerLinks = {
@@ -83,13 +90,22 @@ export function Footer() {
             
             <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <Input
+                type="text"
+                placeholder="Enter your name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="min-w-[150px] flex-initial bg-white/10 border-white/20 text-white placeholder:text-white/60"
+                required
+              />
+              <Input
                 type="email"
                 placeholder="Enter your email address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 bg-white/10 border-white/20 text-white placeholder:text-white/60"
+                className="flex-[2_2_0%] min-w-[265px] bg-white/10 border-white/20 text-white placeholder:text-white/60"
+                required
               />
-              <Button type="submit" className="bg-thai-gold hover:bg-thai-gold/90 text-thai-forest-dark font-semibold">
+              <Button type="submit" className="bg-thai-gold hover:bg-thai-gold/90 text-thai-forest-dark font-semibold min-w-[120px]">
                 Subscribe
               </Button>
             </form>
