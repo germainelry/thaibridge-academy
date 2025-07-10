@@ -106,15 +106,15 @@ export default function Reviews() {
       <section className="bg-thai-forest-deep text-white py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="font-display text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="font-display text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">
               Student Reviews
             </h1>
-            <p className="text-xl lg:text-2xl text-thai-text-secondary leading-relaxed mb-8">
+            <p className="text-xl lg:text-2xl text-thai-text-secondary leading-relaxed mb-8 animate-slide-up">
               Hear from our students about their Thai learning journey with ThaiBridge Academy
             </p>
             
             {/* Overall Rating */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-2xl mx-auto">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-2xl mx-auto animate-slide-up">
               <div className="flex items-center justify-center gap-2 mb-4">
                 {renderStars(5)}
                 <span className="text-2xl font-bold ml-2">4.8</span>

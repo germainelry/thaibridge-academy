@@ -57,10 +57,10 @@ export default function About() {
       <section className="bg-thai-forest-deep text-white py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="font-display text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="font-display text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">
               About ThaiBridge Academy
             </h1>
-            <p className="text-xl lg:text-2xl text-thai-text-secondary leading-relaxed">
+            <p className="text-xl lg:text-2xl text-thai-text-secondary leading-relaxed animate-slide-up">
               Building bridges between cultures through authentic Thai language education
             </p>
           </div>
