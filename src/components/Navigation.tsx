@@ -50,9 +50,12 @@ export function Navigation() {
               href="/" 
               className="flex items-center space-x-3 font-display text-xl lg:text-2xl font-bold text-white hover:text-thai-gold transition-thai"
             >
-              <div className="w-8 h-8 border-2 border-thai-gold rounded-lg flex items-center justify-center">
-                <span className="text-xs text-thai-gold font-bold">SVG</span>
-              </div>
+              <img
+                src="/thaibridge-icon.svg"
+                alt="ThaiBridge Academy Logo"
+                className="h-16 object-contain"
+                style={{ display: 'block' }}
+              />
               <span>ThaiBridge Academy</span>
             </a>
           </div>
