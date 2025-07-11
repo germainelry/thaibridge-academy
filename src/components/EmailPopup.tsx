@@ -47,6 +47,7 @@ export function EmailPopup({ isOpen, onClose }: EmailPopupProps) {
 
     setIsSubmitting(true);
 
+    // TODO: Replace with actual API call
     await fetch("https://thaibridge.app.n8n.cloud/webhook-test/subscribe", {
       method: "POST",
       headers: { "Content-Type": "application/json" },

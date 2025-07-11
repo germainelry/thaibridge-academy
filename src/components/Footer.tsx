@@ -34,8 +34,8 @@ export function Footer() {
       });
       if (!response.ok) throw new Error("Network response was not ok");
       toast({
-        title: "Thank you for subscribing!",
-        description: "You'll receive our latest updates and Thai learning tips.",
+        title: "Successfully subscribed!",
+        description: "You'll receive our latest Thai learning tips and course updates.",
       });
       setEmail("");
       setName("");
