@@ -359,7 +359,7 @@ const Index = () => {
             className="bg-primary hover:bg-primary/90"
             onClick={() => (window.location.href = "/contact")}
           >
-            Book Free Trial
+            Book Free Consultation
           </Button>
         </div>
       </section>
