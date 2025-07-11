@@ -1,5 +1,12 @@
-import { MapPin, Phone, Mail, Facebook, Instagram, Linkedin } from "lucide-react";
-import { Music } from "lucide-react"; // Using Music icon as TikTok placeholder
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Facebook,
+  Instagram,
+  Linkedin,
+} from "lucide-react";
+import { Music2 } from "lucide-react"; // Using Music icon as TikTok placeholder
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
@@ -15,7 +22,7 @@ export function Footer() {
     if (!name || !email) {
       toast({
         title: "Please fill in all fields",
-        variant: "destructive"
+        variant: "destructive",
       });
       return;
     }
@@ -32,47 +39,47 @@ export function Footer() {
       { name: "1-to-1 Private Coaching", href: "/courses" },
       { name: "Corporate Training", href: "/courses" },
       { name: "Immersion Programs", href: "/courses" },
-      { name: "Free Consultation", href: "/contact" }
+      { name: "Free Consultation", href: "/contact" },
     ],
     company: [
       { name: "About Us", href: "/about" },
       { name: "Our Instructors", href: "/about" },
       { name: "Student Reviews", href: "/reviews" },
-      { name: "FAQ", href: "/faq" }
+      { name: "FAQ", href: "/faq" },
     ],
     support: [
       { name: "Contact Us", href: "/contact" },
       { name: "Privacy Policy", href: "/policy" },
       { name: "Terms of Service", href: "/policy" },
-      { name: "Refund Policy", href: "/policy" }
-    ]
+      { name: "Refund Policy", href: "/policy" },
+    ],
   };
 
   const socialLinks = [
-    { 
-      name: "Facebook", 
-      icon: Facebook, 
+    {
+      name: "Facebook",
+      icon: Facebook,
       href: "https://facebook.com/thaibridgeacademy",
-      color: "hover:text-blue-500" 
+      color: "hover:text-blue-500",
     },
-    { 
-      name: "Instagram", 
-      icon: Instagram, 
+    {
+      name: "Instagram",
+      icon: Instagram,
       href: "https://instagram.com/thaibridgeacademy",
-      color: "hover:text-pink-500" 
+      color: "hover:text-pink-500",
     },
-    { 
-      name: "LinkedIn", 
-      icon: Linkedin, 
+    {
+      name: "LinkedIn",
+      icon: Linkedin,
       href: "https://linkedin.com/company/thaibridgeacademy",
-      color: "hover:text-blue-600" 
+      color: "hover:text-blue-600",
     },
-    { 
-      name: "TikTok", 
-      icon: Music, 
+    {
+      name: "TikTok",
+      icon: Music2,
       href: "https://tiktok.com/@thaibridgeacademy",
-      color: "hover:text-black" 
-    }
+      color: "hover:text-black",
+    },
   ];
 
   return (
@@ -85,10 +92,14 @@ export function Footer() {
               Stay Connected with ThaiBridge
             </h3>
             <p className="text-thai-text-secondary mb-8 max-w-2xl mx-auto">
-              Get exclusive Thai language tips, cultural insights, and course updates delivered to your inbox.
+              Get exclusive Thai language tips, cultural insights, and course
+              updates delivered to your inbox.
             </p>
-            
-            <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+
+            <form
+              onSubmit={handleNewsletterSubmit}
+              className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"
+            >
               <Input
                 type="text"
                 placeholder="Enter your name"
@@ -105,7 +116,10 @@ export function Footer() {
                 className="flex-[2_2_0%] min-w-[265px] bg-white/10 border-white/20 text-white placeholder:text-white/60"
                 required
               />
-              <Button type="submit" className="bg-thai-gold hover:bg-thai-gold/90 text-thai-forest-dark font-semibold min-w-[120px] h-10 px-6 py-3 rounded-lg">
+              <Button
+                type="submit"
+                className="bg-thai-gold hover:bg-thai-gold/90 text-thai-forest-dark font-semibold min-w-[120px] h-10 px-6 py-3 rounded-lg"
+              >
                 Subscribe
               </Button>
             </form>
@@ -116,7 +130,6 @@ export function Footer() {
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
-          
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="mb-6">
@@ -124,8 +137,9 @@ export function Footer() {
                 ThaiBridge Academy
               </h2>
               <p className="text-thai-text-secondary leading-relaxed mb-6">
-                Your bridge to authentic Thai culture and language. Learn from native speakers 
-                and connect deeper with Thailand's rich heritage.
+                Your bridge to authentic Thai culture and language. Learn from
+                native speakers and connect deeper with Thailand's rich
+                heritage.
               </p>
             </div>
 
@@ -136,25 +150,26 @@ export function Footer() {
                 <div>
                   <p className="text-white font-medium">Visit Our School</p>
                   <p className="text-thai-text-secondary text-sm">
-                    123 Orchard Road, #12-34<br />
+                    123 Orchard Road, #12-34
+                    <br />
                     Singapore 238858
                   </p>
                 </div>
               </div>
-              
+
               <div className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-thai-gold mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-white font-medium">Call or WhatsApp</p>
                   <div className="space-y-1">
-                    <a 
-                      href="tel:+6512345678" 
+                    <a
+                      href="tel:+6512345678"
                       className="text-thai-text-secondary text-sm hover:text-white transition-thai block"
                     >
                       +65 1234 5678
                     </a>
-                    <a 
-                      href="https://wa.me/6512345678?text=Hi%20ThaiBridge%20Academy,%20I'm%20interested%20in%20learning%20Thai" 
+                    <a
+                      href="https://wa.me/6512345678?text=Hi%20ThaiBridge%20Academy,%20I'm%20interested%20in%20learning%20Thai"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-thai-gold text-sm hover:text-thai-gold/80 transition-thai inline-flex items-center gap-1"
@@ -164,13 +179,13 @@ export function Footer() {
                   </div>
                 </div>
               </div>
-              
+
               <div className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-thai-gold mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-white font-medium">Email Us</p>
-                  <a 
-                    href="mailto:hello@thaibridgeacademy.sg" 
+                  <a
+                    href="mailto:hello@thaibridgeacademy.sg"
                     className="text-thai-text-secondary text-sm hover:text-white transition-thai"
                   >
                     hello@thaibridgeacademy.sg
@@ -186,7 +201,7 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.courses.map((link) => (
                 <li key={link.name}>
-                  <a 
+                  <a
                     href={link.href}
                     className="text-thai-text-secondary text-sm hover:text-white transition-thai"
                   >
@@ -202,7 +217,7 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <a 
+                  <a
                     href={link.href}
                     className="text-thai-text-secondary text-sm hover:text-white transition-thai"
                   >
@@ -218,7 +233,7 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.support.map((link) => (
                 <li key={link.name}>
-                  <a 
+                  <a
                     href={link.href}
                     className="text-thai-text-secondary text-sm hover:text-white transition-thai"
                   >
@@ -236,12 +251,14 @@ export function Footer() {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="text-thai-text-secondary text-sm">
-              © 2024 ThaiBridge Academy. All rights reserved.
+              © 2025 ThaiBridge Academy. All rights reserved.
             </div>
-            
+
             {/* Social Links */}
             <div className="flex items-center gap-4">
-              <span className="text-thai-text-secondary text-sm">Follow us:</span>
+              <span className="text-thai-text-secondary text-sm">
+                Follow us:
+              </span>
               <div className="flex items-center gap-3">
                 {socialLinks.map((social) => {
                   const IconComponent = social.icon;

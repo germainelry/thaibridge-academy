@@ -40,3 +40,16 @@
 .read-the-docs {
   color: #888;
 }
+
+.notify-btn {
+  background-color: #e5e7eb; /* light gray for base */
+  color: #166534; /* dark green text */
+  border: 1px solid #22c55e; /* green border */
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+.notify-btn:hover, .notify-btn:focus {
+  background-color: #22c55e; /* green */
+  color: #fff;
+  border-color: #16a34a; /* darker green */
+  cursor: pointer;
+}
