@@ -63,15 +63,17 @@ export default function Contact() {
   };
 
   const contactInfo = [
-    {
-      icon: MapPin,
-      title: "Visit Us",
-      details: [
-        "123 Orchard Road, #12-34",
-        "Singapore 238858",
-        "Near Somerset MRT Station",
-      ],
-    },
+    
+    // Once there is a physical address, add this back in
+    // {
+    //   icon: MapPin,
+    //   title: "Visit Us",
+    //   details: [
+    //     "123 Orchard Road, #12-34",
+    //     "Singapore 238858",
+    //     "Near Somerset MRT Station",
+    //   ],
+    // },
     {
       icon: Phone,
       title: "Call Us",
