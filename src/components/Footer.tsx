@@ -17,7 +17,7 @@ export function Footer() {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
 
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name || !email) {
       toast({
@@ -26,12 +26,26 @@ export function Footer() {
       });
       return;
     }
-    toast({
-      title: "Thank you for subscribing!",
-      description: "You'll receive our latest updates and Thai learning tips.",
-    });
-    setEmail("");
-    setName("");
+    try {
+      const response = await fetch("https://thaibridge.app.n8n.cloud/webhook-test/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email }),
+      });
+      if (!response.ok) throw new Error("Network response was not ok");
+      toast({
+        title: "Thank you for subscribing!",
+        description: "You'll receive our latest updates and Thai learning tips.",
+      });
+      setEmail("");
+      setName("");
+    } catch (error) {
+      toast({
+        title: "Subscription failed",
+        description: "There was a problem subscribing. Please try again later.",
+        variant: "destructive",
+      });
+    }
   };
 
   const footerLinks = {
