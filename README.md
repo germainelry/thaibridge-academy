@@ -78,7 +78,7 @@ This project is deployed using [Vercel](https://vercel.com/). To deploy updates:
 
 ## 📄 License
 
-© 2025 Germaine Luah ([@germainelry](https://github.com/germainelry)). All rights reserved.
+© 2025 Germaine Luah ([Github Profile](https://github.com/germainelry)). All rights reserved.
 
 ---
 
