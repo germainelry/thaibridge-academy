@@ -68,23 +68,22 @@ Contributions are welcome! Please fork the repo and submit a pull request. For m
 
 ## 🖥️ Deployment
 
-This project is published using [Lovable.dev](https://lovable.dev/). To deploy updates:
+This project is deployed using [Vercel](https://vercel.com/). To deploy updates:
 
-- Push changes to the main branch
-- Or use the Lovable web interface to edit and publish
-
-You can also connect a custom domain via Lovable’s settings.
+- Push changes to the main branch on GitHub (or your connected Git provider)
+- Vercel will automatically build and deploy your site
+- You can connect a custom domain via the Vercel dashboard
 
 ---
 
 ## 📄 License
 
-© 2025 Germaine Luah. All rights reserved.
+© 2025 Germaine Luah ([@germainelry](https://github.com/germainelry)). All rights reserved.
 
 ---
 
 ## 🙏 Credits
 
 - ThaiBridge Academy Team for sponsoring this project
-- [Lovable.dev](https://lovable.dev/) for hosting
+- [Lovable.dev](https://lovable.dev/) for providing the base template
 - All open-source contributors
