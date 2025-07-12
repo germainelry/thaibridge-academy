@@ -59,7 +59,7 @@ export default function Contact() {
       });
       setFormData({
         name: "",
-        email: "",
+        user_email: "",
         phone: "",
         course: "",
         message: "",
@@ -152,7 +152,7 @@ export default function Contact() {
                     <form onSubmit={handleSubmit} className="space-y-6">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="space-y-2">
-                          <Label htmlFor="name">Full Name *</Label>
+                          <Label htmlFor="name">Full Name <span className="text-red-500">*</span></Label>
                           <Input
                             id="name"
                             name="name"
@@ -164,7 +164,7 @@ export default function Contact() {
                         </div>
 
                         <div className="space-y-2">
-                          <Label htmlFor="email">Email Address *</Label>
+                          <Label htmlFor="email">Email Address <span className="text-red-500">*</span></Label>
                           <Input
                             id="email"
                             name="email"
@@ -218,7 +218,7 @@ export default function Contact() {
                       </div>
 
                       <div className="space-y-2">
-                        <Label htmlFor="message">Message *</Label>
+                        <Label htmlFor="message">Message <span className="text-red-500">*</span></Label>
                         <Textarea
                           id="message"
                           name="message"
