@@ -45,7 +45,7 @@ export default function Contact() {
       return;
     }
 
-    // Simulate form submission
+    // Simulate form submission with API Post Request
     toast({
       title: "Message sent successfully!",
       description:

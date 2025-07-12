@@ -8,6 +8,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 const faqCategories = [
   {
@@ -133,6 +135,47 @@ const faqCategories = [
 ];
 
 export default function FAQ() {
+  const { toast } = useToast();
+  const [faqForm, setFaqForm] = useState({ question: "", email: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleFaqInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFaqForm((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleFaqSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!faqForm.question || !faqForm.email) {
+      toast({
+        title: "Please fill in all fields",
+        variant: "destructive",
+      });
+      return;
+    }
+    setIsSubmitting(true);
+    try {
+      const response = await fetch("https://thaibridge.app.n8n.cloud/webhook/submit-faq", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question: faqForm.question, email: faqForm.email }),
+      });
+      if (!response.ok) throw new Error("Network response was not ok");
+      toast({
+        title: "Thank you for your submission!",
+        description: "We have received your question and will get back to you soon.",
+      });
+      setFaqForm({ question: "", email: "" });
+    } catch (error) {
+      toast({
+        title: "Submission failed",
+        description: "There was a problem submitting your question. Please try again later.",
+        variant: "destructive",
+      });
+    }
+    setIsSubmitting(false);
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />

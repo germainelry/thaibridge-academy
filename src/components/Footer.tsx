@@ -27,7 +27,7 @@ export function Footer() {
       return;
     }
     try {
-      const response = await fetch("https://thaibridge.app.n8n.cloud/webhook-test/subscribe", {
+      const response = await fetch("https://thaibridge.app.n8n.cloud/webhook/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email }),

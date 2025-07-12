@@ -300,7 +300,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Testimonials (Static in nature, please update this section manually)*/}
       <section className="py-20 bg-thai-light-tint">
         <div className="container mx-auto px-4">
           <h2 className="font-display text-3xl lg:text-4xl font-bold text-center text-thai-text-dark mb-12">
