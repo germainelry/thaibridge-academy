@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star } from "lucide-react";
 import { useEffect, useState } from "react";
+import { format } from 'date-fns';
 
 const stats = [
   { number: "200+", label: "Happy Students" },
@@ -125,7 +126,7 @@ export default function Reviews() {
                         <div>
                           <h3 className="font-semibold text-thai-text-dark">{review.name}</h3>
                           <p className="text-sm text-muted-foreground">
-                            {new Date(review.created_at).toLocaleDateString()}
+                            {format(new Date(review.created_at), 'dd MMM yyyy')}
                           </p>
                         </div>
                         <div className="flex items-center gap-1">
