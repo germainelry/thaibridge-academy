@@ -100,7 +100,7 @@ export function EmailPopup({ isOpen, onClose }: EmailPopupProps) {
         <div className="p-8">
           <div className="text-center mb-6">
             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl">📧</span>
+              <span className="text-2xl">📬</span>
             </div>
 
             <h2 className="font-display text-2xl font-bold text-thai-text-dark mb-2">
