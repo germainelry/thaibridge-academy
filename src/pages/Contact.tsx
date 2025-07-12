@@ -15,7 +15,7 @@ export default function Contact() {
     name: "",
     user_email: "",
     phone: "",
-    course: "",
+    course_taken: "",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -61,7 +61,7 @@ export default function Contact() {
         name: "",
         user_email: "",
         phone: "",
-        course: "",
+        course_taken: "",
         message: "",
       });
     } catch (error) {
@@ -191,28 +191,20 @@ export default function Contact() {
                         </div>
 
                         <div className="space-y-2">
-                          <Label htmlFor="course">Interested Course</Label>
+                          <Label htmlFor="course_taken">Interested Course</Label>
                           <select
-                            id="course"
-                            name="course"
-                            value={formData.course}
+                            id="course_taken"
+                            name="course_taken"
+                            value={formData.course_taken}
                             onChange={handleInputChange}
                             className="w-full px-3 py-2 border border-input rounded-md bg-background text-foreground text-base font-sans"
                           >
                             <option value="">Select a course</option>
-                            <option value="private">
-                              1 to 1 Private Coaching
-                            </option>
-                            <option value="corporate">
-                              Corporate Training
-                            </option>
-                            <option value="immersion">Immersion Program</option>
-                            <option value="traveller">
-                              Basic Traveller's Pack
-                            </option>
-                            <option value="consultation">
-                              Free Consultation
-                            </option>
+                            <option value="1 to 1 Private Coaching">1 to 1 Private Coaching</option>
+                            <option value="Corporate Training">Corporate Training</option>
+                            <option value="Immersion Program">Immersion Program</option>
+                            <option value="Basic Traveller's Pack">Basic Traveller's Pack</option>
+                            <option value="Free Consultation">Free Consultation</option>
                           </select>
                         </div>
                       </div>
