@@ -13,7 +13,7 @@ export default function Contact() {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
+    user_email: "",
     phone: "",
     course: "",
     message: "",
@@ -35,7 +35,7 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     // Basic validation
-    if (!formData.name || !formData.email || !formData.message) {
+    if (!formData.name || !formData.user_email || !formData.message) {
       toast({
         title: "Please fill in all required fields",
         description:
@@ -46,7 +46,7 @@ export default function Contact() {
     }
     setIsSubmitting(true);
     try {
-      const response = await fetch("https://thaibridge.app.n8n.cloud/webhook/submit-faq", {
+      const response = await fetch("https://thaibridge.app.n8n.cloud/webhook-test/submit-faq", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -164,12 +164,12 @@ export default function Contact() {
                         </div>
 
                         <div className="space-y-2">
-                          <Label htmlFor="email">Email Address <span className="text-red-500">*</span></Label>
+                          <Label htmlFor="user_email">Email Address <span className="text-red-500">*</span></Label>
                           <Input
-                            id="email"
-                            name="email"
+                            id="user_email"
+                            name="user_email"
                             type="email"
-                            value={formData.email}
+                            value={formData.user_email}
                             onChange={handleInputChange}
                             placeholder="Enter your email"
                             required
