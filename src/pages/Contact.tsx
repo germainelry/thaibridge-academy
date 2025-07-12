@@ -46,7 +46,7 @@ export default function Contact() {
     }
     setIsSubmitting(true);
     try {
-      const response = await fetch("https://thaibridge.app.n8n.cloud/webhook-test/submit-faq", {
+      const response = await fetch("https://thaibridge.app.n8n.cloud/webhook/submit-faq", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
