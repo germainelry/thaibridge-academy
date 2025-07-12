@@ -30,7 +30,7 @@ const Index = () => {
       ) {
         setShowEmailPopup(true);
       }
-    }, 5000); // 5 second delay
+    }, 3000); // 3 second delay
 
     return () => clearTimeout(timer);
   }, []);
