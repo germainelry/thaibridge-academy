@@ -107,7 +107,7 @@ export default function Reviews() {
             >
               Leave a Review
             </a>
-            <span className="mt-3 text-thai-text-secondary text-sm text-center whitespace-nowrap">
+            <span className="mt-3 text-thai-text-secondary text-sm text-center block px-2 sm:px-0">
               We value your feedback! ☺️ Kindly share your experience with us and help others on their Thai learning journey.
             </span>
           </div>
