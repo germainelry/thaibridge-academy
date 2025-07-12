@@ -1,7 +1,10 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
 import {
   Accordion,
   AccordionContent,
@@ -9,6 +12,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 const faqCategories = [
   {
@@ -134,6 +138,71 @@ const faqCategories = [
 ];
 
 export default function FAQ() {
+  const { toast } = useToast();
+  const [faqFormData, setFaqFormData] = useState({
+    name: "",
+    email: "",
+    question: "",
+    category: "",
+  });
+  const [isSubmittingFaq, setIsSubmittingFaq] = useState(false);
+
+  const handleFaqInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    const { name, value } = e.target;
+    setFaqFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleFaqSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    // Basic validation
+    if (!faqFormData.name || !faqFormData.email || !faqFormData.question) {
+      toast({
+        title: "Please fill in all required fields",
+        description:
+          "Name, email, and question are required to submit your FAQ.",
+        variant: "destructive",
+      });
+      return;
+    }
+    setIsSubmittingFaq(true);
+    try {
+      const response = await fetch("https://thaibridge.app.n8n.cloud/webhook/submit-faq", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...faqFormData,
+          type: "faq_submission"
+        }),
+      });
+      if (!response.ok) throw new Error("Network response was not ok");
+      toast({
+        title: "FAQ submitted successfully!",
+        description:
+          "Thank you for your question. We'll review it and add it to our FAQ if it's relevant to other students.",
+      });
+      setFaqFormData({
+        name: "",
+        email: "",
+        question: "",
+        category: "",
+      });
+    } catch (error) {
+      toast({
+        title: "Submission failed",
+        description: "There was a problem submitting your question. Please try again later.",
+        variant: "destructive",
+      });
+    }
+    setIsSubmittingFaq(false);
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -183,6 +252,109 @@ export default function FAQ() {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Submit FAQ Section */}
+      <section className="bg-thai-light-tint py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-8">
+              <h2 className="font-display text-3xl lg:text-4xl font-bold text-thai-text-dark mb-4">
+                Submit a Question
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Can't find what you're looking for? Submit your question and we'll add it to our FAQ if it helps other students.
+              </p>
+            </div>
+
+            <Card className="shadow-thai-medium">
+              <CardHeader>
+                <CardTitle className="font-display text-xl text-thai-text-dark">
+                  Ask Your Question
+                </CardTitle>
+                <p className="text-muted-foreground">
+                  We'll review your question and add it to our FAQ if it's relevant to other students.
+                </p>
+              </CardHeader>
+
+              <CardContent>
+                <form onSubmit={handleFaqSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <Label htmlFor="faq_name">Full Name <span className="text-red-500">*</span></Label>
+                      <Input
+                        id="faq_name"
+                        name="name"
+                        value={faqFormData.name}
+                        onChange={handleFaqInputChange}
+                        placeholder="Enter your full name"
+                        required
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="faq_email">Email Address <span className="text-red-500">*</span></Label>
+                      <Input
+                        id="faq_email"
+                        name="email"
+                        type="email"
+                        value={faqFormData.email}
+                        onChange={handleFaqInputChange}
+                        placeholder="Enter your email"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="faq_category">Question Category</Label>
+                    <select
+                      id="faq_category"
+                      name="category"
+                      value={faqFormData.category}
+                      onChange={handleFaqInputChange}
+                      className="w-full px-3 py-2 border border-input rounded-md bg-background text-foreground"
+                    >
+                      <option value="">Select a category</option>
+                      <option value="Course Information">Course Information</option>
+                      <option value="Scheduling & Flexibility">Scheduling & Flexibility</option>
+                      <option value="Pricing & Payment">Pricing & Payment</option>
+                      <option value="Technical & Learning Support">Technical & Learning Support</option>
+                      <option value="Immersion Programs">Immersion Programs</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="faq_question">Your Question <span className="text-red-500">*</span></Label>
+                    <Textarea
+                      id="faq_question"
+                      name="question"
+                      value={faqFormData.question}
+                      onChange={handleFaqInputChange}
+                      placeholder="What would you like to know about our Thai language courses?"
+                      rows={4}
+                      required
+                    />
+                  </div>
+
+                  <Button 
+                    type="submit" 
+                    size="lg" 
+                    className="w-full"
+                    disabled={isSubmittingFaq}
+                  >
+                    {isSubmittingFaq ? "Submitting..." : "Submit Question"}
+                  </Button>
+
+                  <p className="text-sm text-muted-foreground text-center">
+                    By submitting this question, you agree to our privacy policy and terms of service.
+                  </p>
+                </form>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
