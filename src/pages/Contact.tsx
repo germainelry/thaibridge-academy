@@ -197,7 +197,7 @@ export default function Contact() {
                             name="course"
                             value={formData.course}
                             onChange={handleInputChange}
-                            className="w-full px-3 py-2 border border-input rounded-md bg-background text-foreground"
+                            className="w-full px-3 py-2 border border-input rounded-md bg-background text-foreground text-base font-sans"
                           >
                             <option value="">Select a course</option>
                             <option value="private">
