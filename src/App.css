@@ -53,3 +53,15 @@
   border-color: #16a34a; /* darker green */
   cursor: pointer;
 }
+
+@keyframes pop-in {
+  0% { transform: scale(0.8); opacity: 0; }
+  80% { transform: scale(1.08); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.leave-review-btn {
+  animation: pop-in 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.leave-review-btn:hover, .leave-review-btn:focus {
+  transform: scale(1.06);
+}

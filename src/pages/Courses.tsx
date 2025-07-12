@@ -200,10 +200,10 @@ export default function Courses() {
 
                       <div className="pt-4">
                         {course.available ? (
-                          <Button
-                            className="w-full"
-                            onClick={() => (window.location.href = "/contact")}
-                          >
+                        <Button
+                          className="w-full"
+                          onClick={() => (window.location.href = "/contact")}
+                        >
                             Enroll Now
                           </Button>
                         ) : (
@@ -212,7 +212,7 @@ export default function Courses() {
                             onClick={() => setShowEmailPopup(true)}
                           >
                             Notify When Available
-                          </Button>
+                        </Button>
                         )}
                       </div>
                     </div>
