@@ -12,7 +12,7 @@ A modern, elegant web application for ThaiBridge Academy, designed to help learn
 
 ## 🌐 Live Site
 
-Visit the deployed site: [https://thaibridge-academy.lovable.app/](https://thaibridge-academy.lovable.app/)
+Visit the deployed site: [https://thaibridge-academy.vercel.app/](https://thaibridge-academy.vercel.app/)
 
 ---
 
