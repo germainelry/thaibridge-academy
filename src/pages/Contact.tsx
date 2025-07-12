@@ -18,6 +18,7 @@ export default function Contact() {
     course: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (
     e: React.ChangeEvent<
@@ -31,9 +32,8 @@ export default function Contact() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
     // Basic validation
     if (!formData.name || !formData.email || !formData.message) {
       toast({
@@ -44,22 +44,34 @@ export default function Contact() {
       });
       return;
     }
-
-    // Simulate form submission with API Post Request
-    toast({
-      title: "Message sent successfully!",
-      description:
-        "We'll get back to you within 24 hours. Thank you for your interest in ThaiBridge Academy.",
-    });
-
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      course: "",
-      message: "",
-    });
+    setIsSubmitting(true);
+    try {
+      const response = await fetch("https://thaibridge.app.n8n.cloud/webhook/submit-faq", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (!response.ok) throw new Error("Network response was not ok");
+      toast({
+        title: "Message sent successfully!",
+        description:
+          "We'll get back to you within 24 hours. Thank you for your interest in ThaiBridge Academy.",
+      });
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        course: "",
+        message: "",
+      });
+    } catch (error) {
+      toast({
+        title: "Submission failed",
+        description: "There was a problem submitting your message. Please try again later.",
+        variant: "destructive",
+      });
+    }
+    setIsSubmitting(false);
   };
 
   const contactInfo = [
