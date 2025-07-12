@@ -267,9 +267,6 @@ export function Footer() {
             <div className="text-thai-text-secondary text-sm">
               © 2025 ThaiBridge Academy. All rights reserved.
             </div>
-            <div className="text-thai-text-secondary text-xs md:text-sm opacity-45">
-              Website by Germaine Luah
-            </div>
             {/* Social Links */}
             <div className="flex items-center gap-4">
               <span className="text-thai-text-secondary text-sm">
