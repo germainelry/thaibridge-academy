@@ -3,6 +3,7 @@ import { Footer } from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Users, Heart, Globe, Award } from "lucide-react";
+import { useNavigation } from "@/hooks/use-navigation";
 
 const values = [
   {
@@ -49,6 +50,8 @@ const team = [
 ];
 
 export default function About() {
+  const { navigate } = useNavigation();
+  
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -163,7 +166,7 @@ export default function About() {
       </section>
 
       {/* Team Section */}
-      <section className="bg-thai-light-tint py-20">
+      <section id="instructors" className="bg-thai-light-tint py-20">
         <div className="container mx-auto px-4">
           <h2 className="font-display text-3xl lg:text-4xl font-bold text-center text-thai-text-dark mb-12">
             Meet Our Expert Instructors
@@ -209,6 +212,50 @@ export default function About() {
         </div>
       </section>
 
+      {/* Partnership Opportunities */}
+      <section className="py-20 bg-thai-gold/5">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="font-display text-3xl lg:text-4xl font-bold text-thai-text-dark mb-6">
+              Partnership Opportunities
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8">
+              Share the beauty of Thai language and culture with your audience while earning competitive commissions. Join our growing network of partners who are passionate about connecting people with authentic Thai experiences.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-thai-sage/20">
+                <div className="text-thai-gold text-2xl font-bold mb-2">Up to 40%</div>
+                <p className="text-thai-text-secondary">Commission rates on premium courses</p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-thai-sage/20">
+                <div className="text-thai-gold text-2xl font-bold mb-2">120 Days</div>
+                <p className="text-thai-text-secondary">Cookie tracking window</p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-thai-sage/20">
+                <div className="text-thai-gold text-2xl font-bold mb-2">Full Support</div>
+                <p className="text-thai-text-secondary">Marketing materials & training</p>
+              </div>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                size="lg" 
+                className="bg-thai-gold hover:bg-thai-gold/90 text-thai-forest-dark"
+                onClick={() => navigate('/affiliate')}
+              >
+                Join Our Affiliate Program
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline"
+                onClick={() => navigate('/contact')}
+              >
+                Learn More
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="bg-thai-forest-deep text-white py-16">
         <div className="container mx-auto px-4 text-center">
@@ -222,7 +269,7 @@ export default function About() {
           <Button 
             size="lg" 
             className="bg-primary hover:bg-primary/90"
-            onClick={() => window.location.href = '/contact'}
+            onClick={() => navigate('/courses')}
           >
             Get Started Today
           </Button>

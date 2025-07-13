@@ -11,7 +11,7 @@ interface WhatsAppButtonProps {
 }
 
 export function WhatsAppButton({ 
-  phoneNumber = "6512345678",
+  phoneNumber = "6588994462",
   message = "Hi ThaiBridge Academy, I'm interested in learning Thai",
   className = "",
   variant = "default",

@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { SectionWrapper } from "@/components/SectionWrapper";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -9,6 +10,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { useState } from "react";
+import { useNavigation } from "@/hooks/use-navigation";
 
 const faqCategories = [
   {
@@ -17,7 +19,7 @@ const faqCategories = [
       {
         question: "What courses do you offer?",
         answer:
-          "We offer four main programs: 1-to-1 Private Coaching (most popular), Corporate Training for businesses, Immersion Programs in Thailand, and Basic Traveller's Pack group classes (coming soon). Each program is designed for different learning goals and schedules.",
+          "We offer four main programs: 1-to-1 Private Coaching (most popular), Corporate Training for businesses, Immersion Programs in Thailand, and Basic Traveller's Pack (SkillsFuture claimable, coming soon). Each program is designed for different learning goals and schedules.",
       },
       {
         question: "How long does it take to learn Thai?",
@@ -62,7 +64,7 @@ const faqCategories = [
       {
         question: "How much do your courses cost?",
         answer:
-          "Private coaching starts from SGD 80/session. Corporate training has group rates (contact us for quotes). Immersion programs start from SGD 1,200/week. The Basic Traveller's Pack will be SGD 180 for the full 4-week course when available.",
+          "Private coaching starts from SGD 80/session. Corporate training has group rates (contact us for quotes). Immersion programs start from SGD 1,200/week. The Basic Traveller's Pack (SkillsFuture claimable) will be SGD 180 for the full 4-week course when available.",
       },
       {
         question: "Do you offer payment plans?",
@@ -72,7 +74,7 @@ const faqCategories = [
       {
         question: "Is there a free trial?",
         answer:
-          "No, but we offer free consultation sessions where you can meet your potential instructor, assess your current level, and experience our teaching style. This helps ensure our approach is right for you before committing.",
+          "We offer discounted trial classes for first-time learners where you can meet your potential instructor, assess your current level, and experience our teaching style. This helps ensure our approach is right for you before committing to a full course.",
       },
       {
         question: "What's included in the course fees?",
@@ -134,12 +136,14 @@ const faqCategories = [
 ];
 
 export default function FAQ() {
+  const { navigate } = useNavigation();
+  
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
 
       {/* Hero Section */}
-      <section className="bg-thai-forest-deep text-white py-24">
+      <SectionWrapper sectionIndex={1} variant="hero">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="font-display text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">
@@ -151,10 +155,10 @@ export default function FAQ() {
             </p>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* FAQ Content */}
-      <section className="py-20">
+      <SectionWrapper sectionIndex={2}>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             {faqCategories.map((category, categoryIndex) => (
@@ -185,16 +189,16 @@ export default function FAQ() {
             ))}
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* Still Have Questions */}
-      <section className="bg-thai-light-tint py-16">
+      <SectionWrapper sectionIndex={3} variant="cta">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="font-display text-3xl lg:text-4xl font-bold text-thai-text-dark mb-6">
+            <h2 className="font-display text-3xl lg:text-4xl font-bold text-white mb-6">
               Still Have Questions?
             </h2>
-            <p className="text-lg text-muted-foreground mb-8">
+            <p className="text-lg text-thai-text-secondary mb-8">
               Can't find the answer you're looking for? Our friendly team is
               here to help. Reach out to us and we'll get back to you within 24
               hours.
@@ -213,7 +217,7 @@ export default function FAQ() {
                 size="lg"
                 onClick={() =>
                   window.open(
-                    "https://wa.me/6512345678?text=Hi%20ThaiBridge%20Academy,%20I%20have%20a%20question%20about%20your%20courses",
+                    "https://wa.me/6588994462?text=Hi%20ThaiBridge%20Academy,%20I%20have%20a%20question%20about%20your%20courses",
                     "_blank"
                   )
                 }
@@ -223,10 +227,10 @@ export default function FAQ() {
             </div>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* Quick Links */}
-      <section className="py-16">
+      <SectionWrapper sectionIndex={4}>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h3 className="font-display text-2xl font-bold text-center text-thai-text-dark mb-8">
@@ -236,7 +240,7 @@ export default function FAQ() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <Card
                 className="shadow-thai-soft hover:shadow-thai-medium transition-thai cursor-pointer"
-                onClick={() => (window.location.href = "/courses")}
+                onClick={() => navigate("/courses")}
               >
                 <CardContent className="p-6 text-center">
                   <h4 className="font-semibold text-thai-text-dark mb-2">
@@ -251,7 +255,7 @@ export default function FAQ() {
 
               <Card
                 className="shadow-thai-soft hover:shadow-thai-medium transition-thai cursor-pointer"
-                onClick={() => (window.location.href = "/reviews")}
+                onClick={() => navigate("/reviews")}
               >
                 <CardContent className="p-6 text-center">
                   <h4 className="font-semibold text-thai-text-dark mb-2">
@@ -266,7 +270,7 @@ export default function FAQ() {
 
               <Card
                 className="shadow-thai-soft hover:shadow-thai-medium transition-thai cursor-pointer"
-                onClick={() => (window.location.href = "/about")}
+                onClick={() => navigate("/about")}
               >
                 <CardContent className="p-6 text-center">
                   <h4 className="font-semibold text-thai-text-dark mb-2">
@@ -281,7 +285,7 @@ export default function FAQ() {
             </div>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       <Footer />
     </div>

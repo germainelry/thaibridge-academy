@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { SectionWrapper } from "@/components/SectionWrapper";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -73,7 +74,7 @@ const courses = [
   },
   {
     id: 4,
-    title: "Basic Traveller's Pack (Group)",
+    title: "Basic Traveller's Pack (SkillsFuture Claimable)",
     description:
       "Essential Thai phrases and cultural knowledge for travelers. Learn to make simple conversations with locals and navigate Thailand with confidence.",
     icon: Heart,
@@ -94,12 +95,24 @@ const courses = [
 
 export default function Courses() {
   const [showEmailPopup, setShowEmailPopup] = useState(false);
+
+  // Map course IDs to their specific routes
+  const getCourseRoute = (courseId: number) => {
+    const routeMap: { [key: number]: string } = {
+      1: "/courses/private-coaching",
+      2: "/courses/corporate-training", 
+      3: "/courses/immersion-program",
+      4: "/courses/travellers-pack"
+    };
+    return routeMap[courseId] || "/courses";
+  };
+  
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
 
       {/* Hero Section */}
-      <section className="bg-thai-forest-deep text-white py-24">
+      <SectionWrapper sectionIndex={1} variant="hero">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="font-display text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">
@@ -111,10 +124,10 @@ export default function Courses() {
             </p>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* Courses Grid */}
-      <section className="py-20">
+      <SectionWrapper sectionIndex={2}>
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
             {courses.map((course) => {
@@ -202,9 +215,9 @@ export default function Courses() {
                         {course.available ? (
                         <Button
                           className="w-full"
-                          onClick={() => (window.location.href = "/contact")}
+                          onClick={() => (window.location.href = getCourseRoute(course.id))}
                         >
-                            Enroll Now
+                            Learn More
                           </Button>
                         ) : (
                           <Button
@@ -222,24 +235,24 @@ export default function Courses() {
             })}
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* CTA Section */}
-      <section className="bg-thai-light-tint py-16">
+      <SectionWrapper sectionIndex={3} variant="cta">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="font-display text-3xl lg:text-4xl font-bold text-thai-text-dark mb-6">
+          <h2 className="font-display text-3xl lg:text-4xl font-bold text-white mb-6">
             Ready to Start Your Thai Journey?
           </h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Not sure which course is right for you? Book a free consultation
-            with our language experts to discuss your goals and find the perfect
-            program.
+          <p className="text-lg text-thai-text-secondary mb-8 max-w-2xl mx-auto">
+            Not sure which course is right for you? Book a discounted trial class
+            with our language experts to experience our teaching style and find the perfect
+            program for your needs.
           </p>
           <Button size="lg" onClick={() => (window.location.href = "/contact")}>
-            Book Free Consultation
+            Book Trial Class
           </Button>
         </div>
-      </section>
+      </SectionWrapper>
 
       <Footer />
       <EmailPopup isOpen={showEmailPopup} onClose={() => setShowEmailPopup(false)} />

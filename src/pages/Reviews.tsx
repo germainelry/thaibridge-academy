@@ -1,16 +1,18 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { SectionWrapper } from "@/components/SectionWrapper";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star } from "lucide-react";
 import { useEffect, useState } from "react";
 import { format } from 'date-fns';
+import { Button } from "@/components/ui/button";
 
 const stats = [
   { number: "200+", label: "Happy Students" },
   { number: "4.8/5", label: "Average Rating" },
   { number: "95%", label: "Course Completion Rate" },
-  { number: "3+", label: "Years of Excellence" },
+  { number: "2+", label: "Years of Excellence" },
 ];
 
 export default function Reviews() {
@@ -39,18 +41,14 @@ export default function Reviews() {
     ));
   };
 
-  // Animation state for Leave a Review button
-  const [popIn, setPopIn] = useState(false);
-  useEffect(() => {
-    setPopIn(true);
-  }, []);
+
 
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
 
       {/* Hero Section */}
-      <section className="bg-thai-forest-deep text-white py-24">
+      <SectionWrapper sectionIndex={1} variant="hero">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="font-display text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">
@@ -73,10 +71,10 @@ export default function Reviews() {
             </div>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* Stats Section */}
-      <section className="py-16 bg-thai-light-tint">
+      <SectionWrapper sectionIndex={2}>
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
             {stats.map((stat, index) => (
@@ -89,29 +87,14 @@ export default function Reviews() {
             ))}
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* Reviews Grid */}
-      <section className="py-20">
+      <SectionWrapper sectionIndex={3}>
         <div className="container mx-auto px-4">
           <h2 className="font-display text-3xl lg:text-4xl font-bold text-center text-thai-text-dark mb-12">
             What Our Students Say
           </h2>
-
-          <div className="flex flex-col items-center mb-10">
-            <a
-              href="https://thaibridge.app.n8n.cloud/form/145db122-0763-4660-9d68-11781099a011"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`leave-review-btn bg-thai-gold hover:bg-thai-gold/90 text-thai-forest-dark font-semibold px-8 py-3 rounded-lg shadow-thai-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-thai-gold focus:ring-offset-2${popIn ? " pop-in" : ""}`}
-              style={{ minWidth: 200, textAlign: "center" }}
-            >
-              Leave a Review
-            </a>
-            <span className="mt-3 text-thai-text-secondary text-sm text-center block px-2 sm:px-0">
-              We value your feedback! ☺️ Kindly share your experience with us and help others on their Thai learning journey.
-            </span>
-          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {loading ? (
@@ -150,10 +133,61 @@ export default function Reviews() {
             )}
           </div>
         </div>
-      </section>
+      </SectionWrapper>
+
+      {/* Leave a Review Section */}
+      <SectionWrapper sectionIndex={4} variant="gradient">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="mb-8">
+              <h2 className="font-display text-3xl lg:text-4xl font-bold text-thai-text-dark mb-4">
+                Share Your Experience
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6">
+                Help future students by sharing your ThaiBridge Academy journey. Your feedback helps us improve and guides others in their Thai learning adventure.
+              </p>
+              
+              {/* Social Proof */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8 max-w-2xl mx-auto">
+                <div className="flex flex-col items-center text-center p-4 bg-thai-light-tint rounded-lg border border-thai-gold/20 hover:border-thai-gold/40 transition-thai group">
+                  <div className="w-10 h-10 bg-thai-gold/20 rounded-full flex items-center justify-center mb-3 group-hover:bg-thai-gold/30 transition-thai">
+                    <Star className="w-5 h-5 text-thai-gold fill-current" />
+                  </div>
+                  <span className="font-semibold text-thai-text-dark">200+ Reviews</span>
+                  <span className="text-sm text-muted-foreground">Verified experiences</span>
+                </div>
+                
+                <div className="flex flex-col items-center text-center p-4 bg-thai-light-tint rounded-lg border border-thai-gold/20 hover:border-thai-gold/40 transition-thai group">
+                  <div className="w-10 h-10 bg-thai-gold/20 rounded-full flex items-center justify-center mb-3 group-hover:bg-thai-gold/30 transition-thai">
+                    <span className="text-lg">⚡</span>
+                  </div>
+                  <span className="font-semibold text-thai-text-dark">Under 3 Minutes</span>
+                  <span className="text-sm text-muted-foreground">Quick & easy</span>
+                </div>
+                
+                <div className="flex flex-col items-center text-center p-4 bg-thai-light-tint rounded-lg border border-thai-gold/20 hover:border-thai-gold/40 transition-thai group">
+                  <div className="w-10 h-10 bg-thai-gold/20 rounded-full flex items-center justify-center mb-3 group-hover:bg-thai-gold/30 transition-thai">
+                    <span className="text-lg">👥</span>
+                  </div>
+                  <span className="font-semibold text-thai-text-dark">Help Others</span>
+                  <span className="text-sm text-muted-foreground">Support learners</span>
+                </div>
+              </div>
+            </div>
+
+            <Button
+              size="lg"
+              className="bg-thai-gold hover:bg-thai-gold/90 text-thai-forest-dark font-semibold shadow-thai-medium hover:shadow-thai-strong transition-all duration-200"
+              onClick={() => window.open('https://thaibridge.app.n8n.cloud/form/145db122-0763-4660-9d68-11781099a011', '_blank')}
+            >
+              Leave a Review
+            </Button>
+          </div>
+        </div>
+      </SectionWrapper>
 
       {/* CTA Section */}
-      <section className="bg-thai-forest-deep text-white py-16">
+      <SectionWrapper sectionIndex={5} variant="cta">
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-display text-3xl lg:text-4xl font-bold mb-6">
             Ready to Join Our Community?
@@ -173,11 +207,11 @@ export default function Reviews() {
               onClick={() => (window.location.href = "/contact")}
               className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-3 rounded-lg font-semibold transition-thai"
             >
-              Book Free Consultation
+              Book Trial Class
             </button>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       <Footer />
     </div>

@@ -3,6 +3,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { EmailPopup } from "@/components/EmailPopup";
 import { ScrollDown } from "@/components/ScrollDown";
+import { SectionWrapper } from "@/components/SectionWrapper";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -22,6 +23,13 @@ const Index = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
+      // Check if popup was already shown in this session
+      const shownInSession = sessionStorage.getItem("emailPopupShownInSession");
+      if (shownInSession) {
+        return; // Don't show if already shown in this session
+      }
+
+      // Check if popup was closed recently (within 30 days)
       const lastClosed = localStorage.getItem("emailPopupClosed");
       if (
         !lastClosed ||
@@ -29,6 +37,8 @@ const Index = () => {
           30 * 24 * 60 * 60 * 1000
       ) {
         setShowEmailPopup(true);
+        // Mark as shown in this session
+        sessionStorage.setItem("emailPopupShownInSession", "true");
       }
     }, 3000); // 3 second delay
 
@@ -61,7 +71,7 @@ const Index = () => {
       available: true,
     },
     {
-      title: "Basic Traveller's Pack (Group)",
+      title: "Basic Traveller's Pack (SkillsFuture Claimable)",
       description:
         "For those who want to be able to make simple conversations with the locals within a short period of time.",
       icon: Heart,
@@ -126,34 +136,36 @@ const Index = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section
-        className="min-h-screen w-full text-white flex items-center justify-center relative"
-        style={{
-          backgroundImage: "url('/background.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/60" />
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="font-display text-5xl lg:text-7xl font-bold mb-6 animate-fade-in">
-            Speak Thai. Connect Deeper.
-          </h1>
-          <p className="text-xl lg:text-2xl text-thai-text-secondary leading-relaxed mb-12 max-w-4xl mx-auto animate-slide-up">
-            Learn from native Thai speakers—online or through our unique
-            immersion experiences. Connect authentically, travel deeper, and
-            discover the Thailand locals know.
-          </p>
-        </div>
-        <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2">
-          <ScrollDown />
-        </div>
-      </section>
+      <SectionWrapper sectionIndex={1} variant="hero" paddingY="none">
+        <section
+          className="min-h-screen w-full text-white flex items-center justify-center relative"
+          style={{
+            backgroundImage: "url('/background.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-black/60" />
+          <div className="container mx-auto px-4 text-center relative z-10">
+            <h1 className="font-display text-5xl lg:text-7xl font-bold mb-6 animate-fade-in">
+              Speak Thai. Connect Deeper.
+            </h1>
+            <p className="text-xl lg:text-2xl text-thai-text-secondary leading-relaxed mb-12 max-w-4xl mx-auto animate-slide-up">
+              Learn from native Thai speakers—online or through our unique
+              immersion experiences. Connect authentically, travel deeper, and
+              discover the Thailand locals know.
+            </p>
+          </div>
+          <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2">
+            <ScrollDown />
+          </div>
+        </section>
+      </SectionWrapper>
 
       {/* Reviews Summary */}
-      <section className="py-16 bg-thai-light-tint">
+      <SectionWrapper sectionIndex={2}>
         <div className="container mx-auto px-4 text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
             {[...Array(5)].map((_, i) => (
@@ -173,10 +185,10 @@ const Index = () => {
             Read All Reviews
           </Button>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* Popular Courses */}
-      <section id="courses" className="py-20">
+      <SectionWrapper sectionIndex={3}>
         <div className="container mx-auto px-4">
           <h2 className="font-display text-3xl lg:text-4xl font-bold text-center text-thai-text-dark mb-12">
             Course Offerings
@@ -231,10 +243,10 @@ const Index = () => {
             })}
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* About Section */}
-      <section className="py-20 bg-thai-light-tint">
+      <SectionWrapper sectionIndex={4}>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="font-display text-3xl lg:text-4xl font-bold text-thai-text-dark mb-8">
@@ -266,10 +278,10 @@ const Index = () => {
             </Button>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* Why Join Us */}
-      <section className="py-20">
+      <SectionWrapper sectionIndex={5}>
         <div className="container mx-auto px-4">
           <h2 className="font-display text-3xl lg:text-4xl font-bold text-center text-thai-text-dark mb-12">
             Why Join Us
@@ -298,10 +310,10 @@ const Index = () => {
             })}
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
-      {/* Testimonials (Static in nature, please update this section manually)*/}
-      <section className="py-20 bg-thai-light-tint">
+      {/* Testimonials */}
+      <SectionWrapper sectionIndex={6}>
         <div className="container mx-auto px-4">
           <h2 className="font-display text-3xl lg:text-4xl font-bold text-center text-thai-text-dark mb-12">
             What Our Students Say
@@ -324,7 +336,7 @@ const Index = () => {
                   </div>
                   <div className="flex-1 flex flex-col">
                     <p className="text-thai-forest-dark italic text-lg text-center mb-4">
-                      “{testimonial.quote}”
+                      "{testimonial.quote}"
                     </p>
                   </div>
                   <div className="mt-auto pt-4 text-center">
@@ -340,10 +352,10 @@ const Index = () => {
             ))}
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* Final CTA */}
-      <section className="bg-thai-forest-deep text-white py-16">
+      <SectionWrapper sectionIndex={7} variant="cta">
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-display text-3xl lg:text-4xl font-bold mb-6">
             Start Your Thai Journey Today
@@ -359,10 +371,10 @@ const Index = () => {
             className="bg-primary hover:bg-primary/90"
             onClick={() => (window.location.href = "/contact")}
           >
-            Book Free Consultation
+            Book Trial Class
           </Button>
         </div>
-      </section>
+      </SectionWrapper>
 
       <Footer />
 

@@ -11,6 +11,25 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { useNavigationLink } from "@/hooks/use-navigation";
+
+// Navigation Link Component with smooth scrolling
+const NavigationLink: React.FC<{ 
+  href: string | { path: string; section: string }; 
+  children: React.ReactNode; 
+  className?: string;
+}> = ({ href, children, className = "" }) => {
+  const navigationProps = useNavigationLink(href);
+  
+  return (
+    <a
+      {...navigationProps}
+      className={className}
+    >
+      {children}
+    </a>
+  );
+};
 
 export function Footer() {
   const { toast } = useToast();
@@ -50,22 +69,24 @@ export function Footer() {
 
   const footerLinks = {
     courses: [
-      { name: "1-to-1 Private Coaching", href: "/courses" },
-      { name: "Corporate Training", href: "/courses" },
-      { name: "Immersion Programs", href: "/courses" },
-      { name: "Free Consultation", href: "/contact" },
+      { name: "All Courses", href: "/courses" },
+      { name: "Private Coaching", href: "/courses/private-coaching" },
+      { name: "Corporate Training", href: "/courses/corporate-training" },
+      { name: "Immersion Programs", href: "/courses/immersion-program" },
+      { name: "Traveller's Pack", href: "/courses/travellers-pack" },
     ],
     company: [
+      { name: "Home", href: "/" },
       { name: "About Us", href: "/about" },
-      { name: "Our Instructors", href: "/about" },
+      { name: "Affiliate Program", href: "/affiliate" },
+      { name: "Our Instructors", href: { path: "/about", section: "instructors" } },
       { name: "Student Reviews", href: "/reviews" },
       { name: "FAQ", href: "/faq" },
     ],
     support: [
       { name: "Contact Us", href: "/contact" },
-      { name: "Privacy Policy", href: "/policy" },
-      { name: "Terms of Service", href: "/policy" },
-      { name: "Refund Policy", href: "/policy" },
+      { name: "Terms & Conditions", href: "/policy" },
+      { name: "Social Media", href: { path: "/contact", section: "social-media" } },
     ],
   };
 
@@ -162,11 +183,9 @@ export function Footer() {
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-thai-gold mt-1 flex-shrink-0" />
                 <div>
-                  <p className="text-white font-medium">Visit Our School</p>
+                  <p className="text-white font-medium">Based in Singapore</p>
                   <p className="text-thai-text-secondary text-sm">
-                    123 Orchard Road, #12-34
-                    <br />
-                    Singapore 238858
+                    We are open to students worldwide!
                   </p>
                 </div>
               </div>
@@ -174,16 +193,16 @@ export function Footer() {
               <div className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-thai-gold mt-1 flex-shrink-0" />
                 <div>
-                  <p className="text-white font-medium">Call or WhatsApp</p>
+                  <p className="text-white font-medium">WhatsApp Us</p>
                   <div className="space-y-1">
                     <a
-                      href="tel:+6512345678"
+                      href="tel:+6588994462"
                       className="text-thai-text-secondary text-sm hover:text-white transition-thai block"
                     >
-                      +65 1234 5678
+                      +65 8899 4462
                     </a>
                     <a
-                      href="https://wa.me/6512345678?text=Hi%20ThaiBridge%20Academy,%20I'm%20interested%20in%20learning%20Thai"
+                      href="https://wa.me/6588994462?text=Hi%20ThaiBridge%20Academy,%20I'm%20interested%20in%20learning%20Thai"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-thai-gold text-sm hover:text-thai-gold/80 transition-thai inline-flex items-center gap-1"
@@ -199,10 +218,10 @@ export function Footer() {
                 <div>
                   <p className="text-white font-medium">Email Us</p>
                   <a
-                    href="mailto:hello@thaibridgeacademy.sg"
+                    href="mailto:thaibridgecontact@gmail.com"
                     className="text-thai-text-secondary text-sm hover:text-white transition-thai"
                   >
-                    hello@thaibridgeacademy.sg
+                    thaibridgecontact@gmail.com
                   </a>
                 </div>
               </div>
@@ -215,12 +234,12 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.courses.map((link) => (
                 <li key={link.name}>
-                  <a
+                  <NavigationLink
                     href={link.href}
                     className="text-thai-text-secondary text-sm hover:text-white transition-thai"
                   >
                     {link.name}
-                  </a>
+                  </NavigationLink>
                 </li>
               ))}
             </ul>
@@ -231,12 +250,12 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <a
+                  <NavigationLink
                     href={link.href}
                     className="text-thai-text-secondary text-sm hover:text-white transition-thai"
                   >
                     {link.name}
-                  </a>
+                  </NavigationLink>
                 </li>
               ))}
             </ul>
@@ -247,12 +266,12 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.support.map((link) => (
                 <li key={link.name}>
-                  <a
+                  <NavigationLink
                     href={link.href}
                     className="text-thai-text-secondary text-sm hover:text-white transition-thai"
                   >
                     {link.name}
-                  </a>
+                  </NavigationLink>
                 </li>
               ))}
             </ul>
