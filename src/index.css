@@ -251,9 +251,15 @@ All colors are in HSL format for consistent theming across light/dark modes.
   }
 
   /* Focus management for keyboard navigation */
-  :focus {
+  /* Focus outline only for keyboard navigation */
+  :focus-visible {
     outline: 2px solid hsl(var(--thai-gold));
     outline-offset: 2px;
+  }
+
+  /* Remove default focus outline for mouse interactions */
+  :focus:not(:focus-visible) {
+    outline: none;
   }
 
   /* Smooth scrolling for all scroll containers */
