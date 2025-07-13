@@ -222,7 +222,7 @@ export default function About() {
           <Button 
             size="lg" 
             className="bg-primary hover:bg-primary/90"
-            onClick={() => window.location.href = '/contact'}
+            onClick={() => window.location.href = '/courses'}
           >
             Get Started Today
           </Button>
