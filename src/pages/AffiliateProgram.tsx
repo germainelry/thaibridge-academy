@@ -177,8 +177,8 @@ export default function AffiliateProgram() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="border-thai-sage/20 hover:border-thai-gold/30 transition-all duration-300">
               <CardHeader>
-                <div className="bg-thai-gold/10 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
-                  <Target className="w-6 h-6 text-thai-gold" />
+                <div className="bg-primary/10 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
+                  <Target className="w-6 h-6 text-primary" />
                 </div>
                 <CardTitle className="text-thai-forest-dark">Proven Conversion Rates</CardTitle>
               </CardHeader>
@@ -191,8 +191,8 @@ export default function AffiliateProgram() {
             
             <Card className="border-thai-sage/20 hover:border-thai-gold/30 transition-all duration-300">
               <CardHeader>
-                <div className="bg-thai-gold/10 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
-                  <Zap className="w-6 h-6 text-thai-gold" />
+                <div className="bg-primary/10 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
+                  <Zap className="w-6 h-6 text-primary" />
                 </div>
                 <CardTitle className="text-thai-forest-dark">Real-Time Tracking</CardTitle>
               </CardHeader>
@@ -205,8 +205,8 @@ export default function AffiliateProgram() {
             
             <Card className="border-thai-sage/20 hover:border-thai-gold/30 transition-all duration-300">
               <CardHeader>
-                <div className="bg-thai-gold/10 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
-                  <Shield className="w-6 h-6 text-thai-gold" />
+                <div className="bg-primary/10 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
+                  <Shield className="w-6 h-6 text-primary" />
                 </div>
                 <CardTitle className="text-thai-forest-dark">Reliable Payments</CardTitle>
               </CardHeader>
@@ -219,8 +219,8 @@ export default function AffiliateProgram() {
             
             <Card className="border-thai-sage/20 hover:border-thai-gold/30 transition-all duration-300">
               <CardHeader>
-                <div className="bg-thai-gold/10 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
-                  <FileText className="w-6 h-6 text-thai-gold" />
+                <div className="bg-primary/10 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
+                  <FileText className="w-6 h-6 text-primary" />
                 </div>
                 <CardTitle className="text-thai-forest-dark">Marketing Resources</CardTitle>
               </CardHeader>
@@ -233,8 +233,8 @@ export default function AffiliateProgram() {
             
             <Card className="border-thai-sage/20 hover:border-thai-gold/30 transition-all duration-300">
               <CardHeader>
-                <div className="bg-thai-gold/10 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
-                  <Users className="w-6 h-6 text-thai-gold" />
+                <div className="bg-primary/10 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
+                  <Users className="w-6 h-6 text-primary" />
                 </div>
                 <CardTitle className="text-thai-forest-dark">Dedicated Support</CardTitle>
               </CardHeader>
@@ -247,8 +247,8 @@ export default function AffiliateProgram() {
             
             <Card className="border-thai-sage/20 hover:border-thai-gold/30 transition-all duration-300">
               <CardHeader>
-                <div className="bg-thai-gold/10 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
-                  <Clock className="w-6 h-6 text-thai-gold" />
+                <div className="bg-primary/10 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
+                  <Clock className="w-6 h-6 text-primary" />
                 </div>
                 <CardTitle className="text-thai-forest-dark">120-Day Cookie Window</CardTitle>
               </CardHeader>
@@ -438,8 +438,8 @@ export default function AffiliateProgram() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="border-thai-sage/20">
               <CardHeader>
-                <div className="bg-thai-gold/10 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
-                  <Download className="w-6 h-6 text-thai-gold" />
+                <div className="bg-primary/10 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
+                  <Download className="w-6 h-6 text-primary" />
                 </div>
                 <CardTitle className="text-thai-forest-dark">Visual Assets</CardTitle>
               </CardHeader>
@@ -455,8 +455,8 @@ export default function AffiliateProgram() {
             
             <Card className="border-thai-sage/20">
               <CardHeader>
-                <div className="bg-thai-gold/10 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
-                  <Mail className="w-6 h-6 text-thai-gold" />
+                <div className="bg-primary/10 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
+                  <Mail className="w-6 h-6 text-primary" />
                 </div>
                 <CardTitle className="text-thai-forest-dark">Email Templates</CardTitle>
               </CardHeader>
@@ -472,8 +472,8 @@ export default function AffiliateProgram() {
             
             <Card className="border-thai-sage/20">
               <CardHeader>
-                <div className="bg-thai-gold/10 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
-                  <Globe className="w-6 h-6 text-thai-gold" />
+                <div className="bg-primary/10 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
+                  <Globe className="w-6 h-6 text-primary" />
                 </div>
                 <CardTitle className="text-thai-forest-dark">Social Media Kit</CardTitle>
               </CardHeader>
@@ -489,8 +489,8 @@ export default function AffiliateProgram() {
             
             <Card className="border-thai-sage/20">
               <CardHeader>
-                <div className="bg-thai-gold/10 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
-                  <FileText className="w-6 h-6 text-thai-gold" />
+                <div className="bg-primary/10 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
+                  <FileText className="w-6 h-6 text-primary" />
                 </div>
                 <CardTitle className="text-thai-forest-dark">Content Library</CardTitle>
               </CardHeader>
@@ -506,8 +506,8 @@ export default function AffiliateProgram() {
             
             <Card className="border-thai-sage/20">
               <CardHeader>
-                <div className="bg-thai-gold/10 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
-                  <BarChart3 className="w-6 h-6 text-thai-gold" />
+                <div className="bg-primary/10 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
+                  <BarChart3 className="w-6 h-6 text-primary" />
                 </div>
                 <CardTitle className="text-thai-forest-dark">Analytics Dashboard</CardTitle>
               </CardHeader>
@@ -523,8 +523,8 @@ export default function AffiliateProgram() {
             
             <Card className="border-thai-sage/20">
               <CardHeader>
-                <div className="bg-thai-gold/10 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
-                  <Users className="w-6 h-6 text-thai-gold" />
+                <div className="bg-primary/10 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
+                  <Users className="w-6 h-6 text-primary" />
                 </div>
                 <CardTitle className="text-thai-forest-dark">Training & Support</CardTitle>
               </CardHeader>
