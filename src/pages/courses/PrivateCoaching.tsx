@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { SectionWrapper } from "@/components/SectionWrapper";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -58,7 +59,7 @@ export default function PrivateCoaching() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="bg-thai-forest-deep text-white py-24">
+      <SectionWrapper sectionIndex={1} variant="hero">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <Badge className="mb-4 bg-thai-gold text-thai-forest-dark">Most Popular</Badge>
@@ -94,10 +95,10 @@ export default function PrivateCoaching() {
             </div>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* Benefits Section */}
-      <section className="py-20">
+      <SectionWrapper sectionIndex={2}>
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="font-display text-3xl lg:text-4xl font-bold text-center text-thai-text-dark mb-12">
@@ -121,10 +122,10 @@ export default function PrivateCoaching() {
             </div>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* Features Section */}
-      <section className="bg-thai-light-tint py-20">
+      <SectionWrapper sectionIndex={3}>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-display text-3xl lg:text-4xl font-bold text-center text-thai-text-dark mb-12">
@@ -140,7 +141,7 @@ export default function PrivateCoaching() {
             </div>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* Testimonials Section */}
       {/* <section className="py-20">
@@ -169,7 +170,7 @@ export default function PrivateCoaching() {
       </section> */}
 
       {/* CTA Section */}
-      <section className="bg-thai-forest-deep text-white py-16">
+      <SectionWrapper sectionIndex={4} variant="cta">
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-display text-3xl lg:text-4xl font-bold mb-6">
             Ready to Start Your Personalized Journey?
@@ -195,7 +196,7 @@ export default function PrivateCoaching() {
             </Button> */}
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       <Footer />
     </div>

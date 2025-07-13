@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { SectionWrapper } from "@/components/SectionWrapper";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const policySections = [
@@ -143,7 +144,7 @@ export default function Policy() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="bg-thai-forest-deep text-white py-24">
+      <SectionWrapper sectionIndex={1} variant="hero">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="font-display text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">
@@ -154,10 +155,10 @@ export default function Policy() {
             </p>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* Policy Sections */}
-      <section className="py-20">
+      <SectionWrapper sectionIndex={2}>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto space-y-12">
             {policySections.map((section, index) => (
@@ -189,16 +190,16 @@ export default function Policy() {
             ))}
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* Contact Section */}
-      <section className="bg-thai-light-tint py-16">
+      <SectionWrapper sectionIndex={3} variant="cta">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="font-display text-3xl font-bold text-thai-text-dark mb-6">
+            <h2 className="font-display text-3xl font-bold text-white mb-6">
               Questions About Our Policies?
             </h2>
-            <p className="text-lg text-muted-foreground mb-8">
+            <p className="text-lg text-thai-text-secondary mb-8">
               If you have any questions about these policies or need clarification on any terms, 
               please don't hesitate to contact us. We're here to help.
             </p>
@@ -213,17 +214,17 @@ export default function Policy() {
               
               <button 
                 onClick={() => window.location.href = 'mailto:legal@thaibridgeacademy.sg'}
-                className="bg-white hover:bg-gray-50 text-thai-text-dark border border-border px-8 py-3 rounded-lg font-semibold transition-thai"
+                className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-3 rounded-lg font-semibold transition-thai"
               >
                 Email Legal Team
               </button>
             </div>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* Quick Reference */}
-      <section className="py-16">
+      <SectionWrapper sectionIndex={4}>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h3 className="font-display text-2xl font-bold text-center text-thai-text-dark mb-8">
@@ -260,7 +261,7 @@ export default function Policy() {
             </div>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       <Footer />
     </div>

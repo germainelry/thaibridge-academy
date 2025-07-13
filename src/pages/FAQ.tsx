@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { SectionWrapper } from "@/components/SectionWrapper";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -139,7 +140,7 @@ export default function FAQ() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="bg-thai-forest-deep text-white py-24">
+      <SectionWrapper sectionIndex={1} variant="hero">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="font-display text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">
@@ -151,10 +152,10 @@ export default function FAQ() {
             </p>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* FAQ Content */}
-      <section className="py-20">
+      <SectionWrapper sectionIndex={2}>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             {faqCategories.map((category, categoryIndex) => (
@@ -185,16 +186,16 @@ export default function FAQ() {
             ))}
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* Still Have Questions */}
-      <section className="bg-thai-light-tint py-16">
+      <SectionWrapper sectionIndex={3} variant="cta">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="font-display text-3xl lg:text-4xl font-bold text-thai-text-dark mb-6">
+            <h2 className="font-display text-3xl lg:text-4xl font-bold text-white mb-6">
               Still Have Questions?
             </h2>
-            <p className="text-lg text-muted-foreground mb-8">
+            <p className="text-lg text-thai-text-secondary mb-8">
               Can't find the answer you're looking for? Our friendly team is
               here to help. Reach out to us and we'll get back to you within 24
               hours.
@@ -223,10 +224,10 @@ export default function FAQ() {
             </div>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* Quick Links */}
-      <section className="py-16">
+      <SectionWrapper sectionIndex={4}>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h3 className="font-display text-2xl font-bold text-center text-thai-text-dark mb-8">
@@ -281,7 +282,7 @@ export default function FAQ() {
             </div>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       <Footer />
     </div>

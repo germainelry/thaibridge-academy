@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { SectionWrapper } from "@/components/SectionWrapper";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star } from "lucide-react";
@@ -47,7 +48,7 @@ export default function Reviews() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="bg-thai-forest-deep text-white py-24">
+      <SectionWrapper sectionIndex={1} variant="hero">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="font-display text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">
@@ -70,10 +71,10 @@ export default function Reviews() {
             </div>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* Stats Section */}
-      <section className="py-16 bg-thai-light-tint">
+      <SectionWrapper sectionIndex={2}>
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
             {stats.map((stat, index) => (
@@ -86,10 +87,10 @@ export default function Reviews() {
             ))}
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* Reviews Grid */}
-      <section className="py-20">
+      <SectionWrapper sectionIndex={3}>
         <div className="container mx-auto px-4">
           <h2 className="font-display text-3xl lg:text-4xl font-bold text-center text-thai-text-dark mb-12">
             What Our Students Say
@@ -132,10 +133,10 @@ export default function Reviews() {
             )}
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* Leave a Review Section */}
-      <section className="bg-gradient-to-br from-thai-light-tint to-thai-gold/10 py-16">
+      <SectionWrapper sectionIndex={4} variant="gradient">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <div className="mb-8">
@@ -174,10 +175,10 @@ export default function Reviews() {
             </Button>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* CTA Section */}
-      <section className="bg-thai-forest-deep text-white py-16">
+      <SectionWrapper sectionIndex={5} variant="cta">
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-display text-3xl lg:text-4xl font-bold mb-6">
             Ready to Join Our Community?
@@ -201,7 +202,7 @@ export default function Reviews() {
             </button>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       <Footer />
     </div>

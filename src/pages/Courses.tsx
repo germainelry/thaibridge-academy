@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { SectionWrapper } from "@/components/SectionWrapper";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -105,12 +106,13 @@ export default function Courses() {
     };
     return routeMap[courseId] || "/courses";
   };
+  
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
 
       {/* Hero Section */}
-      <section className="bg-thai-forest-deep text-white py-24">
+      <SectionWrapper sectionIndex={1} variant="hero">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="font-display text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">
@@ -122,10 +124,10 @@ export default function Courses() {
             </p>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* Courses Grid */}
-      <section className="py-20">
+      <SectionWrapper sectionIndex={2}>
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
             {courses.map((course) => {
@@ -233,15 +235,15 @@ export default function Courses() {
             })}
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* CTA Section */}
-      <section className="bg-thai-light-tint py-16">
+      <SectionWrapper sectionIndex={3} variant="cta">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="font-display text-3xl lg:text-4xl font-bold text-thai-text-dark mb-6">
+          <h2 className="font-display text-3xl lg:text-4xl font-bold text-white mb-6">
             Ready to Start Your Thai Journey?
           </h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-thai-text-secondary mb-8 max-w-2xl mx-auto">
             Not sure which course is right for you? Book a discounted trial class
             with our language experts to experience our teaching style and find the perfect
             program for your needs.
@@ -250,7 +252,7 @@ export default function Courses() {
             Book Trial Class
           </Button>
         </div>
-      </section>
+      </SectionWrapper>
 
       <Footer />
       <EmailPopup isOpen={showEmailPopup} onClose={() => setShowEmailPopup(false)} />

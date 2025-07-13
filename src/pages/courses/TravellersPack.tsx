@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { SectionWrapper } from "@/components/SectionWrapper";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -96,7 +97,7 @@ export default function TravellersPack() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="bg-thai-forest-deep text-white py-24">
+      <SectionWrapper sectionIndex={1} variant="hero">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex flex-col sm:flex-row gap-2 justify-center mb-4">
@@ -135,10 +136,10 @@ export default function TravellersPack() {
             </div>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* SkillsFuture Section */}
-      <section className="py-20 bg-gradient-to-br from-primary/5 to-thai-gold/5">
+      <SectionWrapper sectionIndex={2} variant="gradient">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
@@ -160,10 +161,10 @@ export default function TravellersPack() {
             </div>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* Benefits Section */}
-      <section className="py-20">
+      <SectionWrapper sectionIndex={3}>
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="font-display text-3xl lg:text-4xl font-bold text-center text-thai-text-dark mb-12">
@@ -187,10 +188,10 @@ export default function TravellersPack() {
             </div>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* Features Section */}
-      <section className="py-20">
+      <SectionWrapper sectionIndex={4}>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-display text-3xl lg:text-4xl font-bold text-center text-thai-text-dark mb-12">
@@ -206,8 +207,7 @@ export default function TravellersPack() {
             </div>
           </div>
         </div>
-      </section>
-
+      </SectionWrapper>
 
       {/* Testimonials Section
       <section className="bg-thai-light-tint py-20">
@@ -242,7 +242,7 @@ export default function TravellersPack() {
       </section>
 
       {/* Course Status */}
-      <section className="py-16 bg-primary/5">
+      <SectionWrapper sectionIndex={5} variant="gradient">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto">
             <Badge className="mb-4 bg-orange-500 text-white">Coming Soon</Badge>
@@ -262,10 +262,10 @@ export default function TravellersPack() {
             </Button>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* CTA Section */}
-      <section className="bg-thai-forest-deep text-white py-16">
+      <SectionWrapper sectionIndex={6} variant="cta">
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-display text-3xl lg:text-4xl font-bold mb-6">
             Ready to Enhance Your Travel Experience?
@@ -282,17 +282,9 @@ export default function TravellersPack() {
             >
               Register Interest
             </Button>
-            {/* <Button
-              variant="ghost"
-              size="lg"
-              className="border-2 border-white/20 bg-transparent text-white hover:bg-white/10 hover:text-white"
-              onClick={() => window.location.href = "/contact"}
-            >
-              Learn About SkillsFuture
-            </Button> */}
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       <Footer />
     </div>

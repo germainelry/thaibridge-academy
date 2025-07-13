@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { SectionWrapper } from "@/components/SectionWrapper";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -153,7 +154,7 @@ export default function Contact() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="bg-thai-forest-deep text-white py-24">
+      <SectionWrapper sectionIndex={1} variant="hero">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="font-display text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">
@@ -165,10 +166,10 @@ export default function Contact() {
             </p>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* Contact Form & Info */}
-      <section className="py-20">
+      <SectionWrapper sectionIndex={2}>
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-stretch">
@@ -343,10 +344,10 @@ export default function Contact() {
             </div>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* Social Media Section */}
-      <section className="py-16 bg-gradient-to-br from-thai-forest-deep/5 to-primary/5">
+      <SectionWrapper sectionIndex={3} variant="gradient">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             {/* Section Header */}
@@ -407,15 +408,15 @@ export default function Contact() {
             </div>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* FAQ Preview */}
-      <section className="bg-thai-light-tint py-16">
+      <SectionWrapper sectionIndex={4} variant="cta">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="font-display text-3xl font-bold text-thai-text-dark mb-6">
+          <h2 className="font-display text-3xl font-bold text-white mb-6">
             Have Questions?
           </h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-thai-text-secondary mb-8 max-w-2xl mx-auto">
             Check out our frequently asked questions for quick answers to common
             inquiries about our courses and programs.
           </p>
@@ -427,7 +428,7 @@ export default function Contact() {
             View FAQ
           </Button>
         </div>
-      </section>
+      </SectionWrapper>
 
       <Footer />
     </div>
