@@ -78,6 +78,7 @@ export function Footer() {
     company: [
       { name: "Home", href: "/" },
       { name: "About Us", href: "/about" },
+      { name: "Affiliate Program", href: "/affiliate" },
       { name: "Our Instructors", href: { path: "/about", section: "instructors" } },
       { name: "Student Reviews", href: "/reviews" },
       { name: "FAQ", href: "/faq" },

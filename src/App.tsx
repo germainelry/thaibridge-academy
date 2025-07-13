@@ -16,6 +16,7 @@ import PrivateCoaching from "./pages/courses/PrivateCoaching";
 import CorporateTraining from "./pages/courses/CorporateTraining";
 import ImmersionProgram from "./pages/courses/ImmersionProgram";
 import TravellersPack from "./pages/courses/TravellersPack";
+import AffiliateProgram from "./pages/AffiliateProgram";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +39,7 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/policy" element={<Policy />} />
+            <Route path="/affiliate" element={<AffiliateProgram />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

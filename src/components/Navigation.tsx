@@ -7,7 +7,9 @@ export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isCoursesOpen, setIsCoursesOpen] = useState(false);
+  const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [closeTimeout, setCloseTimeout] = useState<NodeJS.Timeout | null>(null);
+  const [aboutCloseTimeout, setAboutCloseTimeout] = useState<NodeJS.Timeout | null>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -24,11 +26,14 @@ export function Navigation() {
   }, [location.pathname]);
 
   const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
     { name: "Reviews", href: "/reviews" },
     { name: "Contact", href: "/contact" },
     { name: "FAQ", href: "/faq" },
+  ];
+
+  const aboutLinks = [
+    { name: "About Us", href: "/about" },
+    { name: "Affiliate Program", href: "/affiliate" },
   ];
 
   const courseLinks = [
@@ -60,14 +65,32 @@ export function Navigation() {
     setCloseTimeout(timeout);
   };
 
+  const handleAboutMouseEnter = () => {
+    if (aboutCloseTimeout) {
+      clearTimeout(aboutCloseTimeout);
+      setAboutCloseTimeout(null);
+    }
+    setIsAboutOpen(true);
+  };
+
+  const handleAboutMouseLeave = () => {
+    const timeout = setTimeout(() => {
+      setIsAboutOpen(false);
+    }, 150); // 150ms delay
+    setAboutCloseTimeout(timeout);
+  };
+
   // Cleanup timeout on unmount
   useEffect(() => {
     return () => {
       if (closeTimeout) {
         clearTimeout(closeTimeout);
       }
+      if (aboutCloseTimeout) {
+        clearTimeout(aboutCloseTimeout);
+      }
     };
-  }, [closeTimeout]);
+  }, [closeTimeout, aboutCloseTimeout]);
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-thai ${
@@ -95,21 +118,58 @@ export function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
-              {/* Home and About */}
-              {navLinks.slice(0, 2).map((link) => (
+            <div className="ml-10 flex items-center justify-evenly flex-1">
+              {/* Home */}
+              <a
+                href="/"
+                className={`px-4 py-2 text-base font-medium transition-thai ${
+                  isActive('/')
+                    ? 'text-thai-gold border-b-2 border-thai-gold'
+                    : 'text-white hover:text-thai-gold'
+                }`}
+              >
+                Home
+              </a>
+
+              {/* About Dropdown */}
+              <div 
+                className="relative"
+                onMouseEnter={handleAboutMouseEnter}
+                onMouseLeave={handleAboutMouseLeave}
+              >
                 <a
-                  key={link.name}
-                  href={link.href}
-                  className={`px-3 py-2 text-base font-medium transition-thai ${
-                    isActive(link.href)
+                  href="/about"
+                  className={`px-4 py-2 text-base font-medium transition-thai flex items-center gap-1 ${
+                    location.pathname.startsWith('/about') || location.pathname.startsWith('/affiliate')
                       ? 'text-thai-gold border-b-2 border-thai-gold'
                       : 'text-white hover:text-thai-gold'
                   }`}
                 >
-                  {link.name}
+                  About
+                                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isAboutOpen ? 'rotate-180' : ''}`} />
                 </a>
-              ))}
+                
+                {/* Dropdown Menu */}
+                {isAboutOpen && (
+                  <div className="absolute top-full left-0 w-48 bg-white rounded-lg shadow-lg border border-gray-200 z-50">
+                    <div className="py-2">
+                      {aboutLinks.map((link) => (
+                        <a
+                          key={link.name}
+                          href={link.href}
+                          className={`block px-4 py-3 text-sm transition-colors ${
+                            isActive(link.href)
+                              ? 'text-primary bg-thai-light-tint font-medium'
+                              : 'text-gray-700 hover:text-primary hover:bg-thai-light-tint'
+                          }`}
+                        >
+                          {link.name}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
               
               {/* Courses Dropdown */}
               <div 
@@ -117,16 +177,17 @@ export function Navigation() {
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
-                <button
-                  className={`px-3 py-2 text-base font-medium transition-thai flex items-center gap-1 ${
+                <a
+                  href="/courses"
+                  className={`px-4 py-2 text-base font-medium transition-thai flex items-center gap-1 ${
                     location.pathname.startsWith('/courses')
                       ? 'text-thai-gold border-b-2 border-thai-gold'
                       : 'text-white hover:text-thai-gold'
                   }`}
                 >
                   Courses
-                  <ChevronDown className={`w-4 h-4 transition-transform ${isCoursesOpen ? 'rotate-180' : ''}`} />
-                </button>
+                                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isCoursesOpen ? 'rotate-180' : ''}`} />
+                </a>
                 
                 {/* Dropdown Menu */}
                 {isCoursesOpen && (
@@ -151,11 +212,11 @@ export function Navigation() {
               </div>
 
               {/* Reviews, Contact, and FAQ */}
-              {navLinks.slice(2).map((link) => (
+              {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className={`px-3 py-2 text-base font-medium transition-thai ${
+                  className={`px-4 py-2 text-base font-medium transition-thai ${
                     isActive(link.href)
                       ? 'text-thai-gold border-b-2 border-thai-gold'
                       : 'text-white hover:text-thai-gold'
@@ -184,20 +245,37 @@ export function Navigation() {
         {isOpen && (
           <div className="md:hidden bg-thai-forest-dark/95 backdrop-blur-sm border-t border-white/10">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {/* Home and About */}
-              {navLinks.slice(0, 2).map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className={`block px-3 py-3 text-lg font-medium transition-thai ${
-                    isActive(link.href)
-                      ? 'text-thai-gold bg-white/10 rounded-lg'
-                      : 'text-white hover:text-thai-gold hover:bg-white/5 rounded-lg'
-                  }`}
-                >
-                  {link.name}
-                </a>
-              ))}
+              {/* Home */}
+              <a
+                href="/"
+                className={`block px-3 py-3 text-lg font-medium transition-thai ${
+                  isActive('/')
+                    ? 'text-thai-gold bg-white/10 rounded-lg'
+                    : 'text-white hover:text-thai-gold hover:bg-white/5 rounded-lg'
+                }`}
+              >
+                Home
+              </a>
+
+              {/* Mobile About Section */}
+              <div className="space-y-1">
+                <div className="px-3 py-2 text-lg font-medium text-thai-gold">
+                  About
+                </div>
+                {aboutLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    className={`block px-6 py-2 text-base font-medium transition-thai ${
+                      isActive(link.href)
+                        ? 'text-thai-gold bg-white/10 rounded-lg'
+                        : 'text-white hover:text-thai-gold hover:bg-white/5 rounded-lg'
+                    }`}
+                  >
+                    {link.name}
+                  </a>
+                ))}
+              </div>
               
               {/* Mobile Courses Section */}
               <div className="space-y-1">
@@ -220,7 +298,7 @@ export function Navigation() {
               </div>
 
               {/* Reviews, Contact, and FAQ */}
-              {navLinks.slice(2).map((link) => (
+              {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
