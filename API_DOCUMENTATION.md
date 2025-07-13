@@ -5,19 +5,21 @@
 
 ## 📖 Table of Contents
 
-- [Overview](#-overview)
-- [Authentication & Security](#-authentication--security)
-- [Base URL & Configuration](#-base-url--configuration)
-- [Endpoints](#-endpoints)
-- [Data Models](#-data-models)
-- [Error Handling](#-error-handling)
-- [Examples & Use Cases](#-examples--use-cases)
-- [SDK & Integration](#-sdk--integration)
-- [Advanced Features](#-advanced-features)
-- [Troubleshooting](#-troubleshooting)
-- [Migration Guide](#-migration-guide)
+## Table of Contents
 
-## 🌟 Overview
+- [Overview](#overview)
+- [Authentication & Security](#authentication--security)
+- [Base URL & Configuration](#base-url--configuration)
+- [Endpoints](#endpoints)
+- [Data Models](#data-models)
+- [Error Handling](#error-handling)
+- [Examples & Use Cases](#examples--use-cases)
+- [SDK & Integration](#sdk--integration)
+- [Advanced Features](#advanced-features)
+- [Troubleshooting](#troubleshooting)
+- [Migration Guide](#migration-guide)
+
+## Overview
 
 The ThaiBridge Academy API is built on [N8n](https://n8n.io/) workflows, providing a robust backend for the learning platform. This API handles form submissions, data retrieval, email notifications, and student interactions through webhook-based endpoints.
 
@@ -38,13 +40,13 @@ The ThaiBridge Academy API is built on [N8n](https://n8n.io/) workflows, providi
 
 ### Key Benefits
 
-- **🔧 Centralized Configuration** - All endpoints managed in one place
-- **🛡️ Type Safety** - Full TypeScript support with strict typing
-- **⚡ Consistent Error Handling** - Standardized error responses
-- **🔄 Reusable Service Layer** - DRY principle with shared utilities
-- **📊 Real-time Integration** - Seamless data flow with external services
+- **Centralized Configuration** - All endpoints managed in one place
+- **Type Safety** - Full TypeScript support with strict typing
+- **Consistent Error Handling** - Standardized error responses
+- **Reusable Service Layer** - DRY principle with shared utilities
+- **Real-time Integration** - Seamless data flow with external services
 
-## 🔐 Authentication & Security
+## Authentication & Security
 
 ### Current Authentication
 
@@ -70,7 +72,15 @@ The API supports cross-origin requests from the following domains:
 - `http://localhost:5173` (development)
 - `http://localhost:3000` (development)
 
-## 🌐 Base URL & Configuration
+### Rate Limiting
+
+Currently, no rate limiting is implemented. Future versions may include:
+
+- **100 requests per minute** per IP address
+- **1000 requests per hour** per IP address
+- **Graceful degradation** for exceeded limits
+
+## Base URL & Configuration
 
 ### Base URL
 
@@ -98,7 +108,7 @@ The project uses a centralized API service for better maintainability:
 | `src/lib/api-types.ts`   | Type Definitions | TypeScript interfaces for requests/responses   |
 | `src/lib/api-service.ts` | Service Methods  | Centralized API handling with error management |
 
-## 🔌 Endpoints
+## Endpoints
 
 ### 1. Newsletter Subscription
 
@@ -372,7 +382,7 @@ window.location.href =
   "https://thaibridge.app.n8n.cloud/form/145db122-0763-4660-9d68-11781099a011";
 ```
 
-## 📊 Data Models
+## Data Models
 
 ### Core Types
 
@@ -444,7 +454,7 @@ interface ApiError {
 | `rating`  | number | Yes      | 1-5 inclusive         |
 | `course`  | string | Yes      | 2-100 characters      |
 
-## ⚠️ Error Handling
+## Error Handling
 
 ### Standard Error Response
 
@@ -504,7 +514,7 @@ VITE_DEBUG=true
 
 This will log detailed API request/response information to the console.
 
-## 💡 Examples & Use Cases
+## Examples & Use Cases
 
 ### Quick Start
 
@@ -720,7 +730,7 @@ curl -X GET https://thaibridge.app.n8n.cloud/webhook/get-reviews \
   -H "Accept: application/json"
 ```
 
-## 🔧 SDK & Integration
+## SDK & Integration
 
 ### Official SDK
 
@@ -870,7 +880,7 @@ Create a Postman collection with the following requests:
 }
 ```
 
-## 🚀 Advanced Features
+## Advanced Features
 
 ### Pagination
 
@@ -945,7 +955,7 @@ interface FileUploadRequest {
 }
 ```
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -1066,7 +1076,7 @@ const measureApiPerformance = async (apiCall: () => Promise<unknown>) => {
 };
 ```
 
-## 🔄 Migration Guide
+## Migration Guide
 
 ### From Direct Fetch Calls
 
@@ -1142,11 +1152,3 @@ const testMigration = async () => {
 ```
 
 ---
-
-<div align="center">
-
-**For support and questions, contact the ThaiBridge Academy development team**
-
-[![ThaiBridge Academy](https://img.shields.io/badge/ThaiBridge-Academy-blue)](https://thaibridge-academy.vercel.app/)
-
-</div>

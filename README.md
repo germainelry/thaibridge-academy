@@ -1,50 +1,45 @@
-# ThaiBridge Academy 🌟
+# ThaiBridge Academy
 
 > **Modern Thai Language Learning Platform**  
 > Connect with authentic Thai language and culture through our comprehensive learning platform
 
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://thaibridge-academy.vercel.app/)
-[![React](https://img.shields.io/badge/React-18.3.1-blue.svg)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.5.3-blue.svg)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4.11-38B2AC.svg)](https://tailwindcss.com/)
-[![License](https://img.shields.io/badge/license-Proprietary-red.svg)](LICENSE)
-
 ## 📖 Table of Contents
 
-- [Overview](#-overview)
-- [Live Demo](#-live-demo)
-- [Features](#-features)
-- [Screenshots](#-screenshots)
-- [Tech Stack](#-tech-stack)
-- [Getting Started](#-getting-started)
-- [Project Structure](#-project-structure)
-- [Development](#-development)
-- [API Integration](#-api-integration)
-- [Deployment](#-deployment)
-- [Contributing](#-contributing)
-- [Support](#-support)
-- [License](#-license)
+## Table of Contents
 
-## 🌟 Overview
+- [Overview](#overview)
+- [Live Demo](#live-demo)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Project Structure](#project-structure)
+- [Development](#development)
+- [API Integration](#api-integration)
+- [Deployment](#deployment)
+- [Contributing](#contributing)
+- [Support](#support)
+- [License](#license)
+
+## Overview
 
 ThaiBridge Academy is a modern, elegant web application designed to help learners connect with authentic Thai language and culture. Built with cutting-edge technologies, it provides a seamless learning experience with comprehensive course offerings, student reviews, and interactive features.
 
 ### Key Features
 
-- **🎨 Beautiful, Responsive Design** - Modern UI with smooth animations and mobile-first approach
-- **📚 Comprehensive Course Listings** - Detailed information about all learning programs
-- **⭐ Student Review System** - Dynamic reviews with real-time data integration
-- **📧 Newsletter Integration** - Seamless email subscription management
-- **💬 Social Media Integration** - Community building through social platforms
-- **📱 WhatsApp Integration** - Instant communication for student support
-- **♿ Accessibility First** - WCAG compliant with usability best practices
-- **🌐 Multi-language Ready** - Built for international accessibility
+- **Responsive Design** - Modern UI with smooth animations and mobile-first approach
+- **Course Listings** - Detailed information about all learning programs
+- **Student Review System** - Dynamic reviews with real-time data integration
+- **Newsletter Integration** - Seamless email subscription management
+- **Social Media Integration** - Community building through social platforms
+- **WhatsApp Integration** - Instant communication for student support
+- **Accessibility First** - WCAG compliant with usability best practices
+- **Multi-language Ready** - Built for international accessibility
 
-## 🌐 Live Demo
+## Live Demo
 
 **Visit the deployed application:** [https://thaibridge-academy.vercel.app/](https://thaibridge-academy.vercel.app/)
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend Framework
 
@@ -78,7 +73,7 @@ ThaiBridge Academy is a modern, elegant web application designed to help learner
 
 - **[Vercel](https://vercel.com/)** - Global edge deployment platform
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -171,7 +166,7 @@ npm run preview
 - Minified assets
 - Production-ready deployment
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 thaibridge-academy-v1/
@@ -240,7 +235,7 @@ The application follows a modern React architecture:
 └─────────────────┘    └─────────────────┘    └─────────────────┘
 ```
 
-## 🔌 API Integration
+## API Integration
 
 This project uses N8n workflows as the backend API. All API calls are centralized in the service layer for better maintainability and type safety.
 
@@ -287,7 +282,7 @@ try {
 }
 ```
 
-## 🛠️ Development
+## Development
 
 ### Available Scripts
 
@@ -351,7 +346,7 @@ npm run build:dev    # Build with development mode
    - Submit PR for review
    - Merge after approval
 
-## 🚀 Deployment
+## Deployment
 
 ### Vercel Deployment
 
@@ -406,7 +401,9 @@ VITE_ANALYTICS_ID=your_analytics_id
 - **CORS**: Configure properly for production domains
 - **HTTPS**: Always use HTTPS in production
 
-## 🤝 Contributing
+For detailed deployment instructions, see [DEPLOYMENT.md](./DEPLOYMENT.md).
+
+## Contributing
 
 We welcome contributions from the community! Please follow these guidelines:
 
@@ -431,13 +428,40 @@ We welcome contributions from the community! Please follow these guidelines:
    ```
 6. **Open a Pull Request**
 
+### Development Guidelines
+
+- **TypeScript**: Use strict typing for all new code
+- **Components**: Create reusable, accessible components
+- **API Integration**: Use the centralized API service
+- **Testing**: Test on multiple devices and browsers
+- **Documentation**: Update docs for new features
+
 ### Contact Information
 
 - **ThaiBridge Academy Team** - Project sponsor
-- **[Lovable.dev](https://lovable.dev/)** - Base template provider
+- **[Lovable.dev](https://lovable.dev/)** – Provided the base template boilerplate
 - **Developer**: [GitHub Profile](https://github.com/germainelry)
 
-## 📄 License
+### Common Issues
+
+1. **Build Errors**
+
+   - Ensure Node.js version is 16+
+   - Clear node_modules and reinstall
+   - Check environment variables
+
+2. **API Connection Issues**
+
+   - Verify N8n instance is running
+   - Check API base URL configuration
+   - Test webhook endpoints directly
+
+3. **Styling Issues**
+   - Ensure Tailwind CSS is properly configured
+   - Check for conflicting CSS rules
+   - Verify component imports
+
+## License
 
 This project is proprietary software for ThaiBridge Academy.
 
@@ -451,11 +475,3 @@ This project is proprietary software for ThaiBridge Academy.
 - **Terms of Use**: Contact ThaiBridge Academy for licensing information
 
 ---
-
-<div align="center">
-
-**Built with ❤️ by [Germaine Lry](https://github.com/germainelry) for ThaiBridge Academy**
-
-[![ThaiBridge Academy](https://img.shields.io/badge/ThaiBridge-Academy-blue)](https://thaibridge-academy.vercel.app/)
-
-</div>
