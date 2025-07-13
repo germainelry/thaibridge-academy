@@ -1,7 +1,6 @@
-# ThaiBridge Academy
+## Overview
 
-> **Modern Thai Language Learning Platform**  
-> Connect with authentic Thai language and culture through our comprehensive learning platform
+ThaiBridge Academy is a modern, elegant web application designed to help learners connect with authentic Thai language and culture. Built with cutting-edge technologies, it provides a seamless learning experience with comprehensive course offerings, student reviews, and interactive features.
 
 ## Table of Contents
 
@@ -17,10 +16,6 @@
 - [Contributing](#contributing)
 - [Support](#support)
 - [License](#license)
-
-## Overview
-
-ThaiBridge Academy is a modern, elegant web application designed to help learners connect with authentic Thai language and culture. Built with cutting-edge technologies, it provides a seamless learning experience with comprehensive course offerings, student reviews, and interactive features.
 
 ### Key Features
 
