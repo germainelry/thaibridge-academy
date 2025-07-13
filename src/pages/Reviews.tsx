@@ -148,20 +148,29 @@ export default function Reviews() {
               </p>
               
               {/* Social Proof */}
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8 text-sm text-muted-foreground">
-                <div className="flex items-center gap-2">
-                  <Star className="w-4 h-4 text-thai-gold fill-current" />
-                  <span>200+ verified reviews</span>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8 max-w-2xl mx-auto">
+                <div className="flex flex-col items-center text-center p-4 bg-thai-light-tint rounded-lg border border-thai-gold/20 hover:border-thai-gold/40 transition-thai group">
+                  <div className="w-10 h-10 bg-thai-gold/20 rounded-full flex items-center justify-center mb-3 group-hover:bg-thai-gold/30 transition-thai">
+                    <Star className="w-5 h-5 text-thai-gold fill-current" />
+                  </div>
+                  <span className="font-semibold text-thai-text-dark">200+ Reviews</span>
+                  <span className="text-sm text-muted-foreground">Verified experiences</span>
                 </div>
-                <div className="hidden sm:block w-1 h-1 bg-muted-foreground rounded-full"></div>
-                <div className="flex items-center gap-2">
-                  <span>⚡</span>
-                  <span>Takes less than 3 minutes</span>
+                
+                <div className="flex flex-col items-center text-center p-4 bg-thai-light-tint rounded-lg border border-thai-gold/20 hover:border-thai-gold/40 transition-thai group">
+                  <div className="w-10 h-10 bg-thai-gold/20 rounded-full flex items-center justify-center mb-3 group-hover:bg-thai-gold/30 transition-thai">
+                    <span className="text-lg">⚡</span>
+                  </div>
+                  <span className="font-semibold text-thai-text-dark">Under 3 Minutes</span>
+                  <span className="text-sm text-muted-foreground">Quick & easy</span>
                 </div>
-                <div className="hidden sm:block w-1 h-1 bg-muted-foreground rounded-full"></div>
-                <div className="flex items-center gap-2">
-                  <span>🌟</span>
-                  <span>Help fellow learners</span>
+                
+                <div className="flex flex-col items-center text-center p-4 bg-thai-light-tint rounded-lg border border-thai-gold/20 hover:border-thai-gold/40 transition-thai group">
+                  <div className="w-10 h-10 bg-thai-gold/20 rounded-full flex items-center justify-center mb-3 group-hover:bg-thai-gold/30 transition-thai">
+                    <span className="text-lg">👥</span>
+                  </div>
+                  <span className="font-semibold text-thai-text-dark">Help Others</span>
+                  <span className="text-sm text-muted-foreground">Support learners</span>
                 </div>
               </div>
             </div>
