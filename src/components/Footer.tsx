@@ -174,16 +174,16 @@ export function Footer() {
               <div className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-thai-gold mt-1 flex-shrink-0" />
                 <div>
-                  <p className="text-white font-medium">Call or WhatsApp</p>
+                  <p className="text-white font-medium">WhatsApp Us</p>
                   <div className="space-y-1">
                     <a
-                      href="tel:+6512345678"
+                      href="tel:+6588994462"
                       className="text-thai-text-secondary text-sm hover:text-white transition-thai block"
                     >
-                      +65 1234 5678
+                      +65 8899 4462
                     </a>
                     <a
-                      href="https://wa.me/6512345678?text=Hi%20ThaiBridge%20Academy,%20I'm%20interested%20in%20learning%20Thai"
+                      href="https://wa.me/6588994462?text=Hi%20ThaiBridge%20Academy,%20I'm%20interested%20in%20learning%20Thai"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-thai-gold text-sm hover:text-thai-gold/80 transition-thai inline-flex items-center gap-1"

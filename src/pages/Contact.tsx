@@ -292,7 +292,7 @@ export default function Contact() {
                         className="w-full"
                         onClick={() =>
                           window.open(
-                            "https://wa.me/6512345678?text=Hi%20ThaiBridge%20Academy,%20I'm%20interested%20in%20learning%20Thai",
+                            "https://wa.me/6588994462?text=Hi%20ThaiBridge%20Academy,%20I'm%20interested%20in%20learning%20Thai",
                             "_blank"
                           )
                         }

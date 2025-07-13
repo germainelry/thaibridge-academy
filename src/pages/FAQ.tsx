@@ -213,7 +213,7 @@ export default function FAQ() {
                 size="lg"
                 onClick={() =>
                   window.open(
-                    "https://wa.me/6512345678?text=Hi%20ThaiBridge%20Academy,%20I%20have%20a%20question%20about%20your%20courses",
+                    "https://wa.me/6588994462?text=Hi%20ThaiBridge%20Academy,%20I%20have%20a%20question%20about%20your%20courses",
                     "_blank"
                   )
                 }

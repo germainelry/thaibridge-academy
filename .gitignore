@@ -23,7 +23,9 @@ dist-ssr
 *.sln
 *.sw?
 
+# Unit Test Files
+whatsapp-test.js
 
-# README.md
+# Not required markdown files
 .env.local
 AUDIT_SUMMARY.md
