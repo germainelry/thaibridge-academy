@@ -92,50 +92,6 @@ const policySections = [
         text: "Neither party is liable for delays or failures due to circumstances beyond reasonable control, including natural disasters, government actions, or health emergencies."
       }
     ]
-  },
-  {
-    title: "Data Protection",
-    lastUpdated: "December 2024",
-    content: [
-      {
-        subtitle: "Your Rights",
-        text: "You have the right to access, update, or delete your personal information. You may also request data portability or restrict processing of your data."
-      },
-      {
-        subtitle: "Cookies and Tracking",
-        text: "Our website uses cookies to improve user experience and analyze site usage. You can control cookie settings through your browser preferences."
-      },
-      {
-        subtitle: "Third-Party Services",
-        text: "We use trusted third-party services for payments, communications, and analytics. These services have their own privacy policies and security measures."
-      },
-      {
-        subtitle: "International Transfers",
-        text: "Your information may be transferred to and processed in countries other than your country of residence, including Singapore and Thailand."
-      }
-    ]
-  },
-  {
-    title: "Cookie Policy",
-    lastUpdated: "December 2024",
-    content: [
-      {
-        subtitle: "What Are Cookies",
-        text: "Cookies are small text files stored on your device that help us provide and improve our services, remember your preferences, and analyze site usage."
-      },
-      {
-        subtitle: "Types of Cookies We Use",
-        text: "We use essential cookies for site functionality, analytics cookies to understand usage patterns, and preference cookies to remember your settings."
-      },
-      {
-        subtitle: "Managing Cookies",
-        text: "You can control cookie settings through your browser preferences. Note that disabling certain cookies may affect site functionality."
-      },
-      {
-        subtitle: "Third-Party Cookies",
-        text: "Some cookies are placed by third-party services we use, such as Google Analytics and payment processors, subject to their own policies."
-      }
-    ]
   }
 ];
 
