@@ -185,14 +185,14 @@ export default function PrivateCoaching() {
             >
               Book Private Session
             </Button>
-            <Button
-              variant="outline"
+            {/* <Button
+              variant="ghost"
               size="lg"
-              className="border-white/20 text-white hover:bg-white/10"
+              className="border-2 border-white/20 bg-transparent text-white hover:bg-white/10 hover:text-white"
               onClick={() => window.location.href = "/contact"}
             >
               Ask Questions
-            </Button>
+            </Button> */}
           </div>
         </div>
       </section>
