@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import { apiService, getErrorMessage } from "@/lib/api-service";
 
 interface EmailPopupProps {
   isOpen: boolean;
@@ -47,26 +48,31 @@ export function EmailPopup({ isOpen, onClose }: EmailPopupProps) {
 
     setIsSubmitting(true);
 
-    // To simulate with actual API call
-    await fetch("https://thaibridge.app.n8n.cloud/webhook/subscribe", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email }),
-    });
+    try {
+      // Using the new centralized API service
+      await apiService.subscribe({ name, email });
 
-    toast({
-      title: "Successfully subscribed!",
-      description:
-        "You'll receive our latest Thai learning tips and course updates.",
-    });
+      toast({
+        title: "Successfully subscribed!",
+        description:
+          "You'll receive our latest Thai learning tips and course updates.",
+      });
 
-    setEmail("");
-    setName("");
-    setIsSubmitting(false);
-    onClose();
+      setEmail("");
+      setName("");
+      onClose();
 
-    // Remember user preference (don't show again for 30 days)
-    localStorage.setItem("emailPopupClosed", new Date().toISOString());
+      // Remember user preference (don't show again for 30 days)
+      localStorage.setItem("emailPopupClosed", new Date().toISOString());
+    } catch (error) {
+      toast({
+        title: "Subscription failed",
+        description: getErrorMessage(error),
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleNoThanks = () => {

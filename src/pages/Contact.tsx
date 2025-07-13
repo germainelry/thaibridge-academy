@@ -86,11 +86,13 @@ export default function Contact() {
     //     "Near Somerset MRT Station",
     //   ],
     // },
-    {
-      icon: Phone,
-      title: "Call Us",
-      details: ["+65 1234 5678", "WhatsApp: +65 1234 5678", "Mon-Sat: 9AM-7PM"],
-    },
+
+    // Removed Call Us Section
+    // {
+    //   icon: Phone,
+    //   title: "Call Us",
+    //   details: ["+65 1234 5678", "WhatsApp: +65 1234 5678", "Mon-Sat: 9AM-7PM"],
+    // },
     {
       icon: Mail,
       title: "Email Us",
