@@ -69,12 +69,14 @@ export function Footer() {
 
   const footerLinks = {
     courses: [
-      { name: "1-to-1 Private Coaching", href: "/courses/private-coaching" },
+      { name: "All Courses", href: "/courses" },
+      { name: "Private Coaching", href: "/courses/private-coaching" },
       { name: "Corporate Training", href: "/courses/corporate-training" },
       { name: "Immersion Programs", href: "/courses/immersion-program" },
       { name: "Traveller's Pack", href: "/courses/travellers-pack" },
     ],
     company: [
+      { name: "Home", href: "/" },
       { name: "About Us", href: "/about" },
       { name: "Our Instructors", href: { path: "/about", section: "instructors" } },
       { name: "Student Reviews", href: "/reviews" },
@@ -82,9 +84,8 @@ export function Footer() {
     ],
     support: [
       { name: "Contact Us", href: "/contact" },
-      { name: "Privacy Policy", href: { path: "/policy", section: "privacy" } },
-      { name: "Terms of Service", href: { path: "/policy", section: "terms" } },
-      { name: "Refund Policy", href: { path: "/policy", section: "refund" } },
+      { name: "Terms & Conditions", href: "/policy" },
+      { name: "Social Media", href: { path: "/contact", section: "social-media" } },
     ],
   };
 

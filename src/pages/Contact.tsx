@@ -351,7 +351,7 @@ export default function Contact() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             {/* Section Header */}
-            <div className="text-center mb-12">
+            <div id="social-media" className="text-center mb-12">
               <h2 className="font-display text-3xl lg:text-4xl font-bold text-thai-text-dark mb-4">
                 Connect With Us on Social Media
               </h2>
