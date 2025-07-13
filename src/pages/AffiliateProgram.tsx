@@ -66,7 +66,7 @@ export default function AffiliateProgram() {
 
     try {
       // Here you would typically send to your affiliate tracking system
-      console.log("Affiliate application submitted:", formData);
+      // Form data would be sent to backend API in production
       
       toast({
         title: "Application Submitted!",
