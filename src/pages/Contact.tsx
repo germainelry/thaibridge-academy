@@ -241,7 +241,7 @@ export default function Contact() {
                             <option value="Corporate Training">Corporate Training</option>
                             <option value="Immersion Program">Immersion Program</option>
                             <option value="Basic Traveller's Pack">Basic Traveller's Pack</option>
-                            <option value="Free Consultation">Free Consultation</option>
+                            <option value="Trial Class">Trial Class</option>
                           </select>
                         </div>
                       </div>

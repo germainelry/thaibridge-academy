@@ -231,12 +231,12 @@ export default function Courses() {
             Ready to Start Your Thai Journey?
           </h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Not sure which course is right for you? Book a free consultation
-            with our language experts to discuss your goals and find the perfect
-            program.
+            Not sure which course is right for you? Book a discounted trial class
+            with our language experts to experience our teaching style and find the perfect
+            program for your needs.
           </p>
           <Button size="lg" onClick={() => (window.location.href = "/contact")}>
-            Book Free Consultation
+            Book Trial Class
           </Button>
         </div>
       </section>

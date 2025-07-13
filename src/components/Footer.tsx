@@ -53,7 +53,7 @@ export function Footer() {
       { name: "1-to-1 Private Coaching", href: "/courses" },
       { name: "Corporate Training", href: "/courses" },
       { name: "Immersion Programs", href: "/courses" },
-      { name: "Free Consultation", href: "/contact" },
+      { name: "Trial Class", href: "/contact" },
     ],
     company: [
       { name: "About Us", href: "/about" },
@@ -162,11 +162,9 @@ export function Footer() {
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-thai-gold mt-1 flex-shrink-0" />
                 <div>
-                  <p className="text-white font-medium">Visit Our School</p>
+                  <p className="text-white font-medium">Based in Singapore</p>
                   <p className="text-thai-text-secondary text-sm">
-                    123 Orchard Road, #12-34
-                    <br />
-                    Singapore 238858
+                    We are open to students worldwide!
                   </p>
                 </div>
               </div>

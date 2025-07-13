@@ -72,7 +72,7 @@ const faqCategories = [
       {
         question: "Is there a free trial?",
         answer:
-          "No, but we offer free consultation sessions where you can meet your potential instructor, assess your current level, and experience our teaching style. This helps ensure our approach is right for you before committing.",
+          "We offer discounted trial classes for first-time learners where you can meet your potential instructor, assess your current level, and experience our teaching style. This helps ensure our approach is right for you before committing to a full course.",
       },
       {
         question: "What's included in the course fees?",
