@@ -1,24 +1,24 @@
-# Deployment Guide 🚀
+# Deployment Guide
 
 > **Complete Deployment Documentation for ThaiBridge Academy**  
 > Comprehensive guide for deploying the application to production environments
 
-## 📖 Table of Contents
+## Table of Contents
 
-- [Overview](#-overview)
-- [Prerequisites](#-prerequisites)
-- [Vercel Deployment](#-vercel-deployment)
-- [Alternative Platforms](#-alternative-platforms)
-- [Environment Configuration](#-environment-configuration)
-- [Domain & SSL](#-domain--ssl)
-- [Performance Optimization](#-performance-optimization)
-- [Monitoring & Analytics](#-monitoring--analytics)
-- [Security Considerations](#-security-considerations)
-- [Troubleshooting](#-troubleshooting)
-- [Cost Analysis](#-cost-analysis)
-- [Post-Deployment Checklist](#-post-deployment-checklist)
+- [Overview](#overview)
+- [Prerequisites](#prerequisites)
+- [Vercel Deployment](#vercel-deployment)
+- [Alternative Platforms](#alternative-platforms)
+- [Environment Configuration](#environment-configuration)
+- [Domain & SSL](#domain--ssl)
+- [Performance Optimization](#performance-optimization)
+- [Monitoring & Analytics](#monitoring--analytics)
+- [Security Considerations](#security-considerations)
+- [Troubleshooting](#troubleshooting)
+- [Cost Analysis](#cost-analysis)
+- [Post-Deployment Checklist](#post-deployment-checklist)
 
-## 🌟 Overview
+## Overview
 
 This guide provides comprehensive instructions for deploying the ThaiBridge Academy application to production environments. The application is optimized for deployment on Vercel but can be deployed to other platforms as well.
 
@@ -39,13 +39,13 @@ This guide provides comprehensive instructions for deploying the ThaiBridge Acad
 
 ### Key Benefits
 
-- **⚡ Lightning Fast** - Vite build system for optimal performance
-- **🌐 Global CDN** - Automatic content delivery worldwide
-- **🔒 SSL Security** - Automatic HTTPS certificate provisioning
-- **📱 Mobile Optimized** - Responsive design for all devices
-- **🔄 Auto Deploy** - Continuous deployment from Git
+- **Lightning Fast** - Vite build system for optimal performance
+- **Global CDN** - Automatic content delivery worldwide
+- **SSL Security** - Automatic HTTPS certificate provisioning
+- **Mobile Optimized** - Responsive design for all devices
+- **Auto Deploy** - Continuous deployment from Git
 
-## ✅ Prerequisites
+## Prerequisites
 
 ### Required Tools
 
@@ -77,14 +77,14 @@ Before deploying, ensure you have the following:
 
 ### Pre-Deployment Checklist
 
-- [ ] All code is committed to Git repository
-- [ ] Build script works locally (`npm run build`)
-- [ ] Environment variables are documented
-- [ ] API endpoints are tested
-- [ ] Mobile responsiveness verified
-- [ ] Performance optimization completed
+- [✅] All code is committed to Git repository
+- [✅] Build script works locally (`npm run build`)
+- [✅] Environment variables are documented
+- [✅] API endpoints are tested
+- [✅] Mobile responsiveness verified
+- [✅] Performance optimization completed
 
-## 🚀 Vercel Deployment (Recommended)
+## Vercel Deployment (Recommended)
 
 ### Step 1: Prepare Your Repository
 
@@ -195,7 +195,7 @@ Before deploying, ensure you have the following:
    - Use Lighthouse to check performance scores
    - Verify mobile responsiveness
 
-## 🌐 Alternative Platforms
+## Alternative Platforms
 
 ### Netlify Deployment
 
@@ -322,7 +322,7 @@ Create `netlify.toml` in your project root:
    - Go to repository Settings → Pages
    - Select "GitHub Actions" as source
 
-## ⚙️ Environment Configuration
+## Environment Configuration
 
 ### Required Environment Variables
 
@@ -370,12 +370,12 @@ VITE_DEBUG=true
 
 #### Security Best Practices
 
-- ✅ **Never commit sensitive data** to Git
-- ✅ **Use environment variables** for configuration
-- ✅ **Rotate API keys** regularly
-- ✅ **Monitor access logs** for suspicious activity
+- **Never commit sensitive data** to Git
+- **Use environment variables** for configuration
+- **Rotate API keys** regularly
+- **Monitor access logs** for suspicious activity
 
-## 🔒 Domain & SSL
+## Domain & SSL
 
 ### Custom Domain Setup
 
@@ -428,7 +428,7 @@ nslookup yourdomain.com
 openssl s_client -connect yourdomain.com:443 -servername yourdomain.com
 ```
 
-## ⚡ Performance Optimization
+## Performance Optimization
 
 ### Build Optimization
 
@@ -502,7 +502,7 @@ const Contact = lazy(() => import("./pages/Contact"));
 }
 ```
 
-## 📊 Monitoring & Analytics
+## Monitoring & Analytics
 
 ### Built-in Monitoring
 
@@ -576,7 +576,7 @@ const measurePerformance = () => {
    });
    ```
 
-## 🔐 Security Considerations
+## Security Considerations
 
 ### Security Headers
 
@@ -620,7 +620,7 @@ const measurePerformance = () => {
 - **Environment variables** for configuration
 - **Secure API endpoints** with proper validation
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### Common Deployment Issues
 
@@ -742,33 +742,33 @@ localStorage.setItem("debug", "true");
 3. **Implement lazy loading**
 4. **Optimize bundle size**
 
-## 💰 Cost Analysis
+## Cost Analysis
 
 ### Vercel Pricing
 
 #### Free Tier (Hobby)
 
-- ✅ **Unlimited personal projects**
-- ✅ **100GB bandwidth/month**
-- ✅ **Custom domains**
-- ✅ **Automatic SSL**
-- ✅ **Global CDN**
-- ✅ **24/7 uptime**
+- **Unlimited personal projects**
+- **100GB bandwidth/month**
+- **Custom domains**
+- **Automatic SSL**
+- **Global CDN**
+- **24/7 uptime**
 
 #### Pro Plan ($20/month)
 
-- ✅ **Unlimited bandwidth**
-- ✅ **Team collaboration**
-- ✅ **Advanced analytics**
-- ✅ **Priority support**
-- ✅ **Password protection**
+- **Unlimited bandwidth**
+- **Team collaboration**
+- **Advanced analytics**
+- **Priority support**
+- **Password protection**
 
 #### Enterprise Plan (Custom pricing)
 
-- ✅ **Custom contracts**
-- ✅ **Advanced security**
-- ✅ **Dedicated support**
-- ✅ **SLA guarantees**
+- **Custom contracts**
+- **Advanced security**
+- **Dedicated support**
+- **SLA guarantees**
 
 ### Alternative Platform Costs
 
@@ -792,56 +792,48 @@ localStorage.setItem("debug", "true");
 4. **Consider CDN** for global distribution
 5. **Implement caching** to reduce server load
 
-## ✅ Post-Deployment Checklist
+## Post-Deployment Checklist
 
 ### Functionality Testing
 
-- [ ] **Homepage loads correctly**
-- [ ] **Navigation works on all pages**
-- [ ] **Contact form submissions work**
-- [ ] **Newsletter subscription functions**
-- [ ] **API calls to N8n backend succeed**
-- [ ] **Mobile responsiveness verified**
-- [ ] **Cross-browser compatibility tested**
+- [✅] **Homepage loads correctly**
+- [✅] **Navigation works on all pages**
+- [✅] **Contact form submissions work**
+- [✅] **Newsletter subscription functions**
+- [✅] **API calls to N8n backend succeed**
+- [✅] **Mobile responsiveness verified**
+- [✅] **Cross-browser compatibility tested**
 
 ### Performance Verification
 
-- [ ] **Lighthouse score > 90**
-- [ ] **Page load time < 3 seconds**
-- [ ] **Mobile performance optimized**
-- [ ] **Images properly optimized**
-- [ ] **Bundle size reasonable**
+- [✅] **Lighthouse score > 90**
+- [✅] **Page load time < 3 seconds**
+- [✅] **Mobile performance optimized**
+- [✅] **Images properly optimized**
+- [✅] **Bundle size reasonable**
 
 ### Security Validation
 
-- [ ] **HTTPS enforced**
-- [ ] **Security headers configured**
-- [ ] **No sensitive data in client code**
-- [ ] **API endpoints secured**
-- [ ] **CORS properly configured**
+- [✅] **HTTPS enforced**
+- [✅] **Security headers configured**
+- [✅] **No sensitive data in client code**
+- [✅] **API endpoints secured**
+- [✅] **CORS properly configured**
 
 ### Monitoring Setup
 
-- [ ] **Analytics tracking enabled**
-- [ ] **Error monitoring configured**
-- [ ] **Performance monitoring active**
-- [ ] **Uptime monitoring set up**
-- [ ] **Alert notifications configured**
+- [✅] **Analytics tracking enabled**
+- [✅] **Error monitoring configured**
+- [✅] **Performance monitoring active**
+- [✅] **Uptime monitoring set up**
+- [✅] **Alert notifications configured**
 
 ### Documentation
 
-- [ ] **Deployment process documented**
-- [ ] **Environment variables documented**
-- [ ] **Troubleshooting guide updated**
-- [ ] **Team access configured**
-- [ ] **Backup strategy implemented**
+- [✅] **Deployment process documented**
+- [✅] **Environment variables documented**
+- [✅] **Troubleshooting guide updated**
+- [✅] **Team access configured**
+- [✅] **Backup strategy implemented**
 
 ---
-
-<div align="center">
-
-**For deployment support, contact the ThaiBridge Academy development team**
-
-[![ThaiBridge Academy](https://img.shields.io/badge/ThaiBridge-Academy-blue)](https://thaibridge-academy.vercel.app/)
-
-</div>
