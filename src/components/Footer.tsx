@@ -11,6 +11,25 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { useNavigationLink } from "@/hooks/use-navigation";
+
+// Navigation Link Component with smooth scrolling
+const NavigationLink: React.FC<{ 
+  href: string | { path: string; section: string }; 
+  children: React.ReactNode; 
+  className?: string;
+}> = ({ href, children, className = "" }) => {
+  const navigationProps = useNavigationLink(href);
+  
+  return (
+    <a
+      {...navigationProps}
+      className={className}
+    >
+      {children}
+    </a>
+  );
+};
 
 export function Footer() {
   const { toast } = useToast();
@@ -50,22 +69,22 @@ export function Footer() {
 
   const footerLinks = {
     courses: [
-      { name: "1-to-1 Private Coaching", href: "/courses" },
-      { name: "Corporate Training", href: "/courses" },
-      { name: "Immersion Programs", href: "/courses" },
-      { name: "Trial Class", href: "/contact" },
+      { name: "1-to-1 Private Coaching", href: "/courses/private-coaching" },
+      { name: "Corporate Training", href: "/courses/corporate-training" },
+      { name: "Immersion Programs", href: "/courses/immersion-program" },
+      { name: "Traveller's Pack", href: "/courses/travellers-pack" },
     ],
     company: [
       { name: "About Us", href: "/about" },
-      { name: "Our Instructors", href: "/about" },
+      { name: "Our Instructors", href: { path: "/about", section: "instructors" } },
       { name: "Student Reviews", href: "/reviews" },
       { name: "FAQ", href: "/faq" },
     ],
     support: [
       { name: "Contact Us", href: "/contact" },
-      { name: "Privacy Policy", href: "/policy" },
-      { name: "Terms of Service", href: "/policy" },
-      { name: "Refund Policy", href: "/policy" },
+      { name: "Privacy Policy", href: { path: "/policy", section: "privacy" } },
+      { name: "Terms of Service", href: { path: "/policy", section: "terms" } },
+      { name: "Refund Policy", href: { path: "/policy", section: "refund" } },
     ],
   };
 
@@ -213,12 +232,12 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.courses.map((link) => (
                 <li key={link.name}>
-                  <a
+                  <NavigationLink
                     href={link.href}
                     className="text-thai-text-secondary text-sm hover:text-white transition-thai"
                   >
                     {link.name}
-                  </a>
+                  </NavigationLink>
                 </li>
               ))}
             </ul>
@@ -229,12 +248,12 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <a
+                  <NavigationLink
                     href={link.href}
                     className="text-thai-text-secondary text-sm hover:text-white transition-thai"
                   >
                     {link.name}
-                  </a>
+                  </NavigationLink>
                 </li>
               ))}
             </ul>
@@ -245,12 +264,12 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.support.map((link) => (
                 <li key={link.name}>
-                  <a
+                  <NavigationLink
                     href={link.href}
                     className="text-thai-text-secondary text-sm hover:text-white transition-thai"
                   >
                     {link.name}
-                  </a>
+                  </NavigationLink>
                 </li>
               ))}
             </ul>

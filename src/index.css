@@ -244,9 +244,28 @@ All colors are in HSL format for consistent theming across light/dark modes.
     }
   }
   
-  /* Smooth Scrolling */
+  /* Enhanced Smooth Scrolling */
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Account for fixed header */
+  }
+
+  /* Focus management for keyboard navigation */
+  :focus {
+    outline: 2px solid hsl(var(--thai-gold));
+    outline-offset: 2px;
+  }
+
+  /* Smooth scrolling for all scroll containers */
+  * {
+    scroll-behavior: smooth;
+  }
+
+  /* Enhanced scroll padding for better UX */
+  @media (max-width: 768px) {
+    html {
+      scroll-padding-top: 60px; /* Smaller offset for mobile */
+    }
   }
   
   /* Custom Scrollbar */

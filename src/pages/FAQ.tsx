@@ -10,6 +10,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { useState } from "react";
+import { useNavigation } from "@/hooks/use-navigation";
 
 const faqCategories = [
   {
@@ -135,6 +136,8 @@ const faqCategories = [
 ];
 
 export default function FAQ() {
+  const { navigate } = useNavigation();
+  
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -237,7 +240,7 @@ export default function FAQ() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <Card
                 className="shadow-thai-soft hover:shadow-thai-medium transition-thai cursor-pointer"
-                onClick={() => (window.location.href = "/courses")}
+                onClick={() => navigate("/courses")}
               >
                 <CardContent className="p-6 text-center">
                   <h4 className="font-semibold text-thai-text-dark mb-2">
@@ -252,7 +255,7 @@ export default function FAQ() {
 
               <Card
                 className="shadow-thai-soft hover:shadow-thai-medium transition-thai cursor-pointer"
-                onClick={() => (window.location.href = "/reviews")}
+                onClick={() => navigate("/reviews")}
               >
                 <CardContent className="p-6 text-center">
                   <h4 className="font-semibold text-thai-text-dark mb-2">
@@ -267,7 +270,7 @@ export default function FAQ() {
 
               <Card
                 className="shadow-thai-soft hover:shadow-thai-medium transition-thai cursor-pointer"
-                onClick={() => (window.location.href = "/about")}
+                onClick={() => navigate("/about")}
               >
                 <CardContent className="p-6 text-center">
                   <h4 className="font-semibold text-thai-text-dark mb-2">

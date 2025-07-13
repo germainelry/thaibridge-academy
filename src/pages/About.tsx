@@ -3,6 +3,7 @@ import { Footer } from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Users, Heart, Globe, Award } from "lucide-react";
+import { useNavigation } from "@/hooks/use-navigation";
 
 const values = [
   {
@@ -49,6 +50,8 @@ const team = [
 ];
 
 export default function About() {
+  const { navigate } = useNavigation();
+  
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -163,7 +166,7 @@ export default function About() {
       </section>
 
       {/* Team Section */}
-      <section className="bg-thai-light-tint py-20">
+      <section id="instructors" className="bg-thai-light-tint py-20">
         <div className="container mx-auto px-4">
           <h2 className="font-display text-3xl lg:text-4xl font-bold text-center text-thai-text-dark mb-12">
             Meet Our Expert Instructors
@@ -222,7 +225,7 @@ export default function About() {
           <Button 
             size="lg" 
             className="bg-primary hover:bg-primary/90"
-            onClick={() => window.location.href = '/courses'}
+            onClick={() => navigate('/courses')}
           >
             Get Started Today
           </Button>
