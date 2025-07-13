@@ -4,9 +4,12 @@ import { SectionWrapper } from "@/components/SectionWrapper";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { EmailPopup } from "@/components/EmailPopup";
 import { Heart, Clock, Trophy, Target, Star, CheckCircle, MapPin, Plane, Users, DollarSign } from "lucide-react";
+import { useState } from "react";
 
 export default function TravellersPack() {
+  const [showEmailPopup, setShowEmailPopup] = useState(false);
   const features = [
     "Essential travel phrases and vocabulary",
     "Numbers, directions, and shopping basics",
@@ -256,7 +259,7 @@ export default function TravellersPack() {
             <Button
               size="lg"
               className="bg-thai-gold hover:bg-thai-gold/90 text-thai-forest-dark font-semibold"
-              onClick={() => window.location.href = "/contact"}
+              onClick={() => setShowEmailPopup(true)}
             >
               Join Waitlist
             </Button>
@@ -264,29 +267,8 @@ export default function TravellersPack() {
         </div>
       </SectionWrapper>
 
-      {/* CTA Section */}
-      <SectionWrapper sectionIndex={6} variant="cta">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="font-display text-3xl lg:text-4xl font-bold mb-6">
-            Ready to Enhance Your Travel Experience?
-          </h2>
-          <p className="text-xl text-thai-text-secondary mb-8 max-w-2xl mx-auto">
-            Use your SkillsFuture credits to learn essential Thai phrases that will transform 
-            your travel experience in Thailand.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              className="bg-thai-gold hover:bg-thai-gold/90 text-thai-forest-dark font-semibold"
-              onClick={() => window.location.href = "/contact"}
-            >
-              Register Interest
-            </Button>
-          </div>
-        </div>
-      </SectionWrapper>
-
       <Footer />
+      <EmailPopup isOpen={showEmailPopup} onClose={() => setShowEmailPopup(false)} />
     </div>
   );
 } 
