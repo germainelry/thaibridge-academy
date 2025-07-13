@@ -29,3 +29,5 @@ whatsapp-test.js
 # Not required markdown files
 .env.local
 AUDIT_SUMMARY.md
+TEST_NAVIGATION.md
+NAVIGATION_GUIDE.md
