@@ -441,15 +441,10 @@ We welcome contributions from the community! Please follow these guidelines:
 
 ## License
 
-This project is proprietary software for ThaiBridge Academy.
+This project is proprietary software for ThaiBridge Academy. 
 
 **All rights reserved.** This software and associated documentation files are the exclusive property of ThaiBridge Academy.
 
-### Legal Information
-
-- **Copyright**: © 2024 ThaiBridge Academy
-- **License**: Proprietary - All rights reserved
-- **Developer**: [Germaine Lry](https://github.com/germainelry)
-- **Terms of Use**: Contact ThaiBridge Academy for licensing information
-
 ---
+
+© 2025 ThaiBridge Academy
