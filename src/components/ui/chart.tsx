@@ -74,28 +74,114 @@ const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {
     return null
   }
 
-  return (
-    <style
-      dangerouslySetInnerHTML={{
-        __html: Object.entries(THEMES)
-          .map(
-            ([theme, prefix]) => `
-${prefix} [data-chart=${id}] {
-${colorConfig
-  .map(([key, itemConfig]) => {
-    const color =
-      itemConfig.theme?.[theme as keyof typeof itemConfig.theme] ||
-      itemConfig.color
-    return color ? `  --color-${key}: ${color};` : null
-  })
-  .join("\n")}
+  // Sanitize the chart ID to prevent injection
+  const sanitizedId = sanitizeKey(id)
+
+  // Create styles safely using React.useLayoutEffect and direct DOM manipulation
+  React.useLayoutEffect(() => {
+    // Create a unique style element for this chart
+    const styleId = `chart-style-${sanitizedId}`
+    let styleElement = document.getElementById(styleId) as HTMLStyleElement
+    
+    if (!styleElement) {
+      styleElement = document.createElement('style')
+      styleElement.id = styleId
+      document.head.appendChild(styleElement)
+    }
+
+    // Build CSS safely
+    const cssRules: string[] = []
+    
+    Object.entries(THEMES).forEach(([theme, prefix]) => {
+      const variables: string[] = []
+      
+      colorConfig.forEach(([key, itemConfig]) => {
+        const sanitizedKey = sanitizeKey(key)
+        let color: string | undefined
+
+        if (itemConfig.theme) {
+          color = itemConfig.theme[theme as keyof typeof itemConfig.theme]
+        } else {
+          color = itemConfig.color
+        }
+
+        if (color && isValidCSSColor(color)) {
+          variables.push(`--color-${sanitizedKey}: ${color}`)
+        }
+      })
+
+      if (variables.length > 0) {
+        const selector = `${prefix} [data-chart="${sanitizedId}"]`
+        cssRules.push(`${selector} { ${variables.join('; ')}; }`)
+      }
+    })
+
+    // Set the CSS content safely
+    styleElement.textContent = cssRules.join('\n')
+
+    // Cleanup function
+    return () => {
+      if (styleElement && styleElement.parentNode) {
+        styleElement.parentNode.removeChild(styleElement)
+      }
+    }
+  }, [sanitizedId, config])
+
+  // Return null since we're managing styles via useLayoutEffect
+  return null
 }
-`
-          )
-          .join("\n"),
-      }}
-    />
-  )
+
+// Helper function to validate CSS colors with strict validation
+function isValidCSSColor(color: string): boolean {
+  if (!color || typeof color !== 'string') return false
+  
+  const trimmedColor = color.trim()
+  
+  // Strict validation patterns
+  const patterns = [
+    // Hex colors: #RGB, #RRGGBB, #RRGGBBAA
+    /^#[0-9A-Fa-f]{3}$/,
+    /^#[0-9A-Fa-f]{6}$/,
+    /^#[0-9A-Fa-f]{8}$/,
+    // RGB/RGBA with strict number validation
+    /^rgb\(\s*([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\s*\)$/,
+    /^rgba\(\s*([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\s*,\s*([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\s*,\s*(0(\.[0-9]+)?|1(\.0+)?)\s*\)$/,
+    // HSL/HSLA with strict validation
+    /^hsl\(\s*([0-9]|[1-9][0-9]|[12][0-9][0-9]|3[0-5][0-9]|360)\s*,\s*([0-9]|[1-9][0-9]|100)%\s*,\s*([0-9]|[1-9][0-9]|100)%\s*\)$/,
+    /^hsla\(\s*([0-9]|[1-9][0-9]|[12][0-9][0-9]|3[0-5][0-9]|360)\s*,\s*([0-9]|[1-9][0-9]|100)%\s*,\s*([0-9]|[1-9][0-9]|100)%\s*,\s*(0(\.[0-9]+)?|1(\.0+)?)\s*\)$/
+  ]
+  
+  // Check against patterns
+  if (patterns.some(pattern => pattern.test(trimmedColor))) {
+    return true
+  }
+  
+  // Allow only specific named colors (security-conscious list)
+  const allowedNamedColors = [
+    'transparent', 'black', 'white', 'red', 'green', 'blue', 'yellow',
+    'cyan', 'magenta', 'gray', 'grey', 'orange', 'purple', 'pink', 'brown',
+    'lightgray', 'darkgray', 'lightblue', 'darkblue', 'lightgreen', 'darkgreen'
+  ]
+  
+  return allowedNamedColors.includes(trimmedColor.toLowerCase())
+}
+
+// Helper function to sanitize keys for CSS with strict validation
+function sanitizeKey(key: string): string {
+  if (!key || typeof key !== 'string') return 'default'
+  
+  // Only allow alphanumeric characters, hyphens, and underscores
+  // Remove everything else and limit length
+  const sanitized = key
+    .replace(/[^a-zA-Z0-9-_]/g, '')
+    .slice(0, 30)
+  
+  // Ensure it doesn't start with a number or hyphen (invalid CSS)
+  if (/^[0-9-]/.test(sanitized)) {
+    return `chart-${sanitized}`
+  }
+  
+  return sanitized || 'default'
 }
 
 const ChartTooltip = RechartsPrimitive.Tooltip

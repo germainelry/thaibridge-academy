@@ -5,10 +5,14 @@ const NotFound = () => {
   const location = useLocation();
 
   useEffect(() => {
-    console.error(
-      "404 Error: User attempted to access non-existent route:",
-      location.pathname
-    );
+    // In production, this should be sent to an error tracking service like Sentry
+    if (import.meta.env.DEV) {
+      console.error(
+        "404 Error: User attempted to access non-existent route:",
+        location.pathname
+      );
+    }
+    // TODO: Send to error tracking service in production
   }, [location.pathname]);
 
   return (
