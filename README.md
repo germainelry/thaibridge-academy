@@ -3,8 +3,6 @@
 > **Modern Thai Language Learning Platform**  
 > Connect with authentic Thai language and culture through our comprehensive learning platform
 
-## 📖 Table of Contents
-
 ## Table of Contents
 
 - [Overview](#overview)
