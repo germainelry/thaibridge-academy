@@ -199,10 +199,10 @@ export function Footer() {
                 <div>
                   <p className="text-white font-medium">Email Us</p>
                   <a
-                    href="mailto:hello@thaibridgeacademy.sg"
+                    href="mailto:thaibridgecontact@gmail.com"
                     className="text-thai-text-secondary text-sm hover:text-white transition-thai"
                   >
-                    hello@thaibridgeacademy.sg
+                    thaibridgecontact@gmail.com
                   </a>
                 </div>
               </div>
