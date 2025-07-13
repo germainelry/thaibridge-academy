@@ -3,10 +3,6 @@
 > **Complete API Reference for ThaiBridge Academy Platform**  
 > Comprehensive documentation for all API endpoints, authentication, and integration patterns
 
-[![API Status](https://img.shields.io/badge/API-Active-brightgreen)](https://thaibridge.app.n8n.cloud)
-[![Documentation](https://img.shields.io/badge/docs-Complete-blue)](./API_DOCUMENTATION.md)
-[![Version](https://img.shields.io/badge/version-1.0.0-blue)](https://thaibridge-academy.vercel.app/)
-
 ## 📖 Table of Contents
 
 - [Overview](#-overview)
