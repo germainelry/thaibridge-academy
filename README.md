@@ -2,20 +2,9 @@
 
 ThaiBridge Academy is a modern, elegant web application designed to help learners connect with authentic Thai language and culture. Built with cutting-edge technologies, it provides a seamless learning experience with comprehensive course offerings, student reviews, and interactive features.
 
-## Table of Contents
+## Live Demo
 
-- [Overview](#overview)
-- [Live Demo](#live-demo)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Getting Started](#getting-started)
-- [Project Structure](#project-structure)
-- [Development](#development)
-- [API Integration](#api-integration)
-- [Deployment](#deployment)
-- [Contributing](#contributing)
-- [Support](#support)
-- [License](#license)
+**Visit the deployed application:** [https://thaibridge-academy.vercel.app/](https://thaibridge-academy.vercel.app/)
 
 ### Key Features
 
@@ -27,10 +16,6 @@ ThaiBridge Academy is a modern, elegant web application designed to help learner
 - **WhatsApp Integration** - Instant communication for student support
 - **Accessibility First** - WCAG compliant with usability best practices
 - **Multi-language Ready** - Built for international accessibility
-
-## Live Demo
-
-**Visit the deployed application:** [https://thaibridge-academy.vercel.app/](https://thaibridge-academy.vercel.app/)
 
 ## Tech Stack
 
