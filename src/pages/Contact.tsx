@@ -240,7 +240,7 @@ export default function Contact() {
                             <option value="1 to 1 Private Coaching">1 to 1 Private Coaching</option>
                             <option value="Corporate Training">Corporate Training</option>
                             <option value="Immersion Program">Immersion Program</option>
-                            <option value="Basic Traveller's Pack">Basic Traveller's Pack</option>
+                            <option value="Basic Traveller's Pack (SkillsFuture claimable)">Basic Traveller's Pack (SkillsFuture Claimable)</option>
                             <option value="Trial Class">Trial Class</option>
                           </select>
                         </div>

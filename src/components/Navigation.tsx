@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { useLocation } from "react-router-dom";
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isCoursesOpen, setIsCoursesOpen] = useState(false);
+  const [closeTimeout, setCloseTimeout] = useState<NodeJS.Timeout | null>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -23,11 +25,18 @@ export function Navigation() {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Courses", href: "/courses" },
     { name: "Reviews", href: "/reviews" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
     { name: "FAQ", href: "/faq" },
+  ];
+
+  const courseLinks = [
+    { name: "All Courses", href: "/courses" },
+    { name: "Private Coaching", href: "/courses/private-coaching" },
+    { name: "Corporate Training", href: "/courses/corporate-training" },
+    { name: "Immersion Program", href: "/courses/immersion-program" },
+    { name: "Traveller's Pack", href: "/courses/travellers-pack" },
   ];
 
   const isActive = (href: string) => {
@@ -35,6 +44,30 @@ export function Navigation() {
     if (href !== "/" && location.pathname.startsWith(href)) return true;
     return false;
   };
+
+  const handleMouseEnter = () => {
+    if (closeTimeout) {
+      clearTimeout(closeTimeout);
+      setCloseTimeout(null);
+    }
+    setIsCoursesOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    const timeout = setTimeout(() => {
+      setIsCoursesOpen(false);
+    }, 150); // 150ms delay
+    setCloseTimeout(timeout);
+  };
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (closeTimeout) {
+        clearTimeout(closeTimeout);
+      }
+    };
+  }, [closeTimeout]);
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-thai ${
@@ -76,6 +109,45 @@ export function Navigation() {
                   {link.name}
                 </a>
               ))}
+              
+              {/* Courses Dropdown */}
+              <div 
+                className="relative"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
+                <button
+                  className={`px-3 py-2 text-base font-medium transition-thai flex items-center gap-1 ${
+                    location.pathname.startsWith('/courses')
+                      ? 'text-thai-gold border-b-2 border-thai-gold'
+                      : 'text-white hover:text-thai-gold'
+                  }`}
+                >
+                  Courses
+                  <ChevronDown className={`w-4 h-4 transition-transform ${isCoursesOpen ? 'rotate-180' : ''}`} />
+                </button>
+                
+                {/* Dropdown Menu */}
+                {isCoursesOpen && (
+                  <div className="absolute top-full left-0 w-64 bg-white rounded-lg shadow-lg border border-gray-200 z-50">
+                    <div className="py-2">
+                      {courseLinks.map((course) => (
+                        <a
+                          key={course.name}
+                          href={course.href}
+                          className={`block px-4 py-3 text-sm transition-colors ${
+                            isActive(course.href)
+                              ? 'text-primary bg-thai-light-tint font-medium'
+                              : 'text-gray-700 hover:text-primary hover:bg-thai-light-tint'
+                          }`}
+                        >
+                          {course.name}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
 
@@ -110,6 +182,25 @@ export function Navigation() {
                 </a>
               ))}
               
+              {/* Mobile Courses Section */}
+              <div className="space-y-1">
+                <div className="px-3 py-2 text-lg font-medium text-thai-gold">
+                  Courses
+                </div>
+                {courseLinks.map((course) => (
+                  <a
+                    key={course.name}
+                    href={course.href}
+                    className={`block px-6 py-2 text-base font-medium transition-thai ${
+                      isActive(course.href)
+                        ? 'text-thai-gold bg-white/10 rounded-lg'
+                        : 'text-white hover:text-thai-gold hover:bg-white/5 rounded-lg'
+                    }`}
+                  >
+                    {course.name}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         )}

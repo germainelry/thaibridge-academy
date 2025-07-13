@@ -11,6 +11,10 @@ import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
 import Policy from "./pages/Policy";
 import NotFound from "./pages/NotFound";
+import PrivateCoaching from "./pages/courses/PrivateCoaching";
+import CorporateTraining from "./pages/courses/CorporateTraining";
+import ImmersionProgram from "./pages/courses/ImmersionProgram";
+import TravellersPack from "./pages/courses/TravellersPack";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +27,10 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/courses" element={<Courses />} />
+          <Route path="/courses/private-coaching" element={<PrivateCoaching />} />
+          <Route path="/courses/corporate-training" element={<CorporateTraining />} />
+          <Route path="/courses/immersion-program" element={<ImmersionProgram />} />
+          <Route path="/courses/travellers-pack" element={<TravellersPack />} />
           <Route path="/reviews" element={<Reviews />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />

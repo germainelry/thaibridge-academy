@@ -17,7 +17,7 @@ const faqCategories = [
       {
         question: "What courses do you offer?",
         answer:
-          "We offer four main programs: 1-to-1 Private Coaching (most popular), Corporate Training for businesses, Immersion Programs in Thailand, and Basic Traveller's Pack group classes (coming soon). Each program is designed for different learning goals and schedules.",
+          "We offer four main programs: 1-to-1 Private Coaching (most popular), Corporate Training for businesses, Immersion Programs in Thailand, and Basic Traveller's Pack (SkillsFuture claimable, coming soon). Each program is designed for different learning goals and schedules.",
       },
       {
         question: "How long does it take to learn Thai?",
@@ -62,7 +62,7 @@ const faqCategories = [
       {
         question: "How much do your courses cost?",
         answer:
-          "Private coaching starts from SGD 80/session. Corporate training has group rates (contact us for quotes). Immersion programs start from SGD 1,200/week. The Basic Traveller's Pack will be SGD 180 for the full 4-week course when available.",
+          "Private coaching starts from SGD 80/session. Corporate training has group rates (contact us for quotes). Immersion programs start from SGD 1,200/week. The Basic Traveller's Pack (SkillsFuture claimable) will be SGD 180 for the full 4-week course when available.",
       },
       {
         question: "Do you offer payment plans?",

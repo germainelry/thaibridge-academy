@@ -70,7 +70,7 @@ const Index = () => {
       available: true,
     },
     {
-      title: "Basic Traveller's Pack (Group)",
+      title: "Basic Traveller's Pack (SkillsFuture Claimable)",
       description:
         "For those who want to be able to make simple conversations with the locals within a short period of time.",
       icon: Heart,

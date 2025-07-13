@@ -73,7 +73,7 @@ const courses = [
   },
   {
     id: 4,
-    title: "Basic Traveller's Pack (Group)",
+    title: "Basic Traveller's Pack (SkillsFuture Claimable)",
     description:
       "Essential Thai phrases and cultural knowledge for travelers. Learn to make simple conversations with locals and navigate Thailand with confidence.",
     icon: Heart,
@@ -94,6 +94,17 @@ const courses = [
 
 export default function Courses() {
   const [showEmailPopup, setShowEmailPopup] = useState(false);
+
+  // Map course IDs to their specific routes
+  const getCourseRoute = (courseId: number) => {
+    const routeMap: { [key: number]: string } = {
+      1: "/courses/private-coaching",
+      2: "/courses/corporate-training", 
+      3: "/courses/immersion-program",
+      4: "/courses/travellers-pack"
+    };
+    return routeMap[courseId] || "/courses";
+  };
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -202,9 +213,9 @@ export default function Courses() {
                         {course.available ? (
                         <Button
                           className="w-full"
-                          onClick={() => (window.location.href = "/contact")}
+                          onClick={() => (window.location.href = getCourseRoute(course.id))}
                         >
-                            Enroll Now
+                            Learn More
                           </Button>
                         ) : (
                           <Button
