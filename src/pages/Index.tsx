@@ -22,6 +22,13 @@ const Index = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
+      // Check if popup was already shown in this session
+      const shownInSession = sessionStorage.getItem("emailPopupShownInSession");
+      if (shownInSession) {
+        return; // Don't show if already shown in this session
+      }
+
+      // Check if popup was closed recently (within 30 days)
       const lastClosed = localStorage.getItem("emailPopupClosed");
       if (
         !lastClosed ||
@@ -29,6 +36,8 @@ const Index = () => {
           30 * 24 * 60 * 60 * 1000
       ) {
         setShowEmailPopup(true);
+        // Mark as shown in this session
+        sessionStorage.setItem("emailPopupShownInSession", "true");
       }
     }, 3000); // 3 second delay
 
