@@ -443,6 +443,8 @@ We welcome contributions from the community! Please follow these guidelines:
 
 This project is proprietary software for ThaiBridge Academy. 
 
+**Developer:** [@germainelry](https://github.com/germainelry)
+
 **All rights reserved.** This software and associated documentation files are the exclusive property of ThaiBridge Academy.
 
 ---
