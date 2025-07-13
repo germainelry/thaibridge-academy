@@ -416,8 +416,8 @@ We welcome contributions from the community! Please follow these guidelines:
 
 ### Contact Information
 
-- **ThaiBridge Academy Team** - Project sponsor
-- **[Lovable.dev](https://lovable.dev/)** – Provided the base template boilerplate
+- **Project Sponsor:** ThaiBridge Academy Team
+- **[Lovable.dev](https://lovable.dev/)**: Provided the base template boilerplate
 - **Developer**: [GitHub Profile](https://github.com/germainelry)
 
 ### Common Issues
@@ -441,9 +441,9 @@ We welcome contributions from the community! Please follow these guidelines:
 
 ## License
 
-This project is proprietary software for ThaiBridge Academy. 
-
 **Developer:** [@germainelry](https://github.com/germainelry)
+
+This project is proprietary software for **ThaiBridge Academy**.
 
 **All rights reserved.** This software and associated documentation files are the exclusive property of ThaiBridge Academy.
 
