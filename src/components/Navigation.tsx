@@ -25,8 +25,8 @@ export function Navigation() {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Reviews", href: "/reviews" },
     { name: "About", href: "/about" },
+    { name: "Reviews", href: "/reviews" },
     { name: "Contact", href: "/contact" },
     { name: "FAQ", href: "/faq" },
   ];
@@ -96,7 +96,8 @@ export function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              {navLinks.map((link) => (
+              {/* Home and About */}
+              {navLinks.slice(0, 2).map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
@@ -148,6 +149,21 @@ export function Navigation() {
                   </div>
                 )}
               </div>
+
+              {/* Reviews, Contact, and FAQ */}
+              {navLinks.slice(2).map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className={`px-3 py-2 text-base font-medium transition-thai ${
+                    isActive(link.href)
+                      ? 'text-thai-gold border-b-2 border-thai-gold'
+                      : 'text-white hover:text-thai-gold'
+                  }`}
+                >
+                  {link.name}
+                </a>
+              ))}
             </div>
           </div>
 
@@ -168,7 +184,8 @@ export function Navigation() {
         {isOpen && (
           <div className="md:hidden bg-thai-forest-dark/95 backdrop-blur-sm border-t border-white/10">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {navLinks.map((link) => (
+              {/* Home and About */}
+              {navLinks.slice(0, 2).map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
@@ -201,6 +218,21 @@ export function Navigation() {
                   </a>
                 ))}
               </div>
+
+              {/* Reviews, Contact, and FAQ */}
+              {navLinks.slice(2).map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className={`block px-3 py-3 text-lg font-medium transition-thai ${
+                    isActive(link.href)
+                      ? 'text-thai-gold bg-white/10 rounded-lg'
+                      : 'text-white hover:text-thai-gold hover:bg-white/5 rounded-lg'
+                  }`}
+                >
+                  {link.name}
+                </a>
+              ))}
             </div>
           </div>
         )}
