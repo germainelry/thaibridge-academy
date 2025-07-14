@@ -2,6 +2,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SectionWrapper } from "@/components/SectionWrapper";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { useNavigation } from "@/hooks/use-navigation";
 
 const policySections = [
@@ -176,26 +177,32 @@ export default function Policy() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button 
+              <Button
+                size="lg"
                 onClick={() => navigate('/contact')}
-                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-lg font-semibold transition-thai"
               >
                 Contact Us
-              </button>
+              </Button>
               
-              <button 
-                onClick={() => window.location.href = 'mailto:legal@thaibridgeacademy.sg'}
-                className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-3 rounded-lg font-semibold transition-thai"
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={() =>
+                  window.open(
+                    "https://wa.me/6588994462?text=Hi%20ThaiBridge%20Academy,%20I%20have%20a%20question%20about%20your%20policies",
+                    "_blank"
+                  )
+                }
               >
-                Email Legal Team
-              </button>
+                WhatsApp Us
+              </Button>
             </div>
           </div>
         </div>
       </SectionWrapper>
 
       {/* Quick Reference */}
-      <SectionWrapper sectionIndex={4}>
+      {/* <SectionWrapper sectionIndex={4}>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h3 className="font-display text-2xl font-bold text-center text-thai-text-dark mb-8">
@@ -232,7 +239,7 @@ export default function Policy() {
             </div>
           </div>
         </div>
-      </SectionWrapper>
+      </SectionWrapper> */}
 
       <Footer />
     </div>
