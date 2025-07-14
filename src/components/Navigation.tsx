@@ -34,6 +34,7 @@ export function Navigation() {
   const aboutLinks = [
     { name: "About Us", href: "/about" },
     { name: "Affiliate Program", href: "/affiliate" },
+    { name: "Terms & Conditions", href: "/policy" },
   ];
 
   const courseLinks = [
@@ -140,7 +141,7 @@ export function Navigation() {
                 <a
                   href="/about"
                   className={`px-4 py-2 text-base font-medium transition-thai flex items-center gap-1 ${
-                    location.pathname.startsWith('/about') || location.pathname.startsWith('/affiliate')
+                    location.pathname.startsWith('/about') || location.pathname.startsWith('/affiliate') || location.pathname.startsWith('/policy')
                       ? 'text-thai-gold border-b-2 border-thai-gold'
                       : 'text-white hover:text-thai-gold'
                   }`}
