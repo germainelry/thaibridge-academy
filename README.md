@@ -414,12 +414,6 @@ We welcome contributions from the community! Please follow these guidelines:
 - **Testing**: Test on multiple devices and browsers
 - **Documentation**: Update docs for new features
 
-### Contact Information
-
-- **Project Sponsor:** ThaiBridge Academy Team
-- **[Lovable.dev](https://lovable.dev/)**: Provided the base template boilerplate
-- **Developer**: [GitHub Profile](https://github.com/germainelry)
-
 ### Common Issues
 
 1. **Build Errors**
@@ -446,6 +440,11 @@ We welcome contributions from the community! Please follow these guidelines:
 This project is proprietary software for **ThaiBridge Academy**.
 
 **All rights reserved.** This software and associated documentation files are the exclusive property of ThaiBridge Academy.
+
+### Credits
+
+- **Project Sponsor:** ThaiBridge Academy Team
+- **[Lovable.dev](https://lovable.dev/)**: Provided the base template boilerplate
 
 ---
 

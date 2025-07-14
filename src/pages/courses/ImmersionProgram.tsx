@@ -86,22 +86,22 @@ export default function ImmersionProgram() {
               authentic local culture, traditions, and daily life with native speakers.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                <div className="flex items-center gap-2 mb-1">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
+                <div className="flex items-center justify-center gap-2 mb-1">
                   <Clock className="w-5 h-5 text-thai-gold" />
                   <span className="font-semibold">Duration</span>
                 </div>
                 <p className="text-thai-text-secondary">1-4 weeks programs</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                <div className="flex items-center gap-2 mb-1">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
+                <div className="flex items-center justify-center gap-2 mb-1">
                   <Target className="w-5 h-5 text-thai-gold" />
                   <span className="font-semibold">Level</span>
                 </div>
                 <p className="text-thai-text-secondary">Intermediate and above</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                <div className="flex items-center gap-2 mb-1">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
+                <div className="flex items-center justify-center gap-2 mb-1">
                   <Trophy className="w-5 h-5 text-thai-gold" />
                   <span className="font-semibold">Price</span>
                 </div>

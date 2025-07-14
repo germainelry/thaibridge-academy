@@ -71,22 +71,22 @@ export default function PrivateCoaching() {
               Perfect for learners who want to progress at their own pace.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                <div className="flex items-center gap-2 mb-1">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
+                <div className="flex items-center justify-center gap-2 mb-1">
                   <Users className="w-5 h-5 text-thai-gold" />
                   <span className="font-semibold">Duration</span>
                 </div>
                 <p className="text-thai-text-secondary">Flexible - 1 hour sessions</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                <div className="flex items-center gap-2 mb-1">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
+                <div className="flex items-center justify-center gap-2 mb-1">
                   <Target className="w-5 h-5 text-thai-gold" />
                   <span className="font-semibold">Level</span>
                 </div>
                 <p className="text-thai-text-secondary">All levels welcome</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                <div className="flex items-center gap-2 mb-1">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
+                <div className="flex items-center justify-center gap-2 mb-1">
                   <Trophy className="w-5 h-5 text-thai-gold" />
                   <span className="font-semibold">Price</span>
                 </div>
