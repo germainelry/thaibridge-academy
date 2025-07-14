@@ -441,7 +441,7 @@ This project is proprietary software for **ThaiBridge Academy**.
 
 **All rights reserved.** This software and associated documentation files are the exclusive property of ThaiBridge Academy.
 
-### Credits
+## Credits
 
 - **Project Sponsor:** ThaiBridge Academy Team
 - **[Lovable.dev](https://lovable.dev/)**: Provided the base template boilerplate
