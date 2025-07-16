@@ -212,11 +212,11 @@ export default function ImmersionProgram() {
       </SectionWrapper>
 
       {/* Testimonials Section */}
-      {/* <section className="bg-thai-light-tint py-20">
+      <SectionWrapper sectionIndex={5}>
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="font-display text-3xl lg:text-4xl font-bold text-center text-thai-text-dark mb-12">
-              Student Experiences
+              What Our Students Say
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {testimonials.map((testimonial, index) => (
@@ -230,10 +230,7 @@ export default function ImmersionProgram() {
                     <p className="text-muted-foreground mb-4 italic">"{testimonial.quote}"</p>
                     <div>
                       <p className="font-semibold text-thai-text-dark">{testimonial.name}</p>
-                      <p className="text-sm text-muted-foreground flex items-center gap-1">
-                        <MapPin className="w-3 h-3" />
-                        {testimonial.location}
-                      </p>
+                      <p className="text-sm text-muted-foreground flex items-center gap-1">{testimonial.location}</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -241,10 +238,10 @@ export default function ImmersionProgram() {
             </div>
           </div>
         </div>
-      </section> */}
+      </SectionWrapper>
 
       {/* CTA Section */}
-      <SectionWrapper sectionIndex={5} variant="cta">
+      <SectionWrapper sectionIndex={6} variant="cta">
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-display text-3xl lg:text-4xl font-bold mb-6">
             Ready for Your Thai Adventure?

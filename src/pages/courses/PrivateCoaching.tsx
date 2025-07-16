@@ -144,7 +144,7 @@ export default function PrivateCoaching() {
       </SectionWrapper>
 
       {/* Testimonials Section */}
-      {/* <section className="py-20">
+      <SectionWrapper sectionIndex={4}>
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="font-display text-3xl lg:text-4xl font-bold text-center text-thai-text-dark mb-12">
@@ -167,7 +167,7 @@ export default function PrivateCoaching() {
             </div>
           </div>
         </div>
-      </section> */}
+      </SectionWrapper>
 
       {/* CTA Section */}
       <SectionWrapper sectionIndex={4} variant="cta">
