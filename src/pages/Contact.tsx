@@ -104,8 +104,7 @@ export default function Contact() {
       icon: Clock,
       title: "Operating Hours",
       details: [
-        "Weekdays: 7AM - 11PM",
-        "Weekends: 9AM - 6PM",
+        "7AM - 11PM daily",
       ],
     },
   ];
