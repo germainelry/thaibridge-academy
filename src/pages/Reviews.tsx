@@ -207,7 +207,7 @@ export default function Reviews() {
               onClick={() => (window.location.href = "/contact")}
               className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-3 rounded-lg font-semibold transition-thai"
             >
-              Book Trial Class
+              Contact Us
             </button>
           </div>
         </div>
