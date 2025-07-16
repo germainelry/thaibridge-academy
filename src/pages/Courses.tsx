@@ -244,13 +244,23 @@ export default function Courses() {
             Ready to Start Your Thai Journey?
           </h2>
           <p className="text-lg text-thai-text-secondary mb-8 max-w-2xl mx-auto">
-            Not sure which course is right for you? Book a discounted trial class
-            with our language experts to experience our teaching style and find the perfect
-            program for your needs.
+            Not sure which course is right for you? Explore the course details above, or reach out for personalized advice—our team is happy to help you find the perfect fit.
           </p>
-          <Button size="lg" onClick={() => (window.location.href = "/contact")}>
-            Book Trial Class
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" onClick={() => (window.location.href = '/contact')}>
+              Contact Us
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              onClick={() => (window.location.href = '/faq')}
+            >
+              View FAQ
+            </Button>
+          </div>
+          <p className="text-sm text-thai-text-secondary mt-6">
+            Most students start with a trial class or a quick chat with our team.
+          </p>
         </div>
       </SectionWrapper>
 
