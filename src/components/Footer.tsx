@@ -124,7 +124,7 @@ export function Footer() {
         <div className="container mx-auto px-4 py-12">
           <div className="max-w-4xl mx-auto text-center">
             <h3 className="font-display text-2xl lg:text-3xl font-bold mb-4">
-              Stay Connected with ThaiBridge
+              Stay Connected with us!
             </h3>
             <p className="text-thai-text-secondary mb-8 max-w-2xl mx-auto">
               Get exclusive Thai language tips, cultural insights, and course
