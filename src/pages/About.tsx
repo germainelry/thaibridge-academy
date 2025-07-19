@@ -30,22 +30,34 @@ const values = [
 
 const team = [
   {
-    name: "Ajarn Siriporn",
-    title: "Founder & Head Instructor",
-    description: "Native Thai speaker with 15 years of teaching experience. MA in Applied Linguistics from Chulalongkorn University.",
-    specialties: ["Business Thai", "Cultural Immersion", "Advanced Grammar"]
+    name: "Ajarn Sirakarn",
+    title: "Head Instructor",
+    description: "15 years experience and an MA in Applied Linguistics. Expert in business Thai, group classes and advanced grammar.",
+    specialties: ["Business Thai", "Linguistics", "Advanced Grammar"]
   },
   {
-    name: "Ajarn Wichai",
+    name: "Ajarn Khwanchanok",
     title: "Senior Language Instructor",
-    description: "Specialized in beginner-friendly teaching methods. Former diplomat with deep understanding of cross-cultural communication.",
+    description: "Beginner-friendly and great at helping new students feel at ease. Clear, patient, and focused on pronunciation and everyday Thai.",
     specialties: ["Beginner Thai", "Pronunciation", "Cultural Etiquette"]
   },
   {
-    name: "Ajarn Napaporn",
+    name: "Ajarn Pornwadee",
     title: "Immersion Program Director",
-    description: "Cultural anthropologist and language educator. Designs authentic cultural experiences for our immersion programs.",
-    specialties: ["Cultural Studies", "Immersion Programs", "Travel Thai"]
+    description: "Certified educator and licensed tour guide, leads Thailand immersion programs with real-life cultural experiences.",
+    specialties: ["Thai Culture", "Immersion Program", "Local Experiences"]
+  },
+  {
+    name: "Ajarn Ganpapath",
+    title: "Senior Language Instructor",
+    description: "MBA and English graduate with years of volunteer and professional teaching, using flexible, learner-centered methods.",
+    specialties: ["Advanced Grammar", "Learner‑Centered Methodology"]
+  },
+  {
+    name: "Ajarn Pavinee",
+    title: "Immersion Program Coordinator and Instructor",
+    description: "Designs lessons for immersion programs, focusing on authentic cultural experiences and travel Thai.",
+    specialties: ["Cultural Studies", "Immersion Program", "Thai Travel and Religion"]
   }
 ];
 
@@ -169,17 +181,13 @@ export default function About() {
       <section id="instructors" className="bg-thai-light-tint py-20">
         <div className="container mx-auto px-4">
           <h2 className="font-display text-3xl lg:text-4xl font-bold text-center text-thai-text-dark mb-12">
-            Meet Our Expert Instructors
+            Meet Our Instructors
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {team.map((member, index) => (
               <Card key={index} className="shadow-thai-medium hover:shadow-thai-strong transition-thai">
                 <CardContent className="p-8 text-center">
-                  <div className="w-24 h-24 bg-primary/10 rounded-full mx-auto mb-6 flex items-center justify-center">
-                    <Users className="w-12 h-12 text-primary" />
-                  </div>
-                  
                   <h3 className="font-display text-xl font-bold text-thai-text-dark mb-2">
                     {member.name}
                   </h3>
@@ -208,6 +216,23 @@ export default function About() {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* A Warm Welcome from Our Instructors Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h3 className="font-display text-2xl lg:text-3xl font-bold text-thai-text-dark mb-6">
+              A Warm Welcome from Our Instructors
+            </h3>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Sawasdeeka! We're so happy to welcome you to ThaiBridge Academy. Whether you're just starting to learn Thai or want to improve your skills, we're here to help you every step of the way. Learning Thai is not just about speaking, it's about connecting with our beautiful culture and making new friends. We can't wait to share our language and culture with you!
+            </p>
+            <p className="mt-6 text-primary font-semibold">
+              — The ThaiBridge Academy Instructors
+            </p>
           </div>
         </div>
       </section>

@@ -113,23 +113,24 @@ const Index = () => {
       course: "Private Coaching",
       rating: 5,
       quote:
-        "The personalized approach really made the difference for me. After 3 months, I can confidently have basic conversations with Thai locals.",
+        "I started private lessons hoping to just learn basic phrases for travel, but ended up being able to hold short conversations at cafes and shops in Bangkok. What I appreciated most was how Kru Gai adapted the lessons for my pace. Super flexible and very encouraging.",
     },
     {
       name: "Marcus Lim",
       course: "Corporate Training",
       rating: 5,
       quote:
-        "The cultural insights were just as valuable as the language skills. Highly recommend for any business dealing with Thai partners.",
+        "I work with Thai clients regularly, and this course helped me go beyond textbook Thai. We covered small talk, polite phrasing, and even how to respond during some scenarios. The cultural tips, like how to wai properly or what Thais are uncomfortable with, were things I couldn’t get from a language app. Highly recommended.",
     },
     {
-      name: "Jennifer Wong",
+      name: "Emily Parker",
       course: "Immersion Program",
       rating: 5,
       quote:
-        "The immersion program in Chiang Mai was life-changing! I came back speaking Thai with much more confidence.",
+      "The Chiang Mai immersion was super well organized. We had Thai lessons in the mornings, and in the afternoons we did hands on activities like cooking, harvesting rice, and going to local markets, using only Thai the whole time. I messed up a lot at first, but by the end I could order food and chat with locals without freaking out. It really gave me a big confidence boost.",
     },
   ];
+  
 
   return (
     <div className="min-h-screen bg-background">
