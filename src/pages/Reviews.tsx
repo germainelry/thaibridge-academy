@@ -7,6 +7,7 @@ import { Star } from "lucide-react";
 import { useEffect, useState } from "react";
 import { format } from 'date-fns';
 import { Button } from "@/components/ui/button";
+import { apiService } from "@/lib/api-service";
 
 const stats = [
   { number: "200+", label: "Happy Students" },
@@ -22,10 +23,11 @@ export default function Reviews() {
   useEffect(() => {
     async function fetchReviews() {
       setLoading(true);
-      const response = await fetch("https://thaibridge.app.n8n.cloud/webhook/get-reviews");
-      if (response.ok) {
-        const data = await response.json();
+      try {
+        const data = await apiService.getReviews();
         setReviews(data);
+      } catch (error) {
+        console.error('Failed to fetch reviews:', error);
       }
       setLoading(false);
     }

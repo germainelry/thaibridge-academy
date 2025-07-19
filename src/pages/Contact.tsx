@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { apiService } from "@/lib/api-service";
 
 export default function Contact() {
   const { toast } = useToast();
@@ -27,7 +28,7 @@ export default function Contact() {
     name: "",
     user_email: "",
     phone: "",
-    course_taken: "",
+    interested_course: "",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -58,12 +59,7 @@ export default function Contact() {
     }
     setIsSubmitting(true);
     try {
-      const response = await fetch("https://thaibridge.app.n8n.cloud/webhook/submit-faq", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-      if (!response.ok) throw new Error("Network response was not ok");
+      await apiService.submitContactForm(formData);
       toast({
         title: "Message sent successfully!",
         description:
@@ -73,7 +69,7 @@ export default function Contact() {
         name: "",
         user_email: "",
         phone: "",
-        course_taken: "",
+        interested_course: "",
         message: "",
       });
     } catch (error) {
@@ -229,11 +225,11 @@ export default function Contact() {
                         </div>
 
                         <div className="space-y-2">
-                          <Label htmlFor="course_taken">Interested Course</Label>
+                          <Label htmlFor="interested_course">Interested Course</Label>
                           <select
-                            id="course_taken"
-                            name="course_taken"
-                            value={formData.course_taken}
+                            id="interested_course"
+                            name="interested_course"
+                            value={formData.interested_course}
                             onChange={handleInputChange}
                             className="w-full px-3 py-2 border border-input rounded-md bg-background text-foreground text-base font-sans"
                           >

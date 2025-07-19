@@ -20,7 +20,7 @@ export interface ContactFormRequest {
   name: string;
   user_email: string;
   phone?: string;
-  course_taken?: string;
+  interested_course?: string;
   message: string;
 }
 
@@ -34,6 +34,7 @@ export interface ContactFormResponse {
 export interface Review {
   id?: string;
   name: string;
+  user_email: string;
   course: string;
   rating: number;
   comment: string;
