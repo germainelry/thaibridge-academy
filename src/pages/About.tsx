@@ -288,8 +288,7 @@ export default function About() {
             Ready to Start Your Journey?
           </h2>
           <p className="text-xl text-thai-text-secondary mb-8 max-w-2xl mx-auto">
-            Join our community of Thai language learners and cultural enthusiasts. 
-            Let's build bridges together.
+          Join our community of Thai language learners and speak with confidence in real-life situations.
           </p>
           <Button 
             size="lg" 

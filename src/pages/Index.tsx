@@ -362,17 +362,14 @@ const Index = () => {
             Start Your Thai Journey Today
           </h2>
           <p className="text-xl text-thai-text-secondary mb-8 max-w-2xl mx-auto">
-            Discover the joy of learning a new language with us. Our
-            comprehensive language programs and dedicated instructors will
-            empower you to communicate confidently to make new connections and
-            experiences.
+            Discover the joy of learning a new language with us. Explore our range of courses designed for different learning styles and goals, from private coaching to immersive cultural experiences.
           </p>
           <Button
             size="lg"
             className="bg-primary hover:bg-primary/90"
-            onClick={() => (window.location.href = "/contact")}
+            onClick={() => (window.location.href = "/courses")}
           >
-            Book Trial Class
+            See All Our Courses
           </Button>
         </div>
       </SectionWrapper>
