@@ -4,7 +4,7 @@ ThaiBridge Academy is a modern, elegant web application designed to help learner
 
 ## Live Demo
 
-**Visit the deployed application:** [https://thaibridge-academy.vercel.app/](https://thaibridge-academy.vercel.app/)
+**Visit the deployed application:** [https://thaibridge.vercel.app/](https://thaibridge.vercel.app/)
 
 ### Key Features
 
