@@ -19,18 +19,18 @@ const courses = [
     id: 1,
     title: "1 to 1 Private Coaching",
     description:
-      "Personalized Thai language instruction with flexible scheduling and individualized attention. Perfect for learners who want to progress at their own pace with dedicated support.",
+      "Personalized Thai lessons with flexible scheduling and dedicated support. Most students choose 1 or 1.5 hour sessions weekly for optimal progress. Ideal for learners who want to advance at their own pace with expert guidance.",
     icon: Users,
     features: [
-      "Flexible scheduling to fit your lifestyle",
-      "Personalized curriculum based on your goals",
-      "Native Thai instructor with English/Chinese proficiency",
-      "Progress tracking and regular assessments",
-      "Cultural insights and practical conversation practice",
+      "Flexible scheduling—choose your preferred days and times",
+      "Personalized curriculum tailored to your goals",
+      "Free digital learning materials included",
+      "Direct access to your teacher for questions between lessons",
+      "Native Thai instructor with English/Chinese proficiency"
     ],
-    duration: "Flexible - 1 hour sessions",
+    duration: "Flexible",
     level: "All levels welcome",
-    price: "From SGD 80/session",
+    price: "From SGD 60/session",
     popular: true,
     available: true,
   },
@@ -64,11 +64,11 @@ const courses = [
       "Cultural activities and local experiences",
       "Small group sizes for personalized attention",
       "Accommodation and meal arrangements",
-      "Certificate of completion",
+      "All activities and accommodations are individually trialed and safety-vetted by our team"
     ],
     duration: "1-4 weeks programs",
-    level: "Intermediate and above",
-    price: "Starting from SGD 1,200/week",
+    level: "Intermediate (beginner options available)",
+    price: "Quotation-based (depends on duration and options)",
     popular: false,
     available: true,
   },
@@ -87,7 +87,7 @@ const courses = [
     ],
     duration: "4-week intensive course",
     level: "Complete beginners",
-    price: "SGD 180 for full course",
+    price: "Fully claimable with SkillsFuture credits",
     popular: false,
     available: false,
   },
@@ -244,13 +244,23 @@ export default function Courses() {
             Ready to Start Your Thai Journey?
           </h2>
           <p className="text-lg text-thai-text-secondary mb-8 max-w-2xl mx-auto">
-            Not sure which course is right for you? Book a discounted trial class
-            with our language experts to experience our teaching style and find the perfect
-            program for your needs.
+            Not sure which course is right for you? Explore the course details above, or reach out for personalized advice—our team is happy to help you find the perfect fit.
           </p>
-          <Button size="lg" onClick={() => (window.location.href = "/contact")}>
-            Book Trial Class
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" onClick={() => (window.location.href = '/contact')}>
+              Contact Us
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              onClick={() => (window.location.href = '/faq')}
+            >
+              View FAQ
+            </Button>
+          </div>
+          <p className="text-sm text-thai-text-secondary mt-6">
+            Most students start with a trial class or a quick chat with our team.
+          </p>
         </div>
       </SectionWrapper>
 

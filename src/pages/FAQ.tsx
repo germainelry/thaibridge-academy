@@ -44,12 +44,13 @@ const faqCategories = [
       {
         question: "How flexible are the class schedules?",
         answer:
-          "Very flexible! Our 1-to-1 private coaching adapts to your schedule. We offer sessions from 9AM-9PM on weekdays and 9AM-6PM on Saturdays. If you miss a class, we provide recordings and allow you to join another group session (subject to availability).",
+          "Our 1-to-1 private coaching is highly flexible and adapts to your schedule. We offer sessions from 7AM to 11PM, Monday through Sunday.",
       },
       {
         question: "Can I reschedule or cancel classes?",
-        answer:
-          "Yes, we understand life happens. You can reschedule private sessions with 24-hour notice. For cancellations, our policy varies by course type - please contact us for specific details. We always try to accommodate our students' needs.",
+        answer: (
+          <>Yes, we understand that life happens. You can reschedule private sessions with 48 hours' notice; otherwise, you will be charged according to our policy. Please see our <a href='/policy' className='text-primary underline'>T&amp;C</a> for details.</>
+        ),
       },
       {
         question: "What if I need to pause my course temporarily?",
@@ -64,17 +65,17 @@ const faqCategories = [
       {
         question: "How much do your courses cost?",
         answer:
-          "Private coaching starts from SGD 80/session. Corporate training has group rates (contact us for quotes). Immersion programs start from SGD 1,200/week. The Basic Traveller's Pack (SkillsFuture claimable) will be SGD 180 for the full 4-week course when available.",
+          "Each of our courses has different rates. Private coaching is charged at an hourly rate, but we also offer package pricing for committed students. Corporate training and immersion programs depend on the duration and group size (contact us for a quote). The Basic Traveller's Pack is claimable with SkillsFuture credits on the SkillsFuture platform.",
       },
       {
         question: "Do you offer payment plans?",
         answer:
-          "Yes! We offer flexible payment options including monthly plans for longer courses. Corporate clients can arrange invoice billing. Contact us to discuss payment arrangements that work for your budget.",
+          "Yes! For package plans, we offer installment options with no additional interest (varies by package). Corporate clients can arrange invoice billing. Contact us to discuss payment arrangements that work for you.",
       },
       {
         question: "Is there a free trial?",
         answer:
-          "We offer discounted trial classes for first-time learners where you can meet your potential instructor, assess your current level, and experience our teaching style. This helps ensure our approach is right for you before committing to a full course.",
+          "Yes, for our private classes we offer a trial class to explain the syllabus and give you a chance to meet the teacher and experience our teaching style. For corporate and immersion programs, consultations are free to discuss your requirements.",
       },
       {
         question: "What's included in the course fees?",
@@ -89,22 +90,17 @@ const faqCategories = [
       {
         question: "Do you provide learning materials?",
         answer:
-          "Yes, all learning materials are included in your course fee. We provide digital textbooks, audio files, practice exercises, and cultural guides. Physical materials can be arranged for local students.",
+          "Yes, all learning materials are included in your course fee. We provide digital textbooks, audio files, practice exercises, and cultural guides. Physical materials can be arranged for local students. All classes are recorded and will be provided for you to review after class.",
       },
       {
         question: "How do online classes work?",
         answer:
-          "Online classes use Zoom or similar platforms. You'll need a stable internet connection, computer/tablet with camera and microphone. We provide technical support to ensure smooth learning experience. All sessions are recorded for review.",
-      },
-      {
-        question: "Can I switch between online and in-person classes?",
-        answer:
-          "Yes, our hybrid approach allows flexibility. You can attend some sessions online and others in-person based on your schedule and preference. This is particularly popular with our private coaching students.",
+          "Online classes use Zoom. You'll need a stable internet connection and a computer or tablet with a camera and microphone. We provide technical support to ensure a smooth learning experience. All sessions are recorded for review.",
       },
       {
         question: "What if I'm struggling with certain aspects?",
         answer:
-          "Our instructors provide personalized support and adjust teaching methods based on your learning style. We offer additional practice sessions, alternative explanations, and cultural context to help overcome specific challenges.",
+          "Our instructors provide personalized support and adjust teaching methods based on your learning style. We offer additional practice sessions, alternative explanations, and cultural context to help you overcome specific challenges. The teacher will also adjust the pace accordingly, so you don't have to worry.",
       },
     ],
   },
@@ -114,7 +110,7 @@ const faqCategories = [
       {
         question: "Where do immersion programs take place?",
         answer:
-          "Our immersion programs are primarily based in Chiang Mai and Bangkok, with cultural excursions to various regions. We choose locations that offer authentic Thai experiences while maintaining safety and comfort for international students.",
+          "Our immersion programs are primarily based in Chiang Mai, with cultural excursions to various regions. We choose locations that offer authentic Thai experiences while maintaining safety and comfort for international students.",
       },
       {
         question: "What's included in immersion programs?",
@@ -124,7 +120,7 @@ const faqCategories = [
       {
         question: "Is the immersion program safe for solo travelers?",
         answer:
-          "Absolutely. We have partnerships with trusted local families and accommodations. Our staff in Thailand provides 24/7 support, and we maintain regular check-ins with all participants. Safety is our top priority.",
+          "Absolutely. We have partnerships with trusted local families and accommodations. Our staff in Thailand provides 24/7 support, and we maintain regular check-ins with all participants. Safety is our top priority. Every single place is individually trialed and vetted by us before being included in the itinerary.",
       },
       {
         question: "What level do I need for immersion programs?",

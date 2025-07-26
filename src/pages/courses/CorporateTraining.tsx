@@ -180,11 +180,11 @@ export default function CorporateTraining() {
       </SectionWrapper>
 
       {/* Testimonials Section */}
-      {/* <section className="py-20">
+      <SectionWrapper sectionIndex={4}>
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="font-display text-3xl lg:text-4xl font-bold text-center text-thai-text-dark mb-12">
-              What Companies Say
+              What Our Students Say
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {testimonials.map((testimonial, index) => (
@@ -206,7 +206,7 @@ export default function CorporateTraining() {
             </div>
           </div>
         </div>
-      </section> */}
+      </SectionWrapper>
 
       {/* CTA Section */}
       <SectionWrapper sectionIndex={4} variant="cta">

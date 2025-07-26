@@ -212,12 +212,12 @@ export default function TravellersPack() {
         </div>
       </SectionWrapper>
 
-      {/* Testimonials Section
-      <section className="bg-thai-light-tint py-20">
+      {/* Testimonials Section */}
+      <SectionWrapper sectionIndex={5}>
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="font-display text-3xl lg:text-4xl font-bold text-center text-thai-text-dark mb-12">
-              Student Reviews
+              What Our Students Say
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {testimonials.map((testimonial, index) => (
@@ -231,10 +231,7 @@ export default function TravellersPack() {
                     <p className="text-muted-foreground mb-4 italic">"{testimonial.quote}"</p>
                     <div>
                       <p className="font-semibold text-thai-text-dark">{testimonial.name}</p>
-                      <p className="text-sm text-muted-foreground flex items-center gap-1">
-                        <MapPin className="w-3 h-3" />
-                        {testimonial.location}
-                      </p>
+                      <p className="text-sm text-muted-foreground flex items-center gap-1">{testimonial.location}</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -242,10 +239,10 @@ export default function TravellersPack() {
             </div>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* Course Status */}
-      <SectionWrapper sectionIndex={5} variant="gradient">
+      <SectionWrapper sectionIndex={6} variant="gradient">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto">
             <Badge className="mb-4 bg-orange-500 text-white">Coming Soon</Badge>

@@ -6,28 +6,7 @@ import { Button } from "@/components/ui/button";
 import { useNavigation } from "@/hooks/use-navigation";
 
 const policySections = [
-  {
-    title: "Privacy Policy",
-    lastUpdated: "December 2024",
-    content: [
-      {
-        subtitle: "Information We Collect",
-        text: "We collect information you provide directly to us, such as when you create an account, enroll in courses, contact us, or participate in our programs. This may include your name, email address, phone number, payment information, and learning preferences."
-      },
-      {
-        subtitle: "How We Use Your Information",
-        text: "We use the information we collect to provide, maintain, and improve our services; process transactions; send communications; provide customer support; and comply with legal obligations."
-      },
-      {
-        subtitle: "Information Sharing",
-        text: "We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as described in this policy or as required by law."
-      },
-      {
-        subtitle: "Data Security",
-        text: "We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction."
-      }
-    ]
-  },
+
   {
     title: "Terms of Service",
     lastUpdated: "December 2024",
@@ -51,46 +30,60 @@ const policySections = [
     ]
   },
   {
-    title: "Refund Policy",
-    lastUpdated: "December 2024",
+    title: "Cancellation Policy",
+    lastUpdated: "March 2025",
     content: [
       {
-        subtitle: "Full Refund Period",
-        text: "You may cancel your enrollment and receive a full refund within 7 days of course start date, provided you have attended no more than 2 sessions."
+        subtitle: "Class Cancellation by Students",
+        text: "For private classes, students may cancel individual sessions with at least 48 hours' notice. Cancellations made after that window will be counted as attended. We understand that unexpected situations can happen, and in genuine cases, we may offer exceptions at our discretion. For group classes, sessions will continue as scheduled. If a student misses a session, they may request a make-up, which will be charged at the private class rate. All group classes are recorded, so students can catch up on the lesson before the next session."
       },
       {
-        subtitle: "Partial Refund",
-        text: "After the full refund period, refunds are calculated based on unused sessions minus a 20% administrative fee. Refunds are not available after 50% of the course has been completed."
+        subtitle: "Class Cancellation by Academy",
+        text: "In the rare event that we need to cancel a private lesson (usually only in emergencies), we will notify students at least 48 hours in advance and offer a reschedule within the same week. For group classes, sessions will proceed as scheduled, and a qualified substitute teacher will be arranged if the original instructor is unavailable."
       },
       {
-        subtitle: "Immersion Programs",
-        text: "Immersion program refunds follow a different schedule due to accommodation and activity bookings. Full details are provided in your program agreement."
-      },
-      {
-        subtitle: "Processing Time",
-        text: "Approved refunds are processed within 10-14 business days to the original payment method."
+        subtitle: "Late Arrival Policy",
+        text: "Lessons will begin and end according to the scheduled time. If you anticipate being late, please inform the teacher in advance—rescheduling may depend on availability. Otherwise, the teacher will wait up to 15 minutes in the Zoom call before ending the session."
       }
     ]
   },
   {
-    title: "Cancellation Policy",
+    title: "Refund Policy",
+    lastUpdated: "March 2025",
+    content: [
+      {
+        subtitle: "Private Classes",
+        text: "Private classes are designed to be as flexible as possible to suit your schedule, which means refund requests for ongoing classes are extremely rare. For packages, once class credits has been purchased, it is non-refundable. These packages are offered at a discounted rate to support students who are committed to consistent learning over time."
+      },
+      {
+        subtitle: "Group Classes",
+        text: "For custom group classes, a deposit will be collected after initial discussions and planning. This deposit is non-refundable, as it covers preparation and coordination efforts. A refund window may be available before the course officially begins—after that point, all fees are non-refundable, as resources and schedules are confirmed. Refunds will not be issued for dropouts once the course has started."
+      },
+      {
+        subtitle: "Immersion Programs",
+        text: "Due to the nature of accommodation and activity bookings with external partners, immersion programs follow a separate refund policy outlined in your program agreement. A deposit is required to confirm your participation and allow us to secure the necessary arrangements—this deposit is non-refundable, as it is used to make time-sensitive reservations. If a cancellation occurs before the specified deadline prior to the program start date, only the deposit will be retained. No refunds will be issued after this deadline."
+      }
+    ]
+  },  
+  {
+    title: "Privacy Policy",
     lastUpdated: "December 2024",
     content: [
       {
-        subtitle: "Class Cancellation by Students",
-        text: "Students may cancel individual sessions with 24-hour advance notice. Late cancellations may result in session charges."
+        subtitle: "Information We Collect",
+        text: "We collect information you provide directly to us, such as when you create an account, enroll in courses, contact us, or participate in our programs. This may include your name, email address, phone number, payment information, and learning preferences."
       },
       {
-        subtitle: "Class Cancellation by Academy",
-        text: "If we need to cancel a class, students will be notified as soon as possible and offered rescheduling options or credit for future sessions."
+        subtitle: "How We Use Your Information",
+        text: "We use the information we collect to provide, maintain, and improve our services; process transactions; send communications; provide customer support; and comply with legal obligations."
       },
       {
-        subtitle: "Course Withdrawal",
-        text: "Students may withdraw from courses at any time. Refunds are subject to our refund policy terms."
+        subtitle: "Information Sharing",
+        text: "We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as described in this policy or as required by law."
       },
       {
-        subtitle: "Force Majeure",
-        text: "Neither party is liable for delays or failures due to circumstances beyond reasonable control, including natural disasters, government actions, or health emergencies."
+        subtitle: "Data Security",
+        text: "We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction."
       }
     ]
   }
@@ -176,27 +169,12 @@ export default function Policy() {
               please don't hesitate to contact us. We're here to help.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                onClick={() => navigate('/contact')}
-              >
-                Contact Us
-              </Button>
-              
-              <Button
-                variant="outline"
-                size="lg"
-                onClick={() =>
-                  window.open(
-                    "https://wa.me/6588994462?text=Hi%20ThaiBridge%20Academy,%20I%20have%20a%20question%20about%20your%20policies",
-                    "_blank"
-                  )
-                }
-              >
-                WhatsApp Us
-              </Button>
-            </div>
+            <Button
+              size="lg"
+              onClick={() => navigate('/contact')}
+            >
+              Contact Us
+            </Button>
           </div>
         </div>
       </SectionWrapper>

@@ -34,7 +34,7 @@ export function Navigation() {
   const aboutLinks = [
     { name: "About Us", href: "/about" },
     { name: "Affiliate Program", href: "/affiliate" },
-    { name: "Terms & Conditions", href: "/policy" },
+    { name: "Policies", href: "/policy" },
   ];
 
   const courseLinks = [
