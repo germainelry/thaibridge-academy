@@ -1,10 +1,12 @@
+# ThaiBridge Academy
+
 ## Overview
 
 ThaiBridge Academy is a modern, elegant web application designed to help learners connect with authentic Thai language and culture. Built with cutting-edge technologies, it provides a seamless learning experience with comprehensive course offerings, student reviews, and interactive features.
 
 ## Live Demo
 
-**Visit the deployed application:** [https://thaibridge.vercel.app/](https://thaibridge.vercel.app/)
+**Visit the deployed application:** [https://thaibridge-academy.vercel.app/](https://thaibridge-academy.vercel.app/)
 
 ### Key Features
 
@@ -28,24 +30,41 @@ ThaiBridge Academy is a modern, elegant web application designed to help learner
 ### Styling & UI
 
 - **[Tailwind CSS 3.4.11](https://tailwindcss.com/)** - Utility-first CSS framework
-- **[shadcn/ui](https://ui.shadcn.com/)** - Beautiful, accessible component library
 - **[Radix UI](https://www.radix-ui.com/)** - Unstyled, accessible UI primitives
+- **[shadcn/ui](https://ui.shadcn.com/)** - Beautiful, accessible component library
+- **[Lucide React](https://lucide.dev/)** - Beautiful & consistent icon toolkit
 
-### Routing & State
+### State Management & Data Fetching
+
+- **[React Query (TanStack Query)](https://tanstack.com/query/latest)** - Powerful data synchronization
+- **[React Hook Form](https://react-hook-form.com/)** - Performant forms with easy validation
+- **[Zod](https://zod.dev/)** - TypeScript-first schema validation
+
+### Routing & Navigation
 
 - **[React Router 6.30.1](https://reactrouter.com/)** - Client-side routing
 - **React Context + Hooks** - Lightweight state management
 
 ### Backend & APIs
 
+- **[FastAPI](https://fastapi.tiangolo.com/)** - Modern, fast web framework for building APIs
+- **[Supabase](https://supabase.com/)** - Database and authentication
 - **[N8n](https://n8n.io/)** - Workflow automation for API endpoints
-- **[Supabase](https://supabase.com/)** - Database and authentication (optional)
 
 ### Development Tools
 
 - **[ESLint 9.9.0](https://eslint.org/)** - Code linting and formatting
-- **[PostCSS](https://postcss.org/)** - CSS processing
 - **[TypeScript ESLint](https://typescript-eslint.io/)** - TypeScript-specific linting
+- **[PostCSS](https://postcss.org/)** - CSS processing
+- **[SWC](https://swc.rs/)** - Fast TypeScript/JavaScript compiler
+
+### Additional Libraries
+
+- **[Recharts](https://recharts.org/)** - Composable charting library
+- **[Embla Carousel](https://www.embla-carousel.com/)** - Lightweight carousel
+- **[Sonner](https://sonner.emilkowal.ski/)** - Toast notifications
+- **[Date-fns](https://date-fns.org/)** - Modern JavaScript date utility library
+- **[React Day Picker](https://react-day-picker.js.org/)** - Flexible date picker
 
 ### Deployment
 
@@ -102,8 +121,8 @@ The application will be available at `http://localhost:5173` by default.
 Create a `.env.local` file in the project root with the following variables:
 
 ```env
-# N8n webhook base URL (required)
-VITE_API_BASE_URL=https://thaibridge.app.n8n.cloud
+# API base URL (required)
+VITE_API_BASE_URL=http://localhost:8000
 
 # Optional: Enable debug mode
 VITE_DEBUG=true
@@ -115,18 +134,23 @@ VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 
 ### Database Setup
 
-This project uses N8n workflows as the backend. No traditional database setup is required, but ensure your N8n instance is properly configured:
+This project uses FastAPI with Supabase as the backend database. The backend provides RESTful API endpoints for all frontend operations:
 
-1. Access your N8n instance at `https://thaibridge.app.n8n.cloud`
-2. Verify webhook endpoints are active
-3. Test API connectivity
+1. **Backend Setup**: Ensure the FastAPI backend is running on `http://localhost:8000`
+2. **Database**: Supabase provides the database layer with automatic API generation
+3. **API Documentation**: Access interactive API docs at `http://localhost:8000/docs`
 
 ### Running the Application
 
 #### Development Mode
 
 ```bash
+# Frontend
 npm run dev
+
+# Backend (in separate terminal)
+cd ../thaibridge-backend
+uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
 
 - Hot module replacement enabled
@@ -147,45 +171,67 @@ npm run preview
 ## Project Structure
 
 ```
-thaibridge-academy-v1/
-├── public/                 # Static assets
-│   ├── background.jpg      # Background images
-│   ├── cover-image.png     # Hero section images
-│   └── favicon.ico        # Site favicon
-├── src/
-│   ├── components/         # Reusable UI components
-│   │   ├── ui/            # shadcn/ui components
-│   │   ├── EmailPopup.tsx # Newsletter popup
-│   │   ├── Footer.tsx     # Site footer
-│   │   ├── Navigation.tsx # Main navigation
-│   │   └── WhatsAppButton.tsx # WhatsApp integration
-│   ├── hooks/             # Custom React hooks
-│   │   ├── use-mobile.tsx # Mobile detection
-│   │   ├── use-navigation.ts # Navigation logic
-│   │   └── use-toast.ts   # Toast notifications
-│   ├── lib/               # Utilities and services
-│   │   ├── api-config.ts  # API endpoint configuration
-│   │   ├── api-service.ts # Centralized API handling
-│   │   ├── api-types.ts   # TypeScript type definitions
-│   │   ├── navigation.ts  # Navigation utilities
-│   │   └── utils.ts       # Helper functions
-│   ├── pages/             # Page components (routes)
-│   │   ├── courses/       # Course-specific pages
-│   │   ├── About.tsx      # About page
-│   │   ├── Contact.tsx    # Contact page
-│   │   ├── Courses.tsx    # Courses listing
-│   │   ├── FAQ.tsx        # FAQ page
-│   │   ├── Index.tsx      # Home page
-│   │   └── Reviews.tsx    # Reviews page
-│   ├── App.tsx            # Main app component
-│   ├── App.css            # Global styles
-│   ├── index.css          # Base styles
-│   └── main.tsx           # Application entry point
-├── .eslintrc.js           # ESLint configuration
-├── tailwind.config.ts     # Tailwind CSS configuration
-├── tsconfig.json          # TypeScript configuration
-├── vite.config.ts         # Vite build configuration
-└── package.json           # Dependencies and scripts
+thaibridge-academy/
+├── thaibridge-frontend/          # React frontend application
+│   ├── public/                   # Static assets
+│   │   ├── images/              # Image assets
+│   │   │   └── immersion/       # Course-specific images
+│   │   ├── background.jpg       # Background images
+│   │   ├── cover-image.png      # Hero section images
+│   │   └── favicon.ico         # Site favicon
+│   ├── src/
+│   │   ├── components/          # Reusable UI components
+│   │   │   ├── ui/             # shadcn/ui components
+│   │   │   ├── EmailPopup.tsx  # Newsletter popup
+│   │   │   ├── Footer.tsx      # Site footer
+│   │   │   ├── Navigation.tsx  # Main navigation
+│   │   │   └── WhatsAppButton.tsx # WhatsApp integration
+│   │   ├── hooks/              # Custom React hooks
+│   │   │   ├── use-mobile.tsx  # Mobile detection
+│   │   │   ├── use-navigation.ts # Navigation logic
+│   │   │   └── use-toast.ts    # Toast notifications
+│   │   ├── lib/                # Utilities and services
+│   │   │   ├── api-config.ts   # API endpoint configuration
+│   │   │   ├── api-service.ts  # Centralized API handling
+│   │   │   ├── api-types.ts    # TypeScript type definitions
+│   │   │   ├── navigation.ts   # Navigation utilities
+│   │   │   └── utils.ts        # Helper functions
+│   │   ├── pages/              # Page components (routes)
+│   │   │   ├── courses/        # Course-specific pages
+│   │   │   ├── About.tsx       # About page
+│   │   │   ├── Contact.tsx     # Contact page
+│   │   │   ├── Courses.tsx     # Courses listing
+│   │   │   ├── FAQ.tsx         # FAQ page
+│   │   │   ├── Index.tsx       # Home page
+│   │   │   └── Reviews.tsx     # Reviews page
+│   │   ├── App.tsx             # Main app component
+│   │   ├── App.css             # Global styles
+│   │   ├── index.css           # Base styles
+│   │   └── main.tsx            # Application entry point
+│   ├── .eslintrc.js            # ESLint configuration
+│   ├── tailwind.config.ts      # Tailwind CSS configuration
+│   ├── tsconfig.json           # TypeScript configuration
+│   ├── vite.config.ts          # Vite build configuration
+│   └── package.json            # Dependencies and scripts
+│
+├── thaibridge-backend/          # FastAPI backend application
+│   ├── app/
+│   │   ├── routes/             # API route handlers
+│   │   │   ├── contact.py      # Contact form endpoints
+│   │   │   ├── reviews.py      # Reviews management
+│   │   │   └── subscribers.py  # Newsletter subscription
+│   │   ├── auth.py             # Authentication logic
+│   │   ├── database.py         # Database configuration
+│   │   └── schemas.py          # Pydantic models
+│   ├── config/                 # Configuration files
+│   ├── docs/                   # Documentation
+│   ├── tests/                  # Test files
+│   ├── tools/                  # Development utilities
+│   ├── main.py                 # FastAPI application entry
+│   ├── requirements.txt        # Python dependencies
+│   └── security_config.py      # Security configuration
+│
+└── README.md                   # Project documentation
 ```
 
 ### Key Files Explained
@@ -195,27 +241,29 @@ thaibridge-academy-v1/
 - **`src/lib/api-types.ts`** - TypeScript interfaces for API requests/responses
 - **`src/components/Navigation.tsx`** - Main navigation component
 - **`src/pages/Index.tsx`** - Homepage with hero section and course overview
+- **`main.py`** - FastAPI application entry point
+- **`app/routes/`** - API route handlers for different features
 
 ### Architecture Overview
 
-The application follows a modern React architecture:
+The application follows a modern full-stack architecture:
 
 ```
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   React App     │    │   API Service   │    │   N8n Backend   │
-│   (Frontend)    │◄──►│   (TypeScript)  │◄──►│   (Workflows)   │
+│   React App     │    │   FastAPI       │    │   Supabase      │
+│   (Frontend)    │◄──►│   (Backend)     │◄──►│   (Database)    │
 └─────────────────┘    └─────────────────┘    └─────────────────┘
          │                       │                       │
          ▼                       ▼                       ▼
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
 │   Components    │    │   Type Safety   │    │   External      │
-│   (UI Layer)    │    │   (Interfaces)  │    │   Services      │
+│   (UI Layer)    │    │   (Pydantic)    │    │   Services      │
 └─────────────────┘    └─────────────────┘    └─────────────────┘
 ```
 
 ## API Integration
 
-This project uses N8n workflows as the backend API. All API calls are centralized in the service layer for better maintainability and type safety.
+This project uses a FastAPI backend with Supabase database integration. All API calls are centralized in the service layer for better maintainability and type safety.
 
 ### API Service Layer
 
@@ -227,12 +275,13 @@ This project uses N8n workflows as the backend API. All API calls are centralize
 
 | Endpoint                                     | Method | Purpose                  | Status    |
 | -------------------------------------------- | ------ | ------------------------ | --------- |
-| `/webhook/subscribe`                         | POST   | Newsletter subscription  | ✅ Active |
-| `/webhook/submit-faq`                        | POST   | Contact form submission  | ✅ Active |
-| `/webhook/get-reviews`                       | GET    | Retrieve student reviews | ✅ Active |
-| `/form/145db122-0763-4660-9d68-11781099a011` | GET    | Review submission form   | ✅ Active |
+| `/api/subscribe`                             | POST   | Newsletter subscription  | ✅ Active |
+| `/api/contact`                               | POST   | Contact form submission  | ✅ Active |
+| `/api/reviews`                               | GET    | Retrieve student reviews | ✅ Active |
+| `/api/reviews`                               | POST   | Submit new review        | ✅ Active |
+| `/api/health`                                | GET    | Health check endpoint    | ✅ Active |
 
-For detailed API documentation, see [API_DOCUMENTATION.md](./API_DOCUMENTATION.md).
+For detailed API documentation, see [API_DOCUMENTATION.md](./API_LIBRARY_DOCUMENTATION.md).
 
 ### Usage Examples
 
@@ -358,7 +407,7 @@ npm run build
 
 ```env
 # Required
-VITE_API_BASE_URL=https://thaibridge.app.n8n.cloud
+VITE_API_BASE_URL=https://your-api-domain.com
 
 # Optional
 VITE_DEBUG=false
@@ -424,14 +473,19 @@ We welcome contributions from the community! Please follow these guidelines:
 
 2. **API Connection Issues**
 
-   - Verify N8n instance is running
+   - Verify FastAPI backend is running on correct port
    - Check API base URL configuration
-   - Test webhook endpoints directly
+   - Test endpoints directly via `/docs` interface
 
 3. **Styling Issues**
    - Ensure Tailwind CSS is properly configured
    - Check for conflicting CSS rules
    - Verify component imports
+
+4. **Backend Issues**
+   - Ensure Python 3.8+ is installed
+   - Install backend dependencies: `pip install -r requirements.txt`
+   - Check Supabase connection configuration
 
 ## License
 
