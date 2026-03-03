@@ -85,15 +85,20 @@ I designed and built this application end-to-end as a solo developer:
 
 ## Screenshots
 
-> *Replace the placeholder paths below with actual screenshot images.*
+### Homepage
+<img src="./screenshots/homepage.png" alt="Homepage" width="720">
 
-| View | Screenshot |
-|------|-----------|
-| Homepage | ![Homepage](./screenshots/homepage.png) |
-| Course Detail | ![Course Detail](./screenshots/course-detail.png) |
-| Reviews | ![Reviews](./screenshots/reviews.png) |
-| Contact Form | ![Contact Form](./screenshots/contact-form.png) |
-| Mobile View | ![Mobile View](./screenshots/mobile-view.png) |
+### Course Detail
+<img src="./screenshots/course-detail.png" alt="Course Detail" width="720">
+
+### Reviews
+<img src="./screenshots/reviews.png" alt="Reviews" width="720">
+
+### Contact Form
+<img src="./screenshots/contact-form.png" alt="Contact Form" width="720">
+
+### Mobile View
+<img src="./screenshots/mobile-view.png" alt="Mobile View" width="360">
 
 ---
 
