@@ -49,7 +49,7 @@ A full-stack web application for a Thai language school, offering course browsin
 ```
 ┌──────────────────┐         ┌──────────────────┐         ┌──────────────┐
 │                  │  REST   │                  │         │              │
-│  React Frontend  │ ──────► │  FastAPI Backend  │ ──────► │   Supabase   │
+│  React Frontend  │ ──────► │  FastAPI Backend │ ──────► │   Supabase   │
 │  (Vercel)        │  JSON   │  (Render)        │  SQL    │  (PostgreSQL)│
 │                  │ ◄────── │                  │ ◄────── │              │
 └──────────────────┘         └────────┬─────────┘         └──────────────┘
